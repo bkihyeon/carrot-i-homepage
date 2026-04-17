@@ -1,0 +1,294 @@
+@theme {
+  --breakpoint-tablet: 50rem;
+  --breakpoint-desktop: 80rem;
+}
+
+:root {
+  --token-color-background: #ffffff;
+  --token-color-foreground: #09090b;
+  --token-color-primary: #f97316;
+  --token-color-primary-foreground: #fff7ed;
+  --token-color-secondary: #f4f4f5;
+  --token-color-secondary-foreground: #18181b;
+  --token-color-accent: #e4e4e7;
+  --token-color-accent-foreground: #18181b;
+  --token-color-muted: #fafafa;
+  --token-color-muted-foreground: #71717a;
+  --token-color-border: #e4e4e7;
+  --token-color-input: #ffffff;
+  --token-color-card: #ffffff;
+  --token-color-card-foreground: #09090b;
+  --token-color-popover: #000000;
+  --token-color-popover-foreground: #ffffff;
+  --token-color-destructive: #ef4444;
+  --token-color-destructive-foreground: #ef4444;
+  --token-color-ring: #d4d4d8;
+  --token-color-body-background: #ffffff;
+  --token-color-foreground-alt: #3f3f46;
+  --token-color-backdrop: rgb(0 0 0 / 40%);
+
+  --token-space-0: 0rem;
+  --token-space-3xs: 0.125rem;
+  --token-space-2xs: 0.25rem;
+  --token-space-xs: 0.5rem;
+  --token-space-sm: 0.75rem;
+  --token-space-md: 1rem;
+  --token-space-lg: 1.25rem;
+  --token-space-xl: 1.5rem;
+  --token-space-2xl: 2rem;
+  --token-space-3xl: 2.5rem;
+  --token-space-4xl: 3rem;
+  --token-space-5xl: 4rem;
+  --token-space-1: 0.25rem;
+  --token-space-2: 0.5rem;
+  --token-space-3: 0.75rem;
+  --token-space-4: 1rem;
+  --token-space-5: 1.25rem;
+  --token-space-6: 1.5rem;
+  --token-space-8: 2rem;
+  --token-space-10: 2.5rem;
+  --token-space-12: 3rem;
+  --token-space-14: 3.5rem;
+  --token-space-16: 4rem;
+  --token-space-20: 5rem;
+  --token-space-24: 6rem;
+
+  --token-radius-none: 0rem;
+  --token-radius-xs: 0.125rem;
+  --token-radius-sm: 0.25rem;
+  --token-radius-md: 0.375rem;
+  --token-radius-lg: 0.5rem;
+  --token-radius-xl: 0.75rem;
+  --token-radius-2xl: 1rem;
+  --token-radius-3xl: 1.5rem;
+  --token-radius-full: 9999px;
+
+  --token-shadow-2xs: 0 1px 0 rgb(0 0 0 / 5%);
+  --token-shadow-xs: 0 1px 2px rgb(0 0 0 / 5%);
+  --token-shadow-sm: 0 1px 3px rgb(0 0 0 / 10%), 0 1px 2px rgb(0 0 0 / 10%);
+
+  --token-font-sans: var(--font-brand-sans, "Noto Sans KR"), "Noto Sans KR",
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --token-font-headings: var(--token-font-sans);
+  --token-font-body: var(--token-font-sans);
+  --token-font-mono: var(--font-geist-mono, "SFMono-Regular"), "SFMono-Regular",
+    ui-monospace, monospace;
+  --token-font-weight-regular: 400;
+  --token-font-weight-medium: 500;
+  --token-font-weight-semibold: 700;
+
+  --token-text-heading-1-size: 3rem;
+  --token-text-heading-1-line-height: 3rem;
+  --token-text-heading-1-letter-spacing: -0.09375rem;
+  --token-text-heading-2-size: 1.875rem;
+  --token-text-heading-2-line-height: 2.625rem;
+  --token-text-heading-2-letter-spacing: -0.0625rem;
+  --token-text-heading-3-size: 1.5rem;
+  --token-text-heading-3-line-height: 1.8rem;
+  --token-text-heading-3-letter-spacing: -0.0625rem;
+  --token-text-heading-4-size: 1.25rem;
+  --token-text-heading-4-line-height: 1.5rem;
+  --token-text-heading-4-letter-spacing: 0rem;
+  --token-text-body-size: 1rem;
+  --token-text-body-line-height: 1.5rem;
+  --token-text-body-letter-spacing: 0rem;
+  --token-text-body-small-size: 0.875rem;
+  --token-text-body-small-line-height: 1.3125rem;
+  --token-text-body-small-letter-spacing: 0rem;
+  --token-text-body-mini-size: 0.75rem;
+  --token-text-body-mini-line-height: 1rem;
+  --token-text-body-mini-letter-spacing: 0rem;
+}
+
+[data-theme="dark"],
+.theme-dark {
+  --token-color-background: #000000;
+  --token-color-foreground: #fafafa;
+  --token-color-primary: #f97316;
+  --token-color-primary-foreground: #7c2d12;
+  --token-color-secondary: #27272a;
+  --token-color-secondary-foreground: #f4f4f5;
+  --token-color-accent: #18181b;
+  --token-color-accent-foreground: #f4f4f5;
+  --token-color-muted: #18181b;
+  --token-color-muted-foreground: #a1a1aa;
+  --token-color-border: #3f3f46;
+  --token-color-input: rgb(255 255 255 / 5%);
+  --token-color-card: #18181b;
+  --token-color-card-foreground: #ffffff;
+  --token-color-popover: #ffffff;
+  --token-color-popover-foreground: #000000;
+  --token-color-body-background: #09090b;
+  --token-color-foreground-alt: #d4d4d4;
+}
+
+@theme inline {
+  --color-background: var(--token-color-background);
+  --color-foreground: var(--token-color-foreground);
+  --color-primary: var(--token-color-primary);
+  --color-primary-foreground: var(--token-color-primary-foreground);
+  --color-secondary: var(--token-color-secondary);
+  --color-secondary-foreground: var(--token-color-secondary-foreground);
+  --color-accent: var(--token-color-accent);
+  --color-accent-foreground: var(--token-color-accent-foreground);
+  --color-muted: var(--token-color-muted);
+  --color-muted-foreground: var(--token-color-muted-foreground);
+  --color-border: var(--token-color-border);
+  --color-input: var(--token-color-input);
+  --color-card: var(--token-color-card);
+  --color-card-foreground: var(--token-color-card-foreground);
+  --color-popover: var(--token-color-popover);
+  --color-popover-foreground: var(--token-color-popover-foreground);
+  --color-destructive: var(--token-color-destructive);
+  --color-destructive-foreground: var(--token-color-destructive-foreground);
+  --color-ring: var(--token-color-ring);
+  --color-body-background: var(--token-color-body-background);
+  --color-foreground-alt: var(--token-color-foreground-alt);
+  --color-backdrop: var(--token-color-backdrop);
+
+  --spacing-0: var(--token-space-0);
+  --spacing-1: var(--token-space-1);
+  --spacing-2: var(--token-space-2);
+  --spacing-3: var(--token-space-3);
+  --spacing-4: var(--token-space-4);
+  --spacing-5: var(--token-space-5);
+  --spacing-6: var(--token-space-6);
+  --spacing-8: var(--token-space-8);
+  --spacing-10: var(--token-space-10);
+  --spacing-12: var(--token-space-12);
+  --spacing-14: var(--token-space-14);
+  --spacing-16: var(--token-space-16);
+  --spacing-20: var(--token-space-20);
+  --spacing-24: var(--token-space-24);
+  --spacing-3xs: var(--token-space-3xs);
+  --spacing-2xs: var(--token-space-2xs);
+  --spacing-xs: var(--token-space-xs);
+  --spacing-sm: var(--token-space-sm);
+  --spacing-md: var(--token-space-md);
+  --spacing-lg: var(--token-space-lg);
+  --spacing-xl: var(--token-space-xl);
+  --spacing-2xl: var(--token-space-2xl);
+  --spacing-3xl: var(--token-space-3xl);
+  --spacing-4xl: var(--token-space-4xl);
+  --spacing-5xl: var(--token-space-5xl);
+
+  --radius-none: var(--token-radius-none);
+  --radius-xs: var(--token-radius-xs);
+  --radius-sm: var(--token-radius-sm);
+  --radius-md: var(--token-radius-md);
+  --radius-lg: var(--token-radius-lg);
+  --radius-xl: var(--token-radius-xl);
+  --radius-2xl: var(--token-radius-2xl);
+  --radius-3xl: var(--token-radius-3xl);
+  --radius-full: var(--token-radius-full);
+
+  --shadow-2xs: var(--token-shadow-2xs);
+  --shadow-xs: var(--token-shadow-xs);
+  --shadow-sm: var(--token-shadow-sm);
+  --shadow-card: var(--token-shadow-sm);
+
+  --font-sans: var(--token-font-body);
+  --font-heading: var(--token-font-headings);
+  --font-mono: var(--token-font-mono);
+  --font-weight-normal: var(--token-font-weight-regular);
+  --font-weight-medium: var(--token-font-weight-medium);
+  --font-weight-semibold: var(--token-font-weight-semibold);
+
+  --text-heading-1: var(--token-text-heading-1-size);
+  --text-heading-1--line-height: var(--token-text-heading-1-line-height);
+  --text-heading-1--letter-spacing: var(--token-text-heading-1-letter-spacing);
+  --text-heading-2: var(--token-text-heading-2-size);
+  --text-heading-2--line-height: var(--token-text-heading-2-line-height);
+  --text-heading-2--letter-spacing: var(--token-text-heading-2-letter-spacing);
+  --text-heading-3: var(--token-text-heading-3-size);
+  --text-heading-3--line-height: var(--token-text-heading-3-line-height);
+  --text-heading-3--letter-spacing: var(--token-text-heading-3-letter-spacing);
+  --text-heading-4: var(--token-text-heading-4-size);
+  --text-heading-4--line-height: var(--token-text-heading-4-line-height);
+  --text-heading-4--letter-spacing: var(--token-text-heading-4-letter-spacing);
+  --text-body: var(--token-text-body-size);
+  --text-body--line-height: var(--token-text-body-line-height);
+  --text-body--letter-spacing: var(--token-text-body-letter-spacing);
+  --text-body-small: var(--token-text-body-small-size);
+  --text-body-small--line-height: var(--token-text-body-small-line-height);
+  --text-body-small--letter-spacing: var(--token-text-body-small-letter-spacing);
+  --text-body-mini: var(--token-text-body-mini-size);
+  --text-body-mini--line-height: var(--token-text-body-mini-line-height);
+  --text-body-mini--letter-spacing: var(--token-text-body-mini-letter-spacing);
+}
+
+.type-heading-1 {
+  font-family: var(--token-font-headings);
+  font-size: var(--token-text-heading-1-size);
+  line-height: var(--token-text-heading-1-line-height);
+  letter-spacing: var(--token-text-heading-1-letter-spacing);
+  font-weight: var(--token-font-weight-semibold);
+}
+
+.type-heading-2 {
+  font-family: var(--token-font-headings);
+  font-size: var(--token-text-heading-2-size);
+  line-height: var(--token-text-heading-2-line-height);
+  letter-spacing: var(--token-text-heading-2-letter-spacing);
+  font-weight: var(--token-font-weight-semibold);
+}
+
+.type-heading-3 {
+  font-family: var(--token-font-headings);
+  font-size: var(--token-text-heading-3-size);
+  line-height: var(--token-text-heading-3-line-height);
+  letter-spacing: var(--token-text-heading-3-letter-spacing);
+  font-weight: var(--token-font-weight-semibold);
+}
+
+.type-heading-4 {
+  font-family: var(--token-font-headings);
+  font-size: var(--token-text-heading-4-size);
+  line-height: var(--token-text-heading-4-line-height);
+  letter-spacing: var(--token-text-heading-4-letter-spacing);
+  font-weight: var(--token-font-weight-semibold);
+}
+
+.font-headings {
+  font-family: var(--token-font-headings);
+}
+
+.type-body {
+  font-family: var(--token-font-body);
+  font-size: var(--token-text-body-size);
+  line-height: var(--token-text-body-line-height);
+  letter-spacing: var(--token-text-body-letter-spacing);
+}
+
+.type-body-bold {
+  font-family: var(--token-font-body);
+  font-size: var(--token-text-body-size);
+  line-height: var(--token-text-body-line-height);
+  letter-spacing: var(--token-text-body-letter-spacing);
+  font-weight: 700;
+  text-align: center;
+}
+
+.type-body-medium {
+  font-family: var(--token-font-body);
+  font-size: var(--token-text-body-size);
+  line-height: var(--token-text-body-line-height);
+  letter-spacing: var(--token-text-body-letter-spacing);
+  font-weight: var(--token-font-weight-medium);
+}
+
+.type-body-small {
+  font-family: var(--token-font-body);
+  font-size: var(--token-text-body-small-size);
+  line-height: var(--token-text-body-small-line-height);
+  letter-spacing: var(--token-text-body-small-letter-spacing);
+  font-weight: var(--token-font-weight-regular);
+}
+
+.type-body-mini {
+  font-family: var(--token-font-body);
+  font-size: var(--token-text-body-mini-size);
+  line-height: var(--token-text-body-mini-line-height);
+  letter-spacing: var(--token-text-body-mini-letter-spacing);
+  font-weight: var(--token-font-weight-medium);
+}
