@@ -36,6 +36,11 @@ function SolutionVisual({
         src={slide.imageSrc}
         alt={slide.imageAlt}
         fill
+        sizes={
+          compact
+            ? "(max-width: 799px) calc(100vw - 2rem), (max-width: 1279px) calc(100vw - 4rem), 1080px"
+            : "1080px"
+        }
         className="object-cover opacity-75"
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(212,212,216,0.18)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,212,216,0.18)_1px,transparent_1px)] bg-[size:46.91px_100px]" />

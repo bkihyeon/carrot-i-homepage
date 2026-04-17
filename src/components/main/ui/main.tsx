@@ -15,7 +15,9 @@ export default function MainPage() {
   return (
     <section className="content-shell flex flex-col px-xs pt-md tablet:px-2xl tablet:pt-xl tablet:pb-5xl desktop:px-0 desktop:pt-2xl desktop:pb-0">
       <div>
+        {/*TODO: 나중에 주는 파일로 대체*/}
         <MediaPlaceholder />
+        {/*사진 다음에 나오는 컴포넌트*/}
         <NextPicture
           title={<>결정으로 이어주는 AI 데이터 플로우</>}
           description={
@@ -29,6 +31,7 @@ export default function MainPage() {
           }
           className="border-t-0"
         />
+        {/* 4 + 1 사각형 디자인 사진 */}
         <div className="grid grid-cols-1 border-l border-border tablet:grid-cols-5 desktop:grid-cols-5">
           {pictureExplainItems.map((item) => (
             <PictureExplain
@@ -40,6 +43,7 @@ export default function MainPage() {
                     src={item.imageSrc}
                     alt={item.imageAlt}
                     fill
+                    sizes="(max-width: 1279px) 10rem, 13.5rem"
                     className="object-contain"
                   />
                 </div>
@@ -50,13 +54,20 @@ export default function MainPage() {
           ))}
           <DecorativeArrowCard className="border-t-0 border-l-0" />
         </div>
+
+        {/* 왜 데이터와 어쩌구 */}
         <div className="grid grid-cols-1 items-stretch tablet:h-[31.875rem] tablet:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] desktop:h-auto desktop:grid-cols-[431px_649px]">
           <WhyAI className="border-t-0 tablet:border-l tablet:border-r-0" />
           <WhyAIIssuesPanel />
         </div>
+
+        {/*데코레이터 배너*/}
         <ImpactBanner />
+        {/*AI의사 결정 아키텍쳐 텍스트 + 그림 */}
         <AIDecisionArchitecture />
+        {/*캐러셀 위 타이틀*/}
         <SolutionsIntro />
+        {/*메인페이지 캐러셀*/}
         <SolutionCarousel />
       </div>
     </section>

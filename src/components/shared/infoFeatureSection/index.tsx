@@ -54,7 +54,13 @@ export default function InfoFeatureSection({
 
       <div className="flex min-w-px flex-[1_0_0] flex-col items-start overflow-hidden bg-background p-2xl">
         <div className="relative h-[38.125rem] w-full overflow-hidden rounded-2xl  bg-background ">
-          <Image src={imageSrc} alt={imageAlt} fill className="object-cover" />
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            sizes="(max-width: 799px) calc(100vw - 4rem), (max-width: 1279px) calc(100vw - 380px - 4rem), 700px"
+            className="object-cover"
+          />
         </div>
       </div>
     </section>

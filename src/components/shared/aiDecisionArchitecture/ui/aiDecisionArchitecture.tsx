@@ -31,7 +31,7 @@ export default function AIDecisionArchitecture({
         <h2 className="w-full break-keep text-[1.75rem] leading-[1.3] font-bold tracking-[-0.0625rem] tablet:text-[2.25rem] desktop:text-[3rem] desktop:leading-[3rem] desktop:tracking-[-0.09375rem]">
           {title}
         </h2>
-        <p className="mx-auto type- max-w-[1080px] whitespace-pre-line px-md text-[1rem] leading-[1.6] font-normal text-foreground tablet:px-2xl tablet:text-[1.125rem] desktop:px-0 desktop:text-[20px]">
+        <p className="type-body mx-auto max-w-[1080px] whitespace-pre-line px-md text-center text-foreground tablet:px-2xl desktop:px-0">
           {description}
         </p>
       </div>
@@ -41,6 +41,7 @@ export default function AIDecisionArchitecture({
           src={imageSrc}
           alt="캐롯아이 AI 의사결정 아키텍처 다이어그램"
           fill
+          sizes="(max-width: 799px) 100vw, (max-width: 1279px) 100vw, 1080px"
           unoptimized
           className="object-contain"
         />
