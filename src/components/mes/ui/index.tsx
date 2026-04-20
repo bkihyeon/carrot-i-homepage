@@ -53,7 +53,7 @@ export default function MesPage() {
             description={item.description}
           />
         ))}
-        <DecorativeArrowCard className="border-t-0 border-l-0" />
+        <DecorativeArrowCard className="hidden border-t-0 border-l-0 tablet:flex" />
       </div>
     </section>
   );
