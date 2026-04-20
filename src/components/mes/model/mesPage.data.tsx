@@ -1,13 +1,11 @@
 export const mesNextPictureProps = {
-  title: (
-    <>
-      생산 데이터를 기반으로 운영을 <br />
-      최적화하는 AI 데이터 플로우 MES
-    </>
-  ),
+  columnsClassName:
+    "tablet:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] desktop:grid-cols-[minmax(0,648.8px)_minmax(320px,431.2px)]",
+  title: <>생산 데이터를 기반으로 운영을 최적화하는 AI 데이터 플로우 MES</>,
   description: (
     <>
-      데이터를 기반으로 운영을 관리하고 <br />
+      데이터를 기반으로 운영을 관리하고
+      <br />
       생산·재고·공정을 최적화하는 AI 기반 MES 솔루션
     </>
   ),
@@ -49,7 +47,7 @@ export const mesInfoFeatureSections = [
       "BOM 구조를 기반으로 자재와 구성 요소를 정리하여 제품 단위의 생산 기준을 명확하게 정의합니다.",
       "변경과 확장이 쉬운 구조로 안정적인 생산 관리를 지원합니다.",
     ],
-    imageSrc: "/image/mes/BOMgwanli.png",
+    imageSrc: "/image/mes/BOMgwanli3.png",
     imageAlt: "BOM 관리 화면",
   },
 ] as const;
@@ -73,7 +71,8 @@ export const mesArchitectureProps = {
   ),
 } as const;
 
-export const mesSectionDividerClassName = "border-b border-border w-[63.5rem] mx-auto";
+export const mesSectionDividerClassName =
+  "border-b border-border w-[63.5rem] mx-auto";
 
 export const mesPictureExplainImageClassName =
   "relative h-[10rem] w-[10rem] tablet:h-[10rem] tablet:w-[10rem] desktop:h-[13.5rem] desktop:w-[13.5rem]";
