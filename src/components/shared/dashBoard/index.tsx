@@ -6,9 +6,9 @@ type DashBoardProps = {
   title?: ReactNode;
   description?: ReactNode;
   imageSrc: string;
-  mobileImageSrc: string;
   imageAlt?: string;
   className?: string;
+  mobileImageHeightClassName?: string;
 };
 
 export default function DashBoard({
@@ -16,9 +16,9 @@ export default function DashBoard({
   title = "AI 데이터 플로우로 분석하고 운영을 최적화합니다",
   description = "생산 데이터를 기반으로 수율을 실시간 분석하고, 변화 흐름과 이상 패턴을 직관적으로 파악할 수 있습니다. 데이터 기반 의사결정으로 생산 효율을 지속적으로 개선합니다.",
   imageSrc,
-  mobileImageSrc,
   imageAlt = "MES 대시보드 이미지",
   className = "",
+  mobileImageHeightClassName = "h-[25rem]",
 }: DashBoardProps) {
   return (
     <section
@@ -46,14 +46,18 @@ export default function DashBoard({
         </div>
       </div>
 
-      <div className="relative w-full overflow-hidden rounded-2xl p-2xl bg-background ">
-        <Image
-          src={mobileImageSrc}
-          alt={imageAlt}
-          width={720}
-          height={674}
-          className="h-auto w-full object-cover tablet:hidden"
-        />
+      <div className="w-full overflow-hidden rounded-2xl p-2xl bg-background">
+        <div
+          className={`relative w-full overflow-hidden tablet:hidden ${mobileImageHeightClassName}`.trim()}
+        >
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            sizes="(max-width: 799px) calc(100vw - 4rem)"
+            className="object-cover object-center"
+          />
+        </div>
         <Image
           src={imageSrc}
           alt={imageAlt}

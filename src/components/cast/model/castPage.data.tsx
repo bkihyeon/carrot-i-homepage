@@ -31,8 +31,8 @@ export const castDashboardProps = {
   description:
     "유동인구, 매출, 업종 데이터를 지도 위에 통합해 상권의 구조와 흐름을 한눈에 파악할 수 있습니다. 입지별 특성과 경쟁 환경을 직관적으로 분석할 수 있습니다.",
   imageSrc: "/image/cast/Commercial Map.png",
-  mobileImageSrc: "/image/cast/Commercial Map.png",
   imageAlt: "cast 상권 지도 이미지",
+  mobileImageHeightClassName: "h-[28rem]",
 } as const;
 
 export const castInfoFeatureSectionProps = {

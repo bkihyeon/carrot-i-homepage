@@ -15,7 +15,6 @@ import WordBanner from "@/components/shared/wordBanner";
 import DashBoard from "@/components/shared/dashBoard";
 import AIDecisionArchitecture from "@/components/shared/aiDecisionArchitecture/ui/aiDecisionArchitecture";
 import { mesPictureExplainImageClassName } from "@/components/mes/model/mesPage.data";
-import { pictureExplainItems } from "@/components/shared/pictureExplain/model/pictureExplain.data";
 import PictureExplain from "@/components/shared/pictureExplain";
 import Image from "next/image";
 import DecorativeArrowCard from "@/components/shared/decorativeArrowCard";
