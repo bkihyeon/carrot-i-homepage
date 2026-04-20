@@ -11,12 +11,12 @@ import {
 import InfoFeatureSection from "@/components/shared/infoFeatureSection";
 import NextPicture from "@/components/shared/nextPicture/ui/nextPicture";
 import WordBanner from "@/components/shared/wordBanner";
-import DashBoard from "@/components/mes/ui/dashBoard";
 import AIDecisionArchitecture from "@/components/shared/aiDecisionArchitecture/ui/aiDecisionArchitecture";
 import { pictureExplainItems } from "@/components/shared/pictureExplain/model/pictureExplain.data";
 import PictureExplain from "@/components/shared/pictureExplain";
 import Image from "next/image";
 import DecorativeArrowCard from "@/components/shared/decorativeArrowCard";
+import DashBoard from "@/components/shared/dashBoard";
 
 export default function MesPage() {
   return (

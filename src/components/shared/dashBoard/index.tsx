@@ -5,21 +5,18 @@ type DashBoardProps = {
   eyebrow?: ReactNode;
   title?: ReactNode;
   description?: ReactNode;
-  imageSrc?: string;
-  mobileImageSrc?: string;
+  imageSrc: string;
+  mobileImageSrc: string;
   imageAlt?: string;
   className?: string;
 };
-
-const defaultImageSrc = "/image/mes/Sales Container.png";
-const defaultMobileImageSrc = "/image/mes/Sales Container(mobile).png";
 
 export default function DashBoard({
   eyebrow = "대시보드",
   title = "AI 데이터 플로우로 분석하고 운영을 최적화합니다",
   description = "생산 데이터를 기반으로 수율을 실시간 분석하고, 변화 흐름과 이상 패턴을 직관적으로 파악할 수 있습니다. 데이터 기반 의사결정으로 생산 효율을 지속적으로 개선합니다.",
-  imageSrc = defaultImageSrc,
-  mobileImageSrc = defaultMobileImageSrc,
+  imageSrc,
+  mobileImageSrc,
   imageAlt = "MES 대시보드 이미지",
   className = "",
 }: DashBoardProps) {
