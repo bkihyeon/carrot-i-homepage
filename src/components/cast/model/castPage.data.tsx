@@ -1,3 +1,5 @@
+import type { PictureExplainItem } from "@/components/shared/pictureExplain/model/pictureExplain.data";
+
 export const castNextPictureProps = {
   columnsClassName:
     "tablet:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] desktop:grid-cols-[minmax(0,648.8px)_minmax(320px,431.2px)]",
@@ -33,6 +35,24 @@ export const castDashboardProps = {
   imageAlt: "cast 상권 지도 이미지",
 } as const;
 
+export const castInfoFeatureSectionProps = {
+  eyebrow: <>운영 관리</>,
+  title: (
+    <>
+      매출과 비용을 한눈에 확인하고
+      <br />
+      수익을 관리합니다
+    </>
+  ),
+  paragraphs: [
+    "매출, 원가, 지출 데이터를 기반으로 실시간 손익을 자동으로 계산하고 시각화합니다.",
+    "운영 흐름을 직관적으로 파악하고 더 정확한 매장 운영 의사결정을 지원합니다.",
+  ],
+  imageSrc: "/image/cast/phoneDisplay.png",
+  imageAlt: "CAST 운영 관리 화면",
+  imageClassName: "object-contain object-center",
+} as const;
+
 export const castInsightDashboardProps = {
   eyebrow: "대시보드",
   title: "데이터 기반 인사이트로 상권 전략을 제안합니다",
@@ -53,3 +73,73 @@ export const castInsightDashboardProps = {
     },
   ],
 } as const;
+
+export const castArchitectureProps = {
+  eyebrow: <>캐롯아이의 AI 의사결정 아키텍처</>,
+  title: <>단순한 상권 분석이 아닌, 데이터 기반 기술입니다</>,
+  description: (
+    <>
+      데이터 구조화부터 예측, 자동화, 설명까지 <br />
+      의사결정에 필요한 모든 과정을 기술로 완성합니다.
+    </>
+  ),
+} as const;
+
+export const castPictureExplainItems: PictureExplainItem[] = [
+  {
+    imageSrc: "/icon/main/miri1_b.png",
+    imageAlt: "cast-miri1",
+    title: (
+      <>
+        Domain <br /> Data Structure
+      </>
+    ),
+    description: (
+      <>
+        데이터를 모으고 <br />
+        구조를 설계합니다.
+      </>
+    ),
+  },
+  {
+    imageSrc: "/icon/main/miri2_b.png",
+    imageAlt: "cast-miri2",
+    title: (
+      <>
+        Hybrid AI <br /> Modeling
+      </>
+    ),
+    description: (
+      <>
+        하나의 모델로 <br />
+        예측하지 않습니다.
+      </>
+    ),
+  },
+  {
+    imageSrc: "/icon/main/miri3_b.png",
+    imageAlt: "cast-miri3",
+    title: <>Execution Pipeline</>,
+    description: (
+      <>
+        분석을 결정으로 <br />
+        연결하고 설계합니다.
+      </>
+    ),
+  },
+  {
+    imageSrc: "/icon/main/miri4_b.png",
+    imageAlt: "cast-miri4",
+    title: (
+      <>
+        Explainable <br /> AI
+      </>
+    ),
+    description: (
+      <>
+        결과와 함께 <br />
+        이유를 제공합니다.
+      </>
+    ),
+  },
+];
