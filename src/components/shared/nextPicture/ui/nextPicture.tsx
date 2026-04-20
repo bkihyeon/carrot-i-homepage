@@ -24,10 +24,10 @@ export default function NextPicture({
       className={`flex flex-col overflow-hidden border border-border bg-background tablet:grid ${columnsClassName} ${className}`.trim()}
     >
       <div className="flex min-h-[180px] flex-col items-start gap-xs p-xl text-foreground tablet:min-h-[220px] tablet:p-2xl desktop:min-h-[240px] desktop:p-3xl">
-        <h2 className="break-keep font-heading text-[1.75rem] leading-[1.4] font-black tracking-[-1px] tablet:text-[1.5rem] tablet:leading-[140%] tablet:font-black tablet:tracking-[-0.0625rem] desktop:text-[2.125rem] desktop:leading-[140%] desktop:font-black desktop:tracking-[-0.0625rem]">
+        <h2 className="break-keep font-heading  text-[1.75rem] leading-[1.4] font-black tracking-[-1px] tablet:text-[1.5rem] tablet:leading-[140%] tablet:font-black tablet:tracking-[-0.0625rem] desktop:text-[2.125rem] desktop:leading-[140%] desktop:font-black desktop:tracking-[-0.0625rem]">
           {title}
         </h2>
-        <p className="font-sans text-[1rem] leading-[140%] font-light uppercase text-foreground tablet:text-[0.875rem] tablet:leading-[21px] tablet:font-normal tablet:tracking-[0.07px] desktop:text-[1.125rem] desktop:font-light">
+        <p className="font-sans text-[1rem] leading-[140%] font-regular uppercase text-foreground tablet:text-[0.875rem] tablet:leading-[21px] tablet:font-regular tablet:tracking-[0.07px] desktop:text-[1.125rem] desktop:font-regular">
           {description}
         </p>
       </div>

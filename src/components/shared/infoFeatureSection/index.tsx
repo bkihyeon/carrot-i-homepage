@@ -42,7 +42,7 @@ export default function InfoFeatureSection({
           </div>
         </div>
 
-        <div className="flex items-end">
+        <div className="hidden items-end tablet:flex">
           <div className="relative h-10 w-10 border border-border bg-background">
             <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_49%,#d4d4d8_50%,transparent_51%)]" />
           </div>
