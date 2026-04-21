@@ -36,7 +36,7 @@ export default function MainPage() {
           {pictureExplainItems.map((item) => (
             <PictureExplain
               key={item.imageAlt}
-              className="max-w-none border-t-0 border-l-0"
+              className="max-w-none border-0 border-r border-b border-border tablet:border-b"
               media={
                 <div className="relative h-[10rem] w-[10rem] tablet:h-[10rem] tablet:w-[10rem] desktop:h-[13.5rem] desktop:w-[13.5rem]">
                   <Image
@@ -52,7 +52,7 @@ export default function MainPage() {
               description={item.description}
             />
           ))}
-          <DecorativeArrowCard className="border-t-0 border-l-0" />
+          <DecorativeArrowCard className="border-0 border-r border-b border-border tablet:border-b-0" />
         </div>
 
         {/* 왜 데이터와 어쩌구 */}

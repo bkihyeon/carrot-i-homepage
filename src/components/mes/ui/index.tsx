@@ -36,7 +36,7 @@ export default function MesPage() {
         {pictureExplainItems.map((item) => (
           <PictureExplain
             key={item.imageAlt}
-            className="max-w-none border-t-0 border-l-0"
+            className="max-w-none border-0 border-r border-b border-border tablet:border-b"
             media={
               <div className={mesPictureExplainImageClassName}>
                 <Image
@@ -51,7 +51,7 @@ export default function MesPage() {
             description={item.description}
           />
         ))}
-        <DecorativeArrowCard className="hidden border-t-0 border-l-0 tablet:flex" />
+        <DecorativeArrowCard className="hidden border-0 border-r border-b border-border tablet:border-b-0 tablet:flex" />
       </div>
     </section>
   );

@@ -39,7 +39,7 @@ export default function CastPage() {
         {castPictureExplainItems.map((item) => (
           <PictureExplain
             key={item.imageAlt}
-            className="max-w-none border-t-0 border-l-0"
+            className="max-w-none border-t-0 border-l-0 border-r"
             media={
               <div className={mesPictureExplainImageClassName}>
                 <Image
