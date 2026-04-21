@@ -23,7 +23,7 @@ export default function WordBanner({ word, type }: WordBannerProps) {
 
   return (
     <section
-      className={`flex items-center justify-center border border-border px-3xl py-4xl text-center shadow-card ${theme.backgroundClassName}`.trim()}
+      className={`flex items-center justify-center border border-border border-t-0 px-3xl py-4xl text-center ${theme.backgroundClassName}`.trim()}
     >
       <p className={`type-heading-2 ${theme.textClassName}`.trim()}>{word}</p>
     </section>

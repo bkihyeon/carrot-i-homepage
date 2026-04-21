@@ -62,7 +62,9 @@ export const mesDashboardProps = {
   title: "AI 데이터 플로우로 분석하고 운영을 최적화합니다",
   description:
     "생산 데이터를 기반으로 수율을 실시간 분석하고, 변화 흐름과 이상 패턴을 직관적으로 파악할 수 있습니다. 데이터 기반 의사결정으로 생산 효율을 지속적으로 개선합니다.",
+  imageSrc: "/image/mes/Sales Container.png",
   imageAlt: "MES 대시보드 이미지",
+  mobileImageHeightClassName: "h-[25rem]",
 } as const;
 
 export const mesArchitectureProps = {
