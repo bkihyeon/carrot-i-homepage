@@ -27,7 +27,7 @@ export default function NextPicture({
         <h2 className="break-keep font-heading  text-[1.75rem] leading-[1.4] font-black tracking-[-1px] tablet:text-[1.5rem] tablet:leading-[140%] tablet:font-black tablet:tracking-[-0.0625rem] desktop:text-[2.125rem] desktop:leading-[140%] desktop:font-black desktop:tracking-[-0.0625rem]">
           {title}
         </h2>
-        <p className="font-sans text-[1rem] leading-[140%] font-regular uppercase text-foreground tablet:text-[0.875rem] tablet:leading-[21px] tablet:font-regular tablet:tracking-[0.07px] desktop:text-[1.125rem] desktop:font-regular">
+        <p className="font-sans text-[1rem] leading-[140%] font-normal uppercase text-foreground tablet:text-[0.875rem] tablet:leading-[21px] tablet:font-normal tablet:tracking-[0.07px] desktop:text-[1.125rem] desktop:font-normal">
           {description}
         </p>
       </div>
