@@ -27,9 +27,7 @@ export default function MesPage() {
       {mesInfoFeatureSections.map((section, index) => (
         <div key={`mes-info-feature-${index}`}>
           <InfoFeatureSection {...section} />
-          {index < mesInfoFeatureSections.length ? (
-            <div className={mesSectionDividerClassName} />
-          ) : null}
+          <div className={mesSectionDividerClassName} />
         </div>
       ))}
       <DashBoard {...mesDashboardProps} />
