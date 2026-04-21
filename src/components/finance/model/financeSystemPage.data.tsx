@@ -1,10 +1,8 @@
+import type { AIDecisionArchitectureProps } from "@/components/shared/aiDecisionArchitecture/ui/aiDecisionArchitecture";
+import type { NextPictureProps } from "@/components/shared/nextPicture/ui/nextPicture";
 import type { PictureExplainItem } from "@/components/shared/pictureExplain/model/pictureExplain.data";
-
-type FinanceDashboardItem = {
-  eyebrow: string;
-  title: string;
-  description: string;
-};
+import type { WordBannerProps } from "@/components/shared/wordBanner";
+import type { TextDashboardProps } from "@/components/finance/ui/textDashboard";
 
 export const financeNextPictureProps = {
   columnsClassName:
@@ -19,12 +17,12 @@ export const financeNextPictureProps = {
   inquiryDes:
     "계정계(Core Banking) 기반의 여수신 데이터 정합성과 트랜잭션 안정성을 확보하고, 정교한 권한 관리와 감사 추적이 가능한 금융 보안 체계를 구축하며, 고가용성 아키텍처를 통해 어떤 상황에서도 중단 없이 운영되는 안정적인 금융 채널 서비스를 제공합니다.",
   className: "border-t-0",
-} as const;
+} as const satisfies NextPictureProps;
 
 export const finnaceWordBannerProps = {
   word: "AI 데이터 플로우 기반, Financial System으로 보안을 최적화하세요.",
   type: "financial" as const,
-};
+} as const satisfies WordBannerProps;
 
 export const financeDashboardProps = [
   {
@@ -45,7 +43,7 @@ export const financeDashboardProps = [
     description:
       "모바일, 웹, 콜센터 등 다양한 고객 접점에서 어떤 상황에서도 서비스가 안정적으로 유지되도록 설계합니다. 트래픽 증가나 외부 연동 장애 상황에서도 핵심 금융 서비스가 중단되지 않는 아키텍처를 구현합니다.",
   },
-] as const satisfies readonly FinanceDashboardItem[];
+] as const satisfies readonly TextDashboardProps[];
 
 export const financeArchitectureProps = {
   eyebrow: <>캐롯아이의 AI 의사결정 아키텍처</>,
@@ -56,9 +54,9 @@ export const financeArchitectureProps = {
       의사결정에 필요한 모든 과정을 기술로 완성합니다.
     </>
   ),
-} as const;
+} as const satisfies AIDecisionArchitectureProps;
 
-export const financePictureExplainItems: PictureExplainItem[] = [
+export const financePictureExplainItems = [
   {
     imageSrc: "/image/finance/miri1.png",
     imageAlt: "finance-miri1",
@@ -115,4 +113,4 @@ export const financePictureExplainItems: PictureExplainItem[] = [
       </>
     ),
   },
-];
+] as const satisfies readonly PictureExplainItem[];

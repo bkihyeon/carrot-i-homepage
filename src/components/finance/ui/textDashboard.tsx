@@ -1,14 +1,16 @@
+export type TextDashboardProps = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  className?: string;
+};
+
 export default function TextDashboard({
   eyebrow,
   title,
   description,
   className,
-}: {
-  eyebrow: string;
-  title: string;
-  description: string;
-  className?: string;
-}) {
+}: TextDashboardProps) {
   return (
     <section
       className={`flex flex-col p-3xl items-start gap-2xl border-x border-b border-border bg-background text-foreground ${className}`.trim()}
