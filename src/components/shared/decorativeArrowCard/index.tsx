@@ -15,8 +15,8 @@ const decorativeArrowCardAssets = {
     arrowHeight: 20,
   },
   cast: {
-    cubeSrc: "/icon/main/_레이어_1_b.png",
-    arrowSrc: "/icon/main/Polygon 42_b.png",
+    cubeSrc: "/icon/main/_레이어_1_b.svg",
+    arrowSrc: "/icon/main/Polygon 42_b.svg",
     cubeWidth: 39.17,
     cubeHeight: 44.17,
     arrowWidth: 23.09,
