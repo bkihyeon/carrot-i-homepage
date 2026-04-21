@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import { Noto_Sans_KR } from "next/font/google";
 import Footer from "@/components/footer/ui/footer";
 import Header from "@/components/header/ui/header";
 import "./globals.css";
+
+const notoSansKr = Noto_Sans_KR({
+  display: "swap",
+  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+  subsets: ["latin"],
+  variable: "--font-brand-sans",
+});
 
 export const metadata: Metadata = {
   title: "Carrot-i",
@@ -14,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="h-full antialiased">
+    <html lang="ko" className={`${notoSansKr.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col pt-16 tablet:pt-[6.25rem]">
         <Header />
         {children}
