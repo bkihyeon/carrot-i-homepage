@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import Image from "next/image";
 
-type NextPictureProps = {
+export type NextPictureProps = {
   className?: string;
   columnsClassName?: string;
   inquiryHref?: string;

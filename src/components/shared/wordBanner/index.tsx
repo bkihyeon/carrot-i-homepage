@@ -1,4 +1,4 @@
-type WordBannerProps = {
+export type WordBannerProps = {
   word: string;
   type: "mes" | "cast" | "financial";
 };

@@ -1,3 +1,8 @@
+import type { AIDecisionArchitectureProps } from "@/components/shared/aiDecisionArchitecture/ui/aiDecisionArchitecture";
+import type { InfoFeatureSectionProps } from "@/components/shared/infoFeatureSection";
+import type { NextPictureProps } from "@/components/shared/nextPicture/ui/nextPicture";
+import type { WordBannerProps } from "@/components/shared/wordBanner";
+
 export const mesNextPictureProps = {
   columnsClassName:
     "tablet:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] desktop:grid-cols-[minmax(0,648.8px)_minmax(320px,431.2px)]",
@@ -12,12 +17,12 @@ export const mesNextPictureProps = {
   inquiryDes:
     "AI 데이터 플로우를 기반으로 MES를 구축하고 수요 예측 AI를 통해 생산·재고·공정 데이터를 통합적으로 분석합니다. 이를 통해 불필요한 작업과 인력 투입을 줄이고 정확한 생산 계획과 적정 재고 운영을 가능하게 하여 작업 공수와 운영 비용을 동시에 절감합니다.",
   className: "border-t-0",
-} as const;
+} as const satisfies NextPictureProps;
 
 export const mesWordBannerProps = {
   word: "AI 데이터 플로우 MES, preci.MES로 생산과 재고를 최적화하세요.",
   type: "mes" as const,
-};
+} as const satisfies WordBannerProps;
 
 export const mesInfoFeatureSections = [
   {
@@ -50,7 +55,7 @@ export const mesInfoFeatureSections = [
     imageSrc: "/image/mes/BOMgwanli3.png",
     imageAlt: "BOM 관리 화면",
   },
-] as const;
+] as const satisfies readonly InfoFeatureSectionProps[];
 
 export const mesDashboardProps = {
   eyebrow: "대시보드",
@@ -69,7 +74,7 @@ export const mesArchitectureProps = {
       의사결정에 필요한 모든 과정을 기술로 완성합니다.
     </>
   ),
-} as const;
+} as const satisfies AIDecisionArchitectureProps;
 
 export const mesSectionDividerClassName =
   "border-b border-border w-[63.5rem] mx-auto";

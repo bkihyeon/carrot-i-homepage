@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-type InfoFeatureSectionProps = {
+export type InfoFeatureSectionProps = {
   eyebrow: ReactNode;
   title: ReactNode;
   paragraphs: readonly ReactNode[];

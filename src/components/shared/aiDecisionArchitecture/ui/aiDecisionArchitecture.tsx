@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ReactNode } from "react";
 
-type AIDecisionArchitectureProps = {
+export type AIDecisionArchitectureProps = {
   eyebrow?: ReactNode;
   title?: ReactNode;
   description?: ReactNode;
