@@ -8,7 +8,7 @@ type NextPictureProps = {
   inquiryHref?: string;
   title?: ReactNode;
   description?: ReactNode;
-  inquiry_des?: ReactNode;
+  inquiryDes?: ReactNode;
 };
 
 export default function NextPicture({
@@ -17,7 +17,7 @@ export default function NextPicture({
   inquiryHref = "/#inquiry",
   title = null,
   description = null,
-  inquiry_des = null,
+  inquiryDes = null,
 }: NextPictureProps) {
   return (
     <section
@@ -33,7 +33,7 @@ export default function NextPicture({
       </div>
 
       <div className="flex min-h-[180px] flex-col items-start gap-xl border-t border-border p-xl tablet:min-h-[220px] tablet:gap-2xl tablet:border-t-0 tablet:border-l tablet:p-3xl desktop:min-h-[240px] desktop:gap-4xl desktop:p-3xl">
-        <p className="type-body font-medium text-foreground">{inquiry_des}</p>
+        <p className="type-body font-medium text-foreground">{inquiryDes}</p>
 
         <Link
           href={inquiryHref}

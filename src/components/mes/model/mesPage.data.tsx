@@ -9,7 +9,7 @@ export const mesNextPictureProps = {
       생산·재고·공정을 최적화하는 AI 기반 MES 솔루션
     </>
   ),
-  inquiry_des:
+  inquiryDes:
     "AI 데이터 플로우를 기반으로 MES를 구축하고 수요 예측 AI를 통해 생산·재고·공정 데이터를 통합적으로 분석합니다. 이를 통해 불필요한 작업과 인력 투입을 줄이고 정확한 생산 계획과 적정 재고 운영을 가능하게 하여 작업 공수와 운영 비용을 동시에 절감합니다.",
   className: "border-t-0",
 } as const;

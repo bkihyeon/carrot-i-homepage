@@ -26,7 +26,7 @@ export default function MainPage() {
               제시합니다.
             </>
           }
-          inquiry_des={
+          inquiryDes={
             "캐롯아이는 다양한 데이터를 수집·정제해 AI가 활용할 수 있는 구조로 연결하고, 예측·시뮬레이션·설명까지 하나의 흐름으로 이어 실행 가능한 결과를 만듭니다."
           }
           className="border-t-0"
