@@ -47,11 +47,13 @@ function HeaderMenu({ item }: { item: HeaderMenuItem }) {
         type="button"
         onClick={() => setOpen((value) => !value)}
         className="inline-flex min-h-[36px] items-center justify-center gap-xs rounded-xl bg-transparent px-md py-xs opacity-100 transition-colors hover:bg-secondary"
-        style={item.frameWidth ? { width: `${item.frameWidth}px` } : undefined}
+        style={item.frameWidth ? { minWidth: `${item.frameWidth}px` } : undefined}
         aria-expanded={open}
         aria-haspopup="menu"
       >
-        <span className="type-body-bold text-foreground">{item.label}</span>
+        <span className="type-body-bold whitespace-nowrap text-foreground">
+          {item.label}
+        </span>
         <Image
           src={open ? "/icon/header/Up_icon.svg" : "/icon/header/Down_icon.svg"}
           alt=""
