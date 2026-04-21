@@ -22,6 +22,7 @@ export default function DecorativeArrowCard({
           alt=""
           width={39.17}
           height={44.17}
+          style={{ width: "auto", height: "auto" }}
           aria-hidden
         />
         <Image
@@ -29,6 +30,7 @@ export default function DecorativeArrowCard({
           alt=""
           width={23.09}
           height={20}
+          style={{ width: "auto", height: "auto" }}
           aria-hidden
         />
       </div>

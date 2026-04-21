@@ -1,4 +1,4 @@
-type WordBannerProps = {
+export type WordBannerProps = {
   word: string;
   type: "mes" | "cast" | "financial";
 };
@@ -23,7 +23,7 @@ export default function WordBanner({ word, type }: WordBannerProps) {
 
   return (
     <section
-      className={`flex h-[5.625rem] border border-border items-center justify-center text-center shadow-card tablet:h-[7.5rem] desktop:h-[10rem] ${theme.backgroundClassName}`.trim()}
+      className={`flex items-center justify-center border border-border px-3xl py-4xl text-center shadow-card ${theme.backgroundClassName}`.trim()}
     >
       <p className={`type-heading-2 ${theme.textClassName}`.trim()}>{word}</p>
     </section>

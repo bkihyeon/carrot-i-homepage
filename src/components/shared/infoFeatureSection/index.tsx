@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-type InfoFeatureSectionProps = {
+export type InfoFeatureSectionProps = {
   eyebrow: ReactNode;
   title: ReactNode;
   paragraphs: readonly ReactNode[];
@@ -20,9 +20,9 @@ export default function InfoFeatureSection({
 }: InfoFeatureSectionProps) {
   return (
     <section
-      className={`flex flex-col border-x border-border border-b-0 bg-background tablet:flex-row tablet:items-start tablet:justify-center ${className}`.trim()}
+      className={`flex flex-col border-x border-border border-b-0 bg-background tablet:grid tablet:grid-cols-[minmax(16rem,380px)_minmax(0,1fr)] tablet:items-start ${className}`.trim()}
     >
-      <div className="flex w-full flex-col items-start justify-between gap-3xl p-3xl tablet:h-[38.125rem] tablet:w-[380px]">
+      <div className="flex w-full min-w-0 flex-col items-start justify-between gap-3xl p-3xl tablet:h-[38.125rem] tablet:max-w-[380px]">
         <div className="flex w-full flex-col items-start gap-xs">
           <p className="text-[14px] leading-[21px] tracking-[0.07px] font-bold text-foreground">
             {eyebrow}
@@ -42,7 +42,7 @@ export default function InfoFeatureSection({
           </div>
         </div>
 
-        <div className="flex items-end">
+        <div className="hidden items-end tablet:flex">
           <div className="relative h-10 w-10 border border-border bg-background">
             <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_49%,#d4d4d8_50%,transparent_51%)]" />
           </div>
@@ -52,9 +52,15 @@ export default function InfoFeatureSection({
         </div>
       </div>
 
-      <div className="flex min-w-px flex-[1_0_0] flex-col items-start overflow-hidden bg-background p-2xl">
+      <div className="flex min-w-0 w-full flex-col items-start overflow-hidden bg-background p-2xl tablet:max-w-[644px]">
         <div className="relative h-[38.125rem] w-full overflow-hidden rounded-2xl  bg-background ">
-          <Image src={imageSrc} alt={imageAlt} fill className="object-cover" />
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            sizes="(max-width: 799px) calc(100vw - 4rem), (max-width: 1279px) calc(100vw - 380px - 4rem), 700px"
+            className="object-cover object-left"
+          />
         </div>
       </div>
     </section>
