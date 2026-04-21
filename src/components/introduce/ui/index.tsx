@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BelowHeroImageText from "@/components/introduce/ui/belowHeroImageText";
+import IntroduceWordBanner from "@/components/introduce/ui/introduceWordBanner";
 
 export default function IntroducePage() {
   return (
@@ -14,6 +15,7 @@ export default function IntroducePage() {
         />
       </div>
       <BelowHeroImageText />
+      <IntroduceWordBanner />
     </section>
   );
 }
