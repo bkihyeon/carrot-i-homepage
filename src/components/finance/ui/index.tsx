@@ -2,7 +2,7 @@ import MediaPlaceholder from "@/components/main/ui/media-placeholder";
 import NextPicture from "@/components/shared/nextPicture/ui/nextPicture";
 import {
   financeNextPictureProps,
-  finnaceWordBannerProps,
+  financeWordBannerProps,
   financeDashboardProps,
   financeArchitectureProps,
   financePictureExplainItems,
@@ -21,7 +21,7 @@ export default function FinancialSystemPage() {
     <section className={"mb-5xl"}>
       <MediaPlaceholder variant="financial" />
       <NextPicture {...financeNextPictureProps} />
-      <WordBanner {...finnaceWordBannerProps} />
+      <WordBanner {...financeWordBannerProps} />
       {financeDashboardProps.map((item) => (
         <TextDashboard
           key={item.eyebrow}

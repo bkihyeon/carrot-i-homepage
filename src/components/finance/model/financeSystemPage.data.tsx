@@ -19,7 +19,7 @@ export const financeNextPictureProps = {
   className: "border-t-0",
 } as const satisfies NextPictureProps;
 
-export const finnaceWordBannerProps = {
+export const financeWordBannerProps = {
   word: "AI 데이터 플로우 기반, Financial System으로 보안을 최적화하세요.",
   type: "financial" as const,
 } as const satisfies WordBannerProps;
