@@ -15,7 +15,7 @@ export const castNextPictureProps = {
       수요와 매출까지 예측하는 AI 솔루션
     </>
   ),
-  inquiry_des:
+  inquiryDes:
     "데이터 파이프라인을 기반으로 유동인구, 공공, 매출 데이터를 통합 분석하여 지역 상권의 흐름을 파악하고 수요를 예측합니다. 이를 통해 매출 가능성을 사전에 예측하고 효율적인 입지 및 운영 전략 수립을 지원합니다.",
   className: "border-t-0",
 } as const;
