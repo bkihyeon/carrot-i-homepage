@@ -1,4 +1,10 @@
+import type { AIDecisionArchitectureProps } from "@/components/shared/aiDecisionArchitecture/ui/aiDecisionArchitecture";
+import type { InfoFeatureSectionProps } from "@/components/shared/infoFeatureSection";
+import type { NextPictureProps } from "@/components/shared/nextPicture/ui/nextPicture";
 import type { PictureExplainItem } from "@/components/shared/pictureExplain/model/pictureExplain.data";
+import type { WordBannerProps } from "@/components/shared/wordBanner";
+import type { DashBoardProps } from "@/components/shared/dashBoard";
+import type { InsightDashboardProps } from "@/components/cast/ui/insightDashboard";
 
 export const castNextPictureProps = {
   columnsClassName:
@@ -18,12 +24,12 @@ export const castNextPictureProps = {
   inquiryDes:
     "데이터 파이프라인을 기반으로 유동인구, 공공, 매출 데이터를 통합 분석하여 지역 상권의 흐름을 파악하고 수요를 예측합니다. 이를 통해 매출 가능성을 사전에 예측하고 효율적인 입지 및 운영 전략 수립을 지원합니다.",
   className: "border-t-0",
-} as const;
+} as const satisfies NextPictureProps;
 
 export const castWordBannerProps = {
   word: "AI 데이터 플로우 기반, preci.CAST로 상권 분석과 운영을 최적화하세요.",
   type: "cast" as const,
-};
+} as const satisfies WordBannerProps;
 
 export const castDashboardProps = {
   eyebrow: "상권 지도",
@@ -33,7 +39,7 @@ export const castDashboardProps = {
   imageSrc: "/image/cast/Commercial Map.png",
   imageAlt: "cast 상권 지도 이미지",
   mobileImageHeightClassName: "h-[28rem]",
-} as const;
+} as const satisfies DashBoardProps;
 
 export const castInfoFeatureSectionProps = {
   eyebrow: <>운영 관리</>,
@@ -51,7 +57,7 @@ export const castInfoFeatureSectionProps = {
   imageSrc: "/image/cast/phoneDisplay.png",
   imageAlt: "CAST 운영 관리 화면",
   imageClassName: "object-contain object-center",
-} as const;
+} as const satisfies InfoFeatureSectionProps;
 
 export const castInsightDashboardProps = {
   eyebrow: "대시보드",
@@ -72,7 +78,7 @@ export const castInsightDashboardProps = {
       alt: "CAST 인사이트 대시보드3",
     },
   ],
-} as const;
+} as const satisfies InsightDashboardProps;
 
 export const castArchitectureProps = {
   eyebrow: <>캐롯아이의 AI 의사결정 아키텍처</>,
@@ -83,9 +89,9 @@ export const castArchitectureProps = {
       의사결정에 필요한 모든 과정을 기술로 완성합니다.
     </>
   ),
-} as const;
+} as const satisfies AIDecisionArchitectureProps;
 
-export const castPictureExplainItems: PictureExplainItem[] = [
+export const castPictureExplainItems = [
   {
     imageSrc: "/icon/main/miri1_b.png",
     imageAlt: "cast-miri1",
@@ -142,4 +148,4 @@ export const castPictureExplainItems: PictureExplainItem[] = [
       </>
     ),
   },
-];
+] as const satisfies readonly PictureExplainItem[];

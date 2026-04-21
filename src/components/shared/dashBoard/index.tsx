@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-type DashBoardProps = {
+export type DashBoardProps = {
   eyebrow?: ReactNode;
   title?: ReactNode;
   description?: ReactNode;

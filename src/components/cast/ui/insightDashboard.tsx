@@ -6,7 +6,7 @@ type InsightDashboardImage = {
   alt: string;
 };
 
-type InsightDashboardProps = {
+export type InsightDashboardProps = {
   eyebrow?: ReactNode;
   title?: ReactNode;
   description?: ReactNode;
