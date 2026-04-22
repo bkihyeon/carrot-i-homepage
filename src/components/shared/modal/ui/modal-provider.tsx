@@ -86,7 +86,7 @@ export default function ModalProvider({ children }: { children: ReactNode }) {
     closeLegalDocument();
   }
 
-  function handleInquirySubmit() {
+  function handleInquirySubmitSuccess() {
     closeInquiry();
   }
 
@@ -108,7 +108,7 @@ export default function ModalProvider({ children }: { children: ReactNode }) {
           onClose={closeInquiry}
           onOpenPrivacyConsent={() => openLegalDocument("privacy", "consent")}
           onPrivacyAgreedChange={setIsPrivacyAgreed}
-          onSubmit={handleInquirySubmit}
+          onSubmitSuccess={handleInquirySubmitSuccess}
         />
       ) : null}
 
