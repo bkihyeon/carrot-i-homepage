@@ -35,7 +35,7 @@ export default function LegalModal({
           <button
             type="button"
             onClick={onAgree}
-            className="inline-flex min-h-[3.5rem] w-full items-center justify-center rounded-[0.875rem] bg-secondary px-md py-sm text-[1.375rem] leading-[140%] font-bold tracking-[-0.02em] text-secondary-foreground transition-colors hover:bg-accent"
+            className="inline-flex min-h-[3.5rem] w-full items-center justify-center rounded-[0.875rem] bg-primary px-md py-sm text-[1.375rem] leading-[140%] font-bold tracking-[-0.02em] text-primary-foreground transition-colors "
           >
             동의하기
           </button>
