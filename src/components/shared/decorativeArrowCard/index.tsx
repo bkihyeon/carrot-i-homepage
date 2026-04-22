@@ -23,8 +23,8 @@ const decorativeArrowCardAssets = {
     arrowHeight: 20,
   },
   financial: {
-    cubeSrc: "/icon/main/_레이어_1.svg",
-    arrowSrc: "/icon/main/Polygon 42.svg",
+    cubeSrc: "/icon/main/_레이어_1_g.svg",
+    arrowSrc: "/icon/main/Polygon 42_g.svg",
     cubeWidth: 39.17,
     cubeHeight: 44.17,
     arrowWidth: 23.09,
