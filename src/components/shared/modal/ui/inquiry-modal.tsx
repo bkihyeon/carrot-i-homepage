@@ -62,14 +62,18 @@ export default function InquiryModal({
   }
 
   return (
-    <ModalShell title="문의하기" onClose={onClose}>
+    <ModalShell
+      title="문의하기"
+      onClose={onClose}
+      panelClassName="w-full max-w-[34rem]"
+    >
       <form action={formAction} className="flex h-full flex-col">
         <input
           type="hidden"
           name="privacyAgreed"
           value={isPrivacyAgreed ? "true" : "false"}
         />
-        <div className="flex flex-col gap-xl p-xl w-[30rem] ">
+        <div className="flex w-full min-w-0 flex-col gap-xl p-xl">
           <label className="flex flex-col gap-xs">
             <span className="font-medium leading-[140%] tracking-[-0.02em] text-foreground">
               회사명 <span className="text-[#FF5E00]">*</span>
