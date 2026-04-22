@@ -21,7 +21,7 @@ import DashBoard from "@/components/shared/dashBoard";
 export default function MesPage() {
   return (
     <section className={"mb-5xl"}>
-      <MediaPlaceholder />
+      <MediaPlaceholder variant="mes" />
       <NextPicture {...mesNextPictureProps} />
       <WordBanner {...mesWordBannerProps} />
       {mesInfoFeatureSections.map((section, index) => (

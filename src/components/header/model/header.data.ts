@@ -23,11 +23,11 @@ export const headerItems: HeaderItem[] = [
   {
     type: "link",
     label: "회사 소개",
-    href: "/#company-introduce",
+    href: "/company_introduce",
   },
   {
     type: "link",
     label: "콘텐츠",
-    href: "/#contents",
+    href: "/contents",
   },
 ];

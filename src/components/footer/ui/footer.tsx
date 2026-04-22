@@ -67,7 +67,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex w-full max-w-none flex-col items-start gap-md tablet:max-w-[679px]">
+          <div className="flex w-full max-w-none flex-col items-start gap-md ">
             <h3 className="text-[20px] leading-6 font-bold tracking-[0] text-[#52525B]">
               ㈜캐롯아이
             </h3>
@@ -83,7 +83,8 @@ export default function Footer() {
             </p>
             <p className="hidden whitespace-pre-line tablet:block tablet:type-body tablet:text-[#52525B]">
               사업자 등록번호 : 000-00-0000 | 대표 : 안선희
-              {"\n"}호스팅 서비스 : ????????????? | 통신판매업 신고번호 : ???????????
+              {"\n"}호스팅 서비스 : ????????????? | 통신판매업 신고번호 :
+              ???????????
               {"\n"}HQ : 경기도 고양시 덕양구 삼원로 83 915호, 916호 | BR :
               서울시 강남구 선릉로 100길 54 삼성빌딩 4층
             </p>
