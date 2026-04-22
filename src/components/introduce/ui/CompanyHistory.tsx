@@ -3,7 +3,6 @@
 import { useState } from "react";
 
 type HistoryEntry = {
-  month: string;
   title: string;
 };
 
@@ -17,26 +16,66 @@ const companyHistory: HistoryYear[] = [
     year: "2026",
     entries: [
       {
-        month: "2026.03",
-        title: "서민금융진흥원 통합 플랫폼 구축 프로젝트",
+        title: "롯데 코리아세븐 데이터파이프라인 구축",
       },
       {
-        month: "2026.02",
-        title: "대상 순창 간장공장 MES 구축 프로젝트",
+        title: "서민금융진흥원 권한시스템 고도화",
       },
       {
-        month: "2026.01",
-        title:
-          "LS산전 “Smart MV 프로젝트 설정 화면 및 반응형 웹 화면 개발” 프로젝트 수행",
+        title: "26년 1월 . 서민금융진흥원 청년미래적금 사업 개발",
       },
     ],
   },
-  { year: "2025", entries: [] },
-  { year: "2024", entries: [] },
-  { year: "2023", entries: [] },
-  { year: "2022", entries: [] },
-  { year: "2021", entries: [] },
-  { year: "2015 ~ 2020", entries: [] },
+  {
+    year: "2025",
+    entries: [
+      { title: "대상 주식회사 MES 서비스 개발" },
+      { title: "칠갑농산 MES 서비스 공급" },
+      { title: "AI기반의 수요예측 솔루션  NIPA 'AI허브' 등록" },
+      { title: "상표등록 ‘RUNNOTE’" },
+    ],
+  },
+  {
+    year: "2023 ~ 2024",
+    entries: [
+      { title: "직무발명인증" },
+      { title: "온라인 유통 플랫폼(웹앱)  서비스 개발" },
+      { title: "온라인 유통 플랫폼 서비스 공급 및 운영" },
+    ],
+  },
+  {
+    year: "2021 ~ 2022",
+    entries: [
+      { title: "식품분야MES 서비스 개발" },
+      { title: "SmartHACCP 서비스 개발" },
+      { title: "식품제조업체 MES 시스템 공급 및 운영" },
+    ],
+  },
+  {
+    year: "2019 ~ 2020",
+    entries: [
+      { title: "중부지방고용노동청 표창" },
+      { title: "SK플래닛 협력사 등록" },
+      { title: "SK플래닛 IDMS시스템 개발" },
+    ],
+  },
+  {
+    year: "2017 ~ 2018",
+    entries: [
+      { title: "연구진구성" },
+      { title: "기업부설연구소 지정" },
+      { title: "DIMS 솔루션 개발" },
+      { title: "고양신문 지역기업 인터뷰 보도" },
+    ],
+  },
+  {
+    year: "2015 ~ 2016",
+    entries: [
+      { title: "SKM&S 협력사 등록" },
+      { title: "LS일렉트릭 협력사 등록" },
+      { title: "캐롯아이 법인설립" },
+    ],
+  },
 ];
 
 export default function CompanyHistory() {
@@ -73,12 +112,9 @@ export default function CompanyHistory() {
           {activeHistory.entries.length > 0 ? (
             activeHistory.entries.map((entry, index) => (
               <article
-                key={`${entry.month}-${index}`}
+                key={`history-entry-${index}`}
                 className="flex self-stretch flex-col items-start gap-xs border-b border-border px-2xl py-xl "
               >
-                <p className="font-sans text-[1rem] leading-[1.5rem] font-bold tracking-[0] text-foreground">
-                  {entry.month}
-                </p>
                 <p className="font-sans text-[1rem] leading-[1.5rem] font-bold tracking-[0] text-foreground tablet:font-heading tablet:text-[1.5rem] tablet:leading-[140%] tablet:tracking-[var(--token-text-heading-3-letter-spacing)]">
                   {entry.title}
                 </p>
