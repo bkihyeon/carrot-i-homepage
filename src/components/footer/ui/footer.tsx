@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { OpenLegalDocumentButton } from "@/components/shared/modal/ui/modal-trigger";
 
 const solutionLinks = [
   { label: "Preci.MES", href: "/mes" },
@@ -91,10 +92,18 @@ export default function Footer() {
           </div>
 
           <div className="flex w-full max-w-none flex-wrap items-center gap-2 tablet:max-w-[263px] tablet:gap-3 tablet:whitespace-nowrap">
-            <span className="type-body font-bold text-[#52525B]">
+            <OpenLegalDocumentButton
+              documentType="privacy"
+              className="type-body font-bold text-[#52525B] transition-colors hover:text-foreground"
+            >
               개인정보처리방침
-            </span>
-            <span className="type-body text-[#52525B]">이메일무단수집거부</span>
+            </OpenLegalDocumentButton>
+            <OpenLegalDocumentButton
+              documentType="no-email-collection"
+              className="type-body text-[#52525B] transition-colors hover:text-foreground"
+            >
+              이메일무단수집거부
+            </OpenLegalDocumentButton>
           </div>
         </div>
       </section>
