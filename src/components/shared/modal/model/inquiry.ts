@@ -17,6 +17,8 @@ export type InquiryActionState = {
   fieldErrors: Partial<Record<InquiryField, string>>;
 };
 
+export const MAX_INQUIRY_MESSAGE_LENGTH = 2000;
+
 export const initialInquiryFormState: InquiryFormState = {
   company: "",
   name: "",
@@ -71,6 +73,8 @@ export function validateInquiryForm(
 
   if (!values.message) {
     fieldErrors.message = "문의 내용을 입력해 주세요.";
+  } else if (values.message.length > MAX_INQUIRY_MESSAGE_LENGTH) {
+    fieldErrors.message = `문의 내용은 ${MAX_INQUIRY_MESSAGE_LENGTH}자 이하로 입력해 주세요.`;
   }
 
   if (!values.privacyAgreed) {

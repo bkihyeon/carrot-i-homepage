@@ -93,7 +93,7 @@ function buildMailText(values: InquiryFormValues) {
 }
 
 function buildMailHtml(values: InquiryFormValues) {
-  const messageHtml = escapeHtml(values.message).replaceAll("\n", "<br />");
+  const messageHtml = escapeHtml(values.message);
 
   return `
     <div>
@@ -107,7 +107,7 @@ function buildMailHtml(values: InquiryFormValues) {
         }</li>
       </ul>
       <p><strong>문의내용</strong></p>
-      <p>${messageHtml}</p>
+      <div style="max-width: 32rem; white-space: pre-wrap; word-break: break-word; overflow-wrap: anywhere;">${messageHtml}</div>
     </div>
   `.trim();
 }

@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useState } from "react";
 
 import {
+  MAX_INQUIRY_MESSAGE_LENGTH,
   initialInquiryActionState,
   initialInquiryFormState,
   isValidEmail,
@@ -133,8 +134,13 @@ export default function InquiryModal({
           </label>
 
           <label className="flex flex-col gap-xs">
-            <span className="font-medium leading-[140%] tracking-[-0.02em] text-foreground">
-              문의내용 <span className="text-[#FF5E00]">*</span>
+            <span className="flex items-center justify-between gap-md">
+              <span className="font-medium leading-[140%] tracking-[-0.02em] text-foreground">
+                문의내용 <span className="text-[#FF5E00]">*</span>
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {formState.message.length}/{MAX_INQUIRY_MESSAGE_LENGTH}
+              </span>
             </span>
             <textarea
               name="message"
@@ -143,6 +149,7 @@ export default function InquiryModal({
               placeholder="문의하실 내용을 입력해 주세요"
               className={`${inputClassName} min-h-[11.875rem] resize-none`}
               disabled={isPending}
+              maxLength={MAX_INQUIRY_MESSAGE_LENGTH}
             />
             {actionState.fieldErrors.message ? (
               <p className="text-sm text-[#D94841]">
