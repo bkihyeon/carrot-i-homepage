@@ -16,7 +16,7 @@ export default function MainPage() {
     <section className="content-shell flex flex-col px-xs pt-md tablet:px-2xl tablet:pt-xl tablet:pb-5xl desktop:px-0 desktop:pt-2xl desktop:pb-0">
       <div>
         {/*TODO: 나중에 주는 파일로 대체*/}
-        <MediaPlaceholder />
+        <MediaPlaceholder variant="main" />
         {/*사진 다음에 나오는 컴포넌트*/}
         <NextPicture
           title={<>결정으로 이어주는 AI 데이터 플로우</>}
