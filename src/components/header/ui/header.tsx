@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-import { headerItems } from "@/components/header/model/header.data";
+import { headerItems, mobileHeaderItems } from "@/components/header/model/header.data";
 import { HeaderNav } from "@/components/header/ui/header-nav";
 import { OpenInquiryButton } from "@/components/shared/modal/ui/modal-trigger";
 
@@ -13,8 +13,8 @@ function MobileHeaderPanel({
 }: {
   onNavigate: () => void;
 }) {
-  const solutionItem = headerItems.find((item) => item.type === "menu");
-  const linkItems = headerItems.filter((item) => item.type === "link");
+  const solutionItem = mobileHeaderItems.find((item) => item.type === "menu");
+  const topLevelItems = mobileHeaderItems.filter((item) => item.type !== "menu");
 
   return (
     <div className="absolute inset-x-0 top-full border-t border-border bg-background px-xl py-xl shadow-card">
@@ -39,29 +39,26 @@ function MobileHeaderPanel({
           </div>
         ) : null}
 
-        {linkItems.map((item) => (
-          <Link
-            key={item.label}
-            href={item.href}
-            onClick={onNavigate}
-            className="type-body-bold text-foreground transition-colors hover:text-foreground-alt"
-          >
-            {item.label}
-          </Link>
-        ))}
-
-        <OpenInquiryButton
-          onClick={onNavigate}
-          className="inline-flex min-h-[36px] items-center justify-center gap-xs rounded-xl bg-secondary px-md py-xs text-secondary-foreground shadow-xs transition-colors"
-        >
-          <Image
-            src="/icon/header/inquiry.svg"
-            alt="inquiry"
-            width={57}
-            height={15}
-            className="h-[15px] w-auto"
-          />
-        </OpenInquiryButton>
+        {topLevelItems.map((item) =>
+          item.type === "link" ? (
+            <Link
+              key={item.label}
+              href={item.href}
+              onClick={onNavigate}
+              className="type-body-bold text-foreground transition-colors hover:text-foreground-alt"
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <OpenInquiryButton
+              key={item.label}
+              onClick={onNavigate}
+              className="type-body-bold text-foreground transition-colors hover:text-foreground-alt"
+            >
+              {item.label}
+            </OpenInquiryButton>
+          ),
+        )}
       </nav>
     </div>
   );

@@ -14,4 +14,12 @@ export type HeaderMenuItem = {
   children: HeaderLeafItem[];
 };
 
+export type HeaderActionItem = {
+  type: "action";
+  label: string;
+  action: "inquiry";
+};
+
 export type HeaderItem = HeaderLinkItem | HeaderMenuItem;
+
+export type MobileHeaderItem = HeaderItem | HeaderActionItem;

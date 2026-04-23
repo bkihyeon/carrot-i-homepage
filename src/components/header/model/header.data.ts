@@ -1,4 +1,7 @@
-import type { HeaderItem } from "@/components/header/model/header.types";
+import type {
+  HeaderItem,
+  MobileHeaderItem,
+} from "@/components/header/model/header.types";
 
 export const headerItems: HeaderItem[] = [
   {
@@ -29,5 +32,14 @@ export const headerItems: HeaderItem[] = [
     type: "link",
     label: "콘텐츠",
     href: "/contents",
+  },
+];
+
+export const mobileHeaderItems: MobileHeaderItem[] = [
+  ...headerItems,
+  {
+    type: "action",
+    label: "문의하기",
+    action: "inquiry",
   },
 ];
