@@ -113,7 +113,7 @@ export default function Header() {
 
         <div className="hidden tablet:block">
           <OpenInquiryButton
-            className="inline-flex min-h-8 shrink-0 items-center justify-center gap-xs rounded-xl bg-secondary px-sm py-2xs text-secondary-foreground shadow-xs transition-colors tablet:min-h-[36px] tablet:px-md tablet:py-xs"
+            className="inline-flex min-h-8 shrink-0 cursor-pointer items-center justify-center gap-xs rounded-xl bg-secondary px-sm py-2xs text-secondary-foreground shadow-xs transition-colors tablet:min-h-[36px] tablet:px-md tablet:py-xs"
           >
             <Image
               src="/icon/header/inquiry.svg"

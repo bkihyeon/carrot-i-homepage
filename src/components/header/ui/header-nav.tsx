@@ -19,7 +19,7 @@ function HeaderDropdownItem({ item }: { item: HeaderLeafItem }) {
   return (
     <Link
       href={item.href}
-      className="inline-flex h-10 w-[184px] items-center rounded-md bg-transparent px-3 py-2xs transition-colors hover:bg-secondary"
+      className="inline-flex h-10 items-center rounded-md bg-transparent px-3 py-2xs transition-colors hover:bg-secondary"
     >
       <span className="text-foreground">{item.label}</span>
     </Link>
@@ -46,8 +46,10 @@ function HeaderMenu({ item }: { item: HeaderMenuItem }) {
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
-        className="inline-flex min-h-[36px] items-center justify-center gap-xs rounded-xl bg-transparent px-md py-xs opacity-100 transition-colors hover:bg-secondary"
-        style={item.frameWidth ? { minWidth: `${item.frameWidth}px` } : undefined}
+        className="inline-flex min-h-[36px] cursor-pointer items-center justify-center gap-xs rounded-xl bg-transparent px-md py-xs opacity-100 transition-colors hover:bg-secondary"
+        style={
+          item.frameWidth ? { minWidth: `${item.frameWidth}px` } : undefined
+        }
         aria-expanded={open}
         aria-haspopup="menu"
       >
