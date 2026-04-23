@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -61,11 +62,15 @@ function SolutionVisual({
           </>
         )}
       </div>
-      <div className="absolute right-5 top-5 flex h-14 w-14 items-center justify-center border border-border bg-white/40">
+      <Link
+        href={slide.href}
+        aria-label={`${slide.title} 페이지로 이동`}
+        className="absolute right-5 top-5 flex h-14 w-14 items-center justify-center border border-border bg-white/40 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+      >
         <span aria-hidden className="text-xl leading-none text-foreground">
           ↗
         </span>
-      </div>
+      </Link>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 export type SolutionSlide = {
   id: string;
+  href: string;
   imageSrc: string;
   imageAlt: string;
   title: string;
@@ -11,6 +12,7 @@ export type SolutionSlide = {
 export const solutionSlides: SolutionSlide[] = [
   {
     id: "mes",
+    href: "/mes",
     imageSrc: "/icon/main/slider/Visual 1.png",
     imageAlt: "Preci.MES visual",
     themeColor: "var(--token-color-primary)",
@@ -22,6 +24,7 @@ export const solutionSlides: SolutionSlide[] = [
   },
   {
     id: "cast",
+    href: "/cast",
     imageSrc: "/icon/main/slider/Visual 2.png",
     imageAlt: "Preci.CAST visual",
     themeColor: "#9333EA",
@@ -32,6 +35,7 @@ export const solutionSlides: SolutionSlide[] = [
   },
   {
     id: "financial-system",
+    href: "/financial_system",
     imageSrc: "/icon/main/slider/Visual 3.png",
     imageAlt: "Financial System visual",
     themeColor: "#16A34A",
