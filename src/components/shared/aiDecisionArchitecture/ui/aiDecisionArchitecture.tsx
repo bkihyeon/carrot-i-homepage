@@ -43,6 +43,7 @@ export default function AIDecisionArchitecture({
           fill
           sizes="(max-width: 799px) 100vw, (max-width: 1279px) 100vw, 1080px"
           unoptimized
+          draggable={false}
           className="object-contain"
         />
       </div>
