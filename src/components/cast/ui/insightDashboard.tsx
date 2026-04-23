@@ -28,7 +28,7 @@ function ImageStack({
       {images.map((image, index) => (
         <div
           key={`${image.src}-${index}`}
-          className="relative w-full overflow-hidden rounded-2xl border border-border bg-background shadow-md"
+          className="relative w-full overflow-hidden  bg-background "
         >
           <Image
             src={image.src}
