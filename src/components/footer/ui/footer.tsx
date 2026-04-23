@@ -33,8 +33,8 @@ export default function Footer() {
 
       <section className="flex self-stretch flex-col items-center gap-xl bg-secondary px-xl pt-3xl pb-5xl text-[#52525B] tablet:gap-3xl tablet:px-2xl tablet:pt-20 tablet:pb-[11.25rem]">
         <div className="mx-auto flex w-full max-w-[67.5rem] flex-col items-start gap-3xl">
-          <div className="flex w-full max-w-none flex-col items-start gap-5 tablet:max-w-[411px] tablet:flex-row tablet:gap-5xl">
-            <div className="flex w-full max-w-none flex-col items-start gap-xs tablet:max-w-[126px]">
+          <div className="flex w-full max-w-none flex-col items-start gap-5  tablet:flex-row tablet:gap-5xl">
+            <div className="flex w-full max-w-none flex-col items-start gap-xs ">
               <p className="text-[14px] leading-[21px] tracking-[0.07px] font-bold text-foreground">
                 솔루션
               </p>
@@ -49,7 +49,7 @@ export default function Footer() {
               ))}
             </div>
 
-            <div className="flex w-full max-w-none flex-col items-start gap-xs tablet:max-w-[221px]">
+            <div className="flex w-full max-w-none flex-col items-start gap-xs ">
               <p className="text-[14px] leading-[21px] tracking-[0.07px] font-bold text-foreground">
                 문의
               </p>
