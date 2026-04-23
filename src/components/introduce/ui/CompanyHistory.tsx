@@ -97,7 +97,7 @@ export default function CompanyHistory() {
                 key={item.year}
                 type="button"
                 onClick={() => setActiveYear(item.year)}
-                className={`flex w-full self-stretch items-center gap-xs border-b border-border px-2xl py-xl text-left transition-colors last:border-b-0  ${isActive ? "bg-secondary text-foreground" : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground"}`.trim()}
+                className={`flex w-full self-stretch items-center gap-xs border-b border-border tablet:px-2xl tablet:py-xl p-md text-left transition-colors last:border-b-0  ${isActive ? "bg-secondary text-foreground" : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground"}`.trim()}
                 aria-pressed={isActive}
               >
                 <span className="font-sans text-[0.875rem] leading-[1.3125rem] font-bold tracking-[0.00438rem] tablet:font-heading tablet:text-[1.875rem] tablet:leading-[140%] tablet:tracking-[var(--token-text-heading-2-letter-spacing)]">
@@ -113,7 +113,7 @@ export default function CompanyHistory() {
             activeHistory.entries.map((entry, index) => (
               <article
                 key={`history-entry-${index}`}
-                className="flex self-stretch flex-col items-start gap-xs border-b border-border px-2xl py-xl "
+                className="flex self-stretch flex-col items-start gap-xs border-b border-border tablet:px-2xl tablet:py-xl p-md"
               >
                 <p className="font-sans text-[1rem] leading-[1.5rem] font-bold tracking-[0] text-foreground tablet:font-heading tablet:text-[1.5rem] tablet:leading-[140%] tablet:tracking-[var(--token-text-heading-3-letter-spacing)]">
                   {entry.title}
