@@ -113,7 +113,7 @@ export default function CompanyHistory() {
             activeHistory.entries.map((entry, index) => (
               <article
                 key={`history-entry-${index}`}
-                className="flex self-stretch flex-col items-start gap-xs border-b border-border tablet:px-2xl tablet:py-xl p-md"
+                className="flex self-stretch flex-col items-start gap-xs border-b border-border px-2xl py-xl"
               >
                 <p className="font-sans text-[1rem] leading-[1.5rem] font-bold tracking-[0] text-foreground tablet:font-heading tablet:text-[1.5rem] tablet:leading-[140%] tablet:tracking-[var(--token-text-heading-3-letter-spacing)]">
                   {entry.title}
