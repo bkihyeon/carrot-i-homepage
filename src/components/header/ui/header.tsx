@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { headerItems } from "@/components/header/model/header.data";
 import { HeaderNav } from "@/components/header/ui/header-nav";
+import { OpenInquiryButton } from "@/components/shared/modal/ui/modal-trigger";
 
 function MobileHeaderPanel({
   onNavigate,
@@ -49,8 +50,7 @@ function MobileHeaderPanel({
           </Link>
         ))}
 
-        <Link
-          href="/#inquiry"
+        <OpenInquiryButton
           onClick={onNavigate}
           className="inline-flex min-h-[36px] items-center justify-center gap-xs rounded-xl bg-secondary px-md py-xs text-secondary-foreground shadow-xs transition-colors"
         >
@@ -61,7 +61,7 @@ function MobileHeaderPanel({
             height={15}
             className="h-[15px] w-auto"
           />
-        </Link>
+        </OpenInquiryButton>
       </nav>
     </div>
   );
@@ -115,8 +115,7 @@ export default function Header() {
         </div>
 
         <div className="hidden tablet:block">
-          <Link
-            href="/#inquiry"
+          <OpenInquiryButton
             className="inline-flex min-h-8 shrink-0 items-center justify-center gap-xs rounded-xl bg-secondary px-sm py-2xs text-secondary-foreground shadow-xs transition-colors tablet:min-h-[36px] tablet:px-md tablet:py-xs"
           >
             <Image
@@ -126,7 +125,7 @@ export default function Header() {
               height={15}
               className="h-3 w-auto tablet:h-[15px]"
             />
-          </Link>
+          </OpenInquiryButton>
         </div>
 
         <button

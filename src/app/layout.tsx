@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import Footer from "@/components/footer/ui/footer";
 import Header from "@/components/header/ui/header";
+import ModalProvider from "@/components/shared/modal/ui/modal-provider";
 import "./globals.css";
 
 const notoSansKr = Noto_Sans_KR({
@@ -24,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${notoSansKr.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col pt-16 tablet:pt-[6.25rem]">
-        <Header />
-        {children}
-        <Footer />
+        <ModalProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ModalProvider>
       </body>
     </html>
   );

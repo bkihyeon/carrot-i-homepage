@@ -1,11 +1,10 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import Image from "next/image";
+import { OpenInquiryButton } from "@/components/shared/modal/ui/modal-trigger";
 
 export type NextPictureProps = {
   className?: string;
   columnsClassName?: string;
-  inquiryHref?: string;
   title?: ReactNode;
   description?: ReactNode;
   inquiryDes?: ReactNode;
@@ -14,7 +13,6 @@ export type NextPictureProps = {
 export default function NextPicture({
   className = "",
   columnsClassName = "tablet:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] desktop:grid-cols-[minmax(0,648.8px)_minmax(320px,431.2px)]",
-  inquiryHref = "/#inquiry",
   title = null,
   description = null,
   inquiryDes = null,
@@ -35,8 +33,7 @@ export default function NextPicture({
       <div className="flex min-h-[180px] flex-col items-start gap-xl border-t border-border p-xl tablet:min-h-[220px] tablet:gap-2xl tablet:border-t-0 tablet:border-l tablet:p-3xl desktop:min-h-[240px] desktop:gap-4xl desktop:p-3xl">
         <p className="type-body font-medium text-foreground">{inquiryDes}</p>
 
-        <Link
-          href={inquiryHref}
+        <OpenInquiryButton
           className="inline-flex min-h-[36px] items-center justify-center gap-xs rounded-xl bg-secondary px-md py-xs text-secondary-foreground transition-colors hover:bg-accent"
         >
           <span className="type-body font-medium">문의하기</span>
@@ -48,7 +45,7 @@ export default function NextPicture({
               height={13.25}
             />
           </span>
-        </Link>
+        </OpenInquiryButton>
       </div>
     </section>
   );
