@@ -40,7 +40,7 @@ export default function DecorativeArrowCard({
 
   return (
     <div
-      className={`relative flex h-[22.7rem] w-full shrink-0 overflow-hidden border border-border bg-secondary tablet:h-full tablet:aspect-auto desktop:h-[386px] desktop:w-[216px] desktop:aspect-[216/386] ${className}`.trim()}
+      className={`relative flex w-full shrink-0 overflow-hidden border border-border bg-secondary tablet:h-full h-[8.75rem] tablet:aspect-auto desktop:h-[386px] desktop:w-[216px] desktop:aspect-[216/386] ${className}`.trim()}
     >
       <div className="absolute inset-0 bg-secondary" />
       <div
