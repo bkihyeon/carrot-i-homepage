@@ -23,7 +23,7 @@ const whyAiItems = [
 
 export default function WhyAIIssuesPanel() {
   return (
-    <section className="flex w-full flex-col items-start justify-center bg-secondary tablet:min-h-[420px] tablet:border-l tablet:border-border desktop:h-[510px] desktop:max-w-[649px]">
+    <section className="flex w-full flex-col items-start justify-center bg-secondary tablet:min-h-[420px] tablet:border-l tablet:border-r tablet:border-border desktop:h-[510px] desktop:max-w-[649px]">
       {whyAiItems.map((item, index) => (
         <div
           key={item.title}
@@ -34,7 +34,9 @@ export default function WhyAIIssuesPanel() {
           <Image src={item.icon} alt="" width={24} height={24} aria-hidden />
 
           <div className="flex min-w-0 flex-[1_0_0] flex-col items-start gap-xs text-foreground">
-            <h3 className="type-heading-4 w-full max-w-[180px]">{item.title}</h3>
+            <h3 className="type-heading-4 w-full max-w-[180px]">
+              {item.title}
+            </h3>
             <p className="w-full min-w-0 text-[14px] leading-[21px] tracking-[0.07px] text-foreground">
               {item.description}
             </p>
