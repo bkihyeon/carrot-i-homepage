@@ -77,7 +77,12 @@ export const mesDashboardProps = {
 
 export const mesArchitectureProps = {
   eyebrow: <>캐롯아이의 AI 의사결정 아키텍처</>,
-  title: <>단순한 MES가 아닌, 데이터 기반 기술입니다</>,
+  title: (
+    <>
+      단순한 MES가 아닌,
+      <br className="tablet:hidden" /> 데이터 기반 기술입니다
+    </>
+  ),
   description: (
     <>
       데이터 구조화부터 예측, 자동화, 설명까지 <br />
@@ -87,7 +92,7 @@ export const mesArchitectureProps = {
 } as const satisfies AIDecisionArchitectureProps;
 
 export const mesSectionDividerClassName =
-  "border-b border-border w-[63.5rem] mx-auto";
+  "mx-auto w-full max-w-[63.5rem] border-b border-border";
 
 export const mesPictureExplainImageClassName =
   "relative h-[10rem] w-[10rem] tablet:h-[10rem] tablet:w-[10rem] desktop:h-[13.5rem] desktop:w-[13.5rem]";

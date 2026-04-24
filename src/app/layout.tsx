@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import Footer from "@/components/footer/ui/footer";
 import Header from "@/components/header/ui/header";
@@ -15,6 +15,11 @@ const notoSansKr = Noto_Sans_KR({
 export const metadata: Metadata = {
   title: "Carrot-i",
   description: "Carrot-i 서비스 소개 및 솔루션 페이지",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
