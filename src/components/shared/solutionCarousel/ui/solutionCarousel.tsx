@@ -81,6 +81,16 @@ function SolutionCard({
   slide: SolutionSlide;
   compact?: boolean;
 }) {
+  const titleClassName = compact
+    ? "text-[1.25rem] leading-[1.75rem] font-black tracking-[-0.0625rem]"
+    : "text-[2rem] leading-[1.25] font-black tracking-[-1px] tablet:text-[34px] tablet:leading-[1.4]";
+  const subtitleClassName = compact
+    ? "text-[0.875rem] leading-[1.3125rem] font-normal tracking-[0.00438rem]"
+    : "text-[1.125rem] leading-[1.4] font-bold tablet:text-[20px]";
+  const descriptionClassName = compact
+    ? "text-[0.875rem] leading-[1.3125rem] font-medium tracking-[0.00438rem] text-white"
+    : "type-body-medium text-white";
+
   return (
     <article
       className="flex flex-col border border-border"
@@ -98,12 +108,8 @@ function SolutionCard({
         }
       >
         <div className="flex flex-[1_0_0] flex-col items-start gap-xs text-white">
-          <h3 className="text-[2rem] leading-[1.25] font-black tracking-[-1px] tablet:text-[34px] tablet:leading-[1.4]">
-            {slide.title}
-          </h3>
-          <p className="text-[1.125rem] leading-[1.4] font-bold tablet:text-[20px]">
-            {slide.subtitle}
-          </p>
+          <h3 className={titleClassName}>{slide.title}</h3>
+          <p className={subtitleClassName}>{slide.subtitle}</p>
         </div>
 
         <div
@@ -113,7 +119,7 @@ function SolutionCard({
               : "w-[400px] border-l border-border pl-2xl"
           }
         >
-          <p className="type-body-medium text-white">{slide.description}</p>
+          <p className={descriptionClassName}>{slide.description}</p>
         </div>
       </div>
     </article>
