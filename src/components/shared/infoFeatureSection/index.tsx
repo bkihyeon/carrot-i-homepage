@@ -9,6 +9,9 @@ export type InfoFeatureSectionProps = {
   imageAlt: string;
   className?: string;
   imageClassName?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageLayout?: "default" | "framed" | "bleedRight";
   showBottomBorder?: boolean;
 };
 
@@ -20,14 +23,28 @@ export default function InfoFeatureSection({
   imageAlt,
   className = "",
   imageClassName = "object-cover object-left",
+  imageWidth,
+  imageHeight,
+  imageLayout = "default",
   showBottomBorder = false,
 }: InfoFeatureSectionProps) {
   const leftPanelPaddingClassName = showBottomBorder
     ? "px-3xl pt-3xl pb-0"
     : "p-3xl";
-  const rightPanelPaddingClassName = showBottomBorder
-    ? "px-2xl pt-2xl pb-0"
-    : "p-2xl";
+  const rightPanelPaddingClassName =
+    imageLayout === "bleedRight"
+      ? showBottomBorder
+        ? "pl-2xl pt-2xl pb-0"
+        : "pl-2xl pt-2xl pb-2xl"
+      : showBottomBorder
+        ? "px-2xl pt-2xl pb-0"
+        : "p-2xl";
+  const imageFrameClassName =
+    imageLayout === "framed"
+      ? "relative h-[35.125rem] w-full overflow-hidden rounded-2xl  bg-background "
+      : "relative h-[38.125rem] w-full overflow-hidden rounded-2xl bg-background";
+  const shouldUseFixedImageSize =
+    imageLayout === "framed" && imageWidth !== undefined && imageHeight !== undefined;
 
   return (
     <section
@@ -66,16 +83,26 @@ export default function InfoFeatureSection({
       </div>
 
       <div
-        className={`flex min-w-0 w-full flex-col items-start overflow-hidden bg-background tablet:max-w-[644px] ${rightPanelPaddingClassName}`.trim()}
+        className={`flex w-full min-w-0 flex-col items-start overflow-hidden bg-background tablet:max-w-[700px] ${rightPanelPaddingClassName}`.trim()}
       >
-        <div className="relative h-[38.125rem] w-full overflow-hidden rounded-2xl  bg-background ">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            sizes="(max-width: 799px) calc(100vw - 4rem), (max-width: 1279px) calc(100vw - 380px - 4rem), 700px"
-            className={imageClassName}
-          />
+        <div className={imageFrameClassName}>
+          {shouldUseFixedImageSize ? (
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={imageWidth}
+              height={imageHeight}
+              className={`max-w-none ${imageClassName}`.trim()}
+            />
+          ) : (
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              sizes="(max-width: 799px) calc(100vw - 4rem), (max-width: 1279px) calc(100vw - 380px - 4rem), 700px"
+              className={imageClassName}
+            />
+          )}
         </div>
       </div>
     </section>

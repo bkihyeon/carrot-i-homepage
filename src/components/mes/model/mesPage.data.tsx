@@ -40,6 +40,10 @@ export const mesInfoFeatureSections = [
     ],
     imageSrc: "/image/mes/gongjung&seoulbi.png",
     imageAlt: "공정 흐름과 설비 관리 화면",
+    imageClassName: "object-contain object-top",
+    imageWidth: 644,
+    imageHeight: 610,
+    imageLayout: "framed",
   },
   {
     eyebrow: <>BOM 관리</>,
@@ -54,6 +58,7 @@ export const mesInfoFeatureSections = [
     ],
     imageSrc: "/image/mes/BOMgwanli3.png",
     imageAlt: "BOM 관리 화면",
+    imageLayout: "bleedRight",
   },
 ] as const satisfies readonly InfoFeatureSectionProps[];
 
