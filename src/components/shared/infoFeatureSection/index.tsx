@@ -30,19 +30,19 @@ export default function InfoFeatureSection({
 }: InfoFeatureSectionProps) {
   const leftPanelPaddingClassName = showBottomBorder
     ? "px-3xl pt-3xl pb-0"
-    : "p-3xl";
+    : "px-3xl py-xl tablet:p-3xl";
   const rightPanelPaddingClassName =
-    imageLayout === "bleedRight"
+    imageLayout === "bleedRight" || imageLayout === "framed"
       ? showBottomBorder
         ? "pl-2xl pt-2xl pb-0"
         : "pl-2xl pt-2xl pb-2xl"
       : showBottomBorder
         ? "px-2xl pt-2xl pb-0"
-        : "p-2xl";
+        : "p-xl tablet:p-2xl";
   const imageFrameClassName =
     imageLayout === "framed"
-      ? "relative h-[35.125rem] w-full overflow-hidden rounded-2xl  bg-background "
-      : "relative h-[30.125rem] tablet:h-[38.125rem] w-full overflow-hidden rounded-2xl bg-background";
+      ? "relative h-[38.125rem] w-full overflow-hidden rounded-2xl bg-background "
+      : "relative h-[28.125rem] tablet:h-[38.125rem] w-full overflow-hidden rounded-2xl bg-background";
   const shouldUseFixedImageSize =
     imageLayout === "framed" &&
     imageWidth !== undefined &&
