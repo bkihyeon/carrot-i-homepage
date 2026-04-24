@@ -18,11 +18,11 @@ function MobileHeaderPanel({ onNavigate }: { onNavigate: () => void }) {
   );
 
   return (
-    <div className="fixed inset-x-0 top-16 z-40 bg-background/60 px-xl py-xl shadow-card backdrop-blur-[8px] tablet:hidden">
+    <div className="fixed inset-x-0 top-16 z-40 bg-background/60 px-xl py-xs shadow-card backdrop-blur-[8px] tablet:hidden">
       <nav className="flex flex-col items-start gap-xs">
         {solutionItem?.type === "menu" ? (
           <div className="flex w-full flex-col items-start ">
-            <span className="type-body-bold text-foreground">
+            <span className="type-heading-4 text-foreground py-3">
               {solutionItem.label}
             </span>
             <div className="flex w-full flex-col items-start gap-xs">
@@ -31,7 +31,7 @@ function MobileHeaderPanel({ onNavigate }: { onNavigate: () => void }) {
                   key={child.href}
                   href={child.href}
                   onClick={onNavigate}
-                  className="type-body text-foreground-alt transition-colors hover:text-foreground px-xl py-3"
+                  className="font-normal text-foreground-alt transition-colors hover:text-foreground px-xs py-3"
                 >
                   {child.label}
                 </Link>
@@ -46,7 +46,7 @@ function MobileHeaderPanel({ onNavigate }: { onNavigate: () => void }) {
               key={item.label}
               href={item.href}
               onClick={onNavigate}
-              className="type-body-bold text-foreground transition-colors hover:text-foreground-alt py-3"
+              className="type-heading-4 text-foreground transition-colors hover:text-foreground-alt py-3"
             >
               {item.label}
             </Link>
@@ -54,7 +54,7 @@ function MobileHeaderPanel({ onNavigate }: { onNavigate: () => void }) {
             <OpenInquiryButton
               key={item.label}
               onClick={onNavigate}
-              className="type-body-bold text-foreground transition-colors hover:text-foreground-alt py-3"
+              className="type-heading-4 text-foreground transition-colors hover:text-foreground-alt py-3"
             >
               {item.label}
             </OpenInquiryButton>
