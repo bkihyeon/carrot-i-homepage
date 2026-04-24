@@ -12,9 +12,9 @@ docker info >/dev/null 2>&1 \
 ssh -o BatchMode=yes -o ConnectTimeout=5 "${SSH_HOST}" "true" \
   || { echo "ERROR: ssh ${SSH_HOST} failed (agent/key/host config)." >&2; exit 1; }
 
-# dirty tree 방지
-if [[ -n "$(git status --porcelain)" ]]; then
-  echo "ERROR: working tree is dirty. commit or stash first." >&2
+# dirty tree 방지 (tracked 파일의 uncommitted 변경분만 검사 — .dockerignore로 배제되는 untracked는 허용)
+if [[ -n "$(git status --porcelain --untracked-files=no)" ]]; then
+  echo "ERROR: working tree has uncommitted changes to tracked files. commit or stash first." >&2
   exit 1
 fi
 
