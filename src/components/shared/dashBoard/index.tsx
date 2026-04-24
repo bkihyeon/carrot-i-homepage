@@ -59,7 +59,7 @@ export default function DashBoard({
         </div>
       </div>
 
-      <div className="mx-2xl mt-2xl self-stretch overflow-hidden rounded-2xl bg-background">
+      <div className=" mt-2xl self-stretch overflow-hidden rounded-2xl bg-background">
         {hasMobileIntrinsicImage ? (
           <Image
             src={mobileImageSrc}

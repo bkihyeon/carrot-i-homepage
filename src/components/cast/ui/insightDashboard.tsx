@@ -59,7 +59,7 @@ export default function InsightDashboard({
     <section
       className={`flex flex-col items-start gap-2xl border-x border-b border-border bg-background text-foreground ${className}`.trim()}
     >
-      <div className="flex w-full items-start justify-between gap-2xl px-3xl pt-3xl">
+      <div className="flex w-full items-start justify-between gap-xl tablet:gap-2xl px-xl pt-xl tablet:px-3xl tablet:pt-3xl">
         <div className="flex max-w-[46.25rem] flex-col items-start gap-xs">
           <p className="text-[14px] leading-[21px] tracking-[0.07px] font-bold text-foreground">
             {eyebrow}
@@ -80,7 +80,7 @@ export default function InsightDashboard({
         </div>
       </div>
 
-      <div className="w-full px-3xl pb-3xl">
+      <div className="w-full tablet:px-3xl tablet:pb-3xl">
         <div className="hidden desktop:block">
           <ImageStack
             images={desktopImages}
