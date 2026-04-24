@@ -24,12 +24,11 @@ function SolutionVisual({
   slide: SolutionSlide;
   compact?: boolean;
 }) {
-  const visualHeight = compact
-    ? "h-[14rem] tablet:h-[22rem]"
-    : "h-[501px]";
-  const titleSize = slide.id === "financial-system"
-    ? "text-[4rem] tablet:text-[5.5rem]"
-    : "text-[4.5rem] tablet:text-[7rem]";
+  const visualHeight = compact ? "h-[14rem] tablet:h-[22rem]" : "h-[501px]";
+  const titleSize =
+    slide.id === "financial-system"
+      ? "text-[4rem] tablet:text-[5.5rem]"
+      : "text-[4.5rem] tablet:text-[7rem]";
 
   return (
     <div className={`relative w-full overflow-hidden ${visualHeight}`.trim()}>
@@ -135,26 +134,30 @@ export default function SolutionCarousel({
       </div>
 
       <div className="hidden desktop:block">
-        <div className="overflow-visible">
-          <Swiper
-            modules={[Navigation]}
-            navigation={{
-              prevEl: ".solution-carousel-prev",
-              nextEl: ".solution-carousel-next",
-            }}
-            spaceBetween={0}
-            slidesPerView={"auto"}
-            className="!overflow-visible pr-[220px]"
-          >
-            {solutionSlides.map((slide) => (
-              <SwiperSlide key={slide.id} className="!w-[1080px]">
-                <SolutionCard slide={slide} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        {/* 캐러셀만 viewport 기준으로 clip */}
+        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-clip">
+          <div className="mx-auto max-w-[1080px] overflow-visible">
+            <Swiper
+              modules={[Navigation]}
+              navigation={{
+                prevEl: ".solution-carousel-prev",
+                nextEl: ".solution-carousel-next",
+              }}
+              spaceBetween={0}
+              slidesPerView="auto"
+              slidesOffsetAfter={220}
+              className="!overflow-visible"
+            >
+              {solutionSlides.map((slide) => (
+                <SwiperSlide key={slide.id} className="!w-[1080px]">
+                  <SolutionCard slide={slide} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
 
-        <div className="flex border border-border bg-secondary p-md">
+        <div className="flex border border-border bg-secondary p-md ">
           <div className="flex w-full items-center justify-end gap-xs">
             <button className="solution-carousel-prev flex h-14 w-14 items-center justify-center rounded-none border border-border bg-white/40 text-foreground">
               <span aria-hidden className="text-2xl leading-none">
