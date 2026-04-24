@@ -42,9 +42,11 @@ export default function InfoFeatureSection({
   const imageFrameClassName =
     imageLayout === "framed"
       ? "relative h-[35.125rem] w-full overflow-hidden rounded-2xl  bg-background "
-      : "relative h-[38.125rem] w-full overflow-hidden rounded-2xl bg-background";
+      : "relative h-[30.125rem] tablet:h-[38.125rem] w-full overflow-hidden rounded-2xl bg-background";
   const shouldUseFixedImageSize =
-    imageLayout === "framed" && imageWidth !== undefined && imageHeight !== undefined;
+    imageLayout === "framed" &&
+    imageWidth !== undefined &&
+    imageHeight !== undefined;
 
   return (
     <section

@@ -6,9 +6,13 @@ export type DashBoardProps = {
   title?: ReactNode;
   description?: ReactNode;
   imageSrc: string;
+  mobileImageSrc?: string;
   imageAlt?: string;
   className?: string;
   mobileImageHeightClassName?: string;
+  mobileImageClassName?: string;
+  mobileImageWidth?: number;
+  mobileImageHeight?: number;
 };
 
 export default function DashBoard({
@@ -16,10 +20,19 @@ export default function DashBoard({
   title = "AI 데이터 플로우로 분석하고 운영을 최적화합니다",
   description = "생산 데이터를 기반으로 수율을 실시간 분석하고, 변화 흐름과 이상 패턴을 직관적으로 파악할 수 있습니다. 데이터 기반 의사결정으로 생산 효율을 지속적으로 개선합니다.",
   imageSrc,
+  mobileImageSrc,
   imageAlt = "MES 대시보드 이미지",
   className = "",
   mobileImageHeightClassName = "h-[25rem]",
+  mobileImageClassName = "object-cover object-center",
+  mobileImageWidth,
+  mobileImageHeight,
 }: DashBoardProps) {
+  const hasMobileIntrinsicImage =
+    mobileImageSrc !== undefined &&
+    mobileImageWidth !== undefined &&
+    mobileImageHeight !== undefined;
+
   return (
     <section
       className={`flex flex-col items-start border-x border-b border-border bg-background text-foreground ${className}`.trim()}
@@ -46,18 +59,29 @@ export default function DashBoard({
         </div>
       </div>
 
-      <div className="w-full overflow-hidden rounded-2xl p-2xl bg-background">
-        <div
-          className={`relative w-full overflow-hidden tablet:hidden ${mobileImageHeightClassName}`.trim()}
-        >
+      <div className="mx-2xl mt-2xl self-stretch overflow-hidden rounded-2xl bg-background">
+        {hasMobileIntrinsicImage ? (
           <Image
-            src={imageSrc}
+            src={mobileImageSrc}
             alt={imageAlt}
-            fill
+            width={mobileImageWidth}
+            height={mobileImageHeight}
             sizes="(max-width: 799px) calc(100vw - 4rem)"
-            className="object-cover object-center"
+            className={`tablet:hidden ${mobileImageClassName}`.trim()}
           />
-        </div>
+        ) : (
+          <div
+            className={`relative w-full overflow-hidden tablet:hidden ${mobileImageHeightClassName}`.trim()}
+          >
+            <Image
+              src={mobileImageSrc ?? imageSrc}
+              alt={imageAlt}
+              fill
+              sizes="(max-width: 799px) calc(100vw - 4rem)"
+              className={mobileImageClassName}
+            />
+          </div>
+        )}
         <Image
           src={imageSrc}
           alt={imageAlt}
