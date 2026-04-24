@@ -114,7 +114,7 @@ npm run lint
 ## Notes
 
 - 금융 페이지의 대표 경로는 `/financial_system` 이고, `/financial-system` 은 별칭 리다이렉트입니다.
-- 솔루션 소개 데이터는 각 기능별 `model/*.data.tsx` 파일과 공용 `src/components/shared/solutionCarousel/model/solutionCarousel.data.ts` 에서 관리합니다.
+- 솔루션 소개 데이터는 각 기능별 `model/*.data.tsx` 파일과 공용 `src/components/shared/solutionCarousel/model/solutionCarousel.data.tsx` 에서 관리합니다.
 - 헤더와 푸터에서 같은 솔루션 링크 체계를 사용합니다.
 
 ## Deployment Checklist
