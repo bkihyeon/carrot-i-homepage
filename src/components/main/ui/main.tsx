@@ -19,13 +19,21 @@ export default function MainPage() {
         <MediaPlaceholder variant="main" />
         {/*사진 다음에 나오는 컴포넌트*/}
         <NextPicture
-          title={<>결정으로 이어주는 AI 데이터 플로우</>}
-          description={
+          title={
             <>
-              데이터를 예측과 판단까지 하나의 흐름으로 연결해 실행 가능한 방향을
-              제시합니다.
+              결정으로 이어주는
+              <br className="desktop:hidden" /> AI 데이터 플로우
             </>
           }
+          description={
+            <>
+              데이터를 예측과 판단까지 하나의 흐름으로
+              <br />
+              연결해 실행 가능한 방향을 제시합니다.
+            </>
+          }
+          descriptionClassName="font-sans text-[1.125rem] leading-[140%] font-light uppercase text-foreground"
+          inquiryDescriptionClassName="font-sans text-[1rem] leading-[1.5rem] font-medium tracking-[0] text-foreground"
           inquiryDes={
             "캐롯아이는 다양한 데이터를 수집·정제해 AI가 활용할 수 있는 구조로 연결하고, 예측·시뮬레이션·설명까지 하나의 흐름으로 이어 실행 가능한 결과를 만듭니다."
           }

@@ -57,7 +57,7 @@ export default function InsightDashboard({
 
   return (
     <section
-      className={`flex flex-col items-start gap-2xl border-x border-b border-border bg-background text-foreground ${className}`.trim()}
+      className={`flex flex-col items-start gap-xl border-x border-b border-border bg-background text-foreground ${className}`.trim()}
     >
       <div className="flex w-full items-start justify-between gap-xl tablet:gap-2xl px-xl pt-xl tablet:px-3xl tablet:pt-3xl">
         <div className="flex max-w-[46.25rem] flex-col items-start gap-xs">
@@ -65,7 +65,9 @@ export default function InsightDashboard({
             {eyebrow}
           </p>
           <h2 className="type-heading-3 font-bold text-foreground">{title}</h2>
-          <p className="type-body-medium text-foreground">{description}</p>
+          <p className="type-body-medium text-foreground break-keep">
+            {description}
+          </p>
         </div>
 
         <div className="mt-xs hidden items-end tablet:flex">
@@ -96,7 +98,7 @@ export default function InsightDashboard({
         <div className="block tablet:hidden">
           <ImageStack
             images={resolvedMobileImages}
-            className="flex flex-col gap-xl"
+            className="flex flex-col gap-md tablet:gap-xl p-xl tablet:p-0 "
           />
         </div>
       </div>

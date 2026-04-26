@@ -39,7 +39,7 @@ export default function DashBoard({
     <section
       className={`flex flex-col items-start border-x border-b border-border bg-background text-foreground ${className}`.trim()}
     >
-      <div className="flex w-full items-start justify-between gap-2xl pt-3xl px-3xl">
+      <div className="flex w-full items-start justify-between gap-2xl pt-xl px-xl tablet:pt-3xl tablet:px-3xl">
         <div className="flex max-w-[46.25rem] flex-col items-start gap-xs text-foreground">
           <p className="text-[14px] leading-[21px] tracking-[0.07px] font-bold text-foreground">
             {eyebrow}
@@ -47,7 +47,9 @@ export default function DashBoard({
           <h2 className="type-heading-3 break-keep font-bold text-foreground">
             {title}
           </h2>
-          <p className="type-body-medium text-foreground">{description}</p>
+          <p className="type-body-medium text-foreground break-keep">
+            {description}
+          </p>
         </div>
 
         {/*사각형 장식*/}
