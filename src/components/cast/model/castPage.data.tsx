@@ -39,6 +39,7 @@ export const castDashboardProps = {
   imageSrc: "/image/cast/Commercial Map.png",
   imageAlt: "cast 상권 지도 이미지",
   mobileImageHeightClassName: "h-[28rem]",
+  useTabletImagePadding: false,
 } as const satisfies DashBoardProps;
 
 export const castInfoFeatureSectionProps = {
@@ -55,6 +56,7 @@ export const castInfoFeatureSectionProps = {
     "운영 흐름을 직관적으로 파악하고 더 정확한 매장 운영 의사결정을 지원합니다.",
   ],
   imageSrc: "/image/cast/phoneDisplay.png",
+  tabletImageSrc: "/image/cast/cast_phone4x.png",
   imageAlt: "CAST 운영 관리 화면",
   imageClassName: "object-contain object-center",
 } as const satisfies InfoFeatureSectionProps;

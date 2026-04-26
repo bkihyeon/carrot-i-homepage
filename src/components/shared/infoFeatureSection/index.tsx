@@ -6,6 +6,7 @@ export type InfoFeatureSectionProps = {
   title: ReactNode;
   paragraphs: readonly ReactNode[];
   imageSrc: string;
+  tabletImageSrc?: string;
   imageAlt: string;
   className?: string;
   imageClassName?: string;
@@ -20,6 +21,7 @@ export default function InfoFeatureSection({
   title,
   paragraphs,
   imageSrc,
+  tabletImageSrc,
   imageAlt,
   className = "",
   imageClassName = "object-cover object-left",
@@ -47,6 +49,8 @@ export default function InfoFeatureSection({
     imageLayout === "framed" &&
     imageWidth !== undefined &&
     imageHeight !== undefined;
+  const shouldUseTabletImage =
+    tabletImageSrc !== undefined && !shouldUseFixedImageSize;
 
   return (
     <section
@@ -96,6 +100,23 @@ export default function InfoFeatureSection({
               height={imageHeight}
               className={`max-w-none ${imageClassName}`.trim()}
             />
+          ) : shouldUseTabletImage ? (
+            <>
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                fill
+                sizes="(max-width: 799px) calc(100vw - 4rem), 700px"
+                className={`tablet:hidden desktop:block ${imageClassName}`.trim()}
+              />
+              <Image
+                src={tabletImageSrc}
+                alt={imageAlt}
+                fill
+                sizes="(min-width: 800px) and (max-width: 1279px) calc(100vw - 380px - 4rem)"
+                className={`hidden tablet:block desktop:hidden ${imageClassName}`.trim()}
+              />
+            </>
           ) : (
             <Image
               src={imageSrc}

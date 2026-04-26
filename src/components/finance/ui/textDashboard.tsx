@@ -20,9 +20,7 @@ export default function TextDashboard({
           <p className="text-[14px] leading-[21px] tracking-[0.07px] font-bold text-foreground">
             {eyebrow}
           </p>
-          <h2 className="type-heading-3 break-keep font-bold text-foreground">
-            {title}
-          </h2>
+          <h2 className="type-heading-3 font-bold text-foreground">{title}</h2>
           <p className="type-body-medium text-foreground">{description}</p>
         </div>
 

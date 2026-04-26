@@ -13,6 +13,7 @@ export type DashBoardProps = {
   mobileImageClassName?: string;
   mobileImageWidth?: number;
   mobileImageHeight?: number;
+  useTabletImagePadding?: boolean;
 };
 
 export default function DashBoard({
@@ -27,6 +28,7 @@ export default function DashBoard({
   mobileImageClassName = "object-cover object-center",
   mobileImageWidth,
   mobileImageHeight,
+  useTabletImagePadding = true,
 }: DashBoardProps) {
   const hasMobileIntrinsicImage =
     mobileImageSrc !== undefined &&
@@ -59,7 +61,9 @@ export default function DashBoard({
         </div>
       </div>
 
-      <div className=" mt-2xl self-stretch overflow-hidden rounded-2xl bg-background tablet:p-2xl">
+      <div
+        className={`mt-2xl self-stretch overflow-hidden rounded-2xl bg-background ${useTabletImagePadding ? "tablet:p-2xl" : ""}`.trim()}
+      >
         {hasMobileIntrinsicImage ? (
           <Image
             src={mobileImageSrc}
