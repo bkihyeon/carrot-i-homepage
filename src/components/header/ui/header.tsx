@@ -31,7 +31,7 @@ function MobileHeaderPanel({ onNavigate }: { onNavigate: () => void }) {
                   key={child.href}
                   href={child.href}
                   onClick={onNavigate}
-                  className="font-normal text-[1rem] transition-colors hover:text-foreground px-xs py-3"
+                  className="font-normal text-[1rem] leading-[140%] text-foreground transition-colors hover:text-foreground px-xs py-3"
                 >
                   {child.label}
                 </Link>
