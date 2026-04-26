@@ -14,9 +14,22 @@ export default function Footer() {
       <section className="flex self-stretch flex-col items-center gap-3xl bg-primary px-xl py-3xl tablet:gap-4xl tablet:px-2xl tablet:py-5xl">
         <div className="mx-auto flex w-full max-w-[67.5rem] flex-col items-start gap-3xl tablet:gap-[5rem]">
           <h2 className="break-keep text-[1.75rem] leading-[1.4] font-bold tracking-[-1px] text-white tablet:text-[42px]">
-            데이터는 분석이 아니라 실행입니다.
-            <br />
-            캐롯아이와 함께, 결정으로 이어지는 AI를 시작하세요.
+            <span className="tablet:hidden">
+              데이터는 분석이 아니라
+              <br />
+              실행입니다.
+              <br />
+              캐롯아이와 함께,
+              <br />
+              결정으로 이어지는 AI를
+              <br />
+              시작하세요.
+            </span>
+            <span className="hidden tablet:inline">
+              데이터는 분석이 아니라 실행입니다.
+              <br />
+              캐롯아이와 함께, 결정으로 이어지는 AI를 시작하세요.
+            </span>
           </h2>
           <Link href="/" className="shrink-0">
             <Image
