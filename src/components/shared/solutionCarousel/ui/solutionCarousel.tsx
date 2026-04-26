@@ -103,11 +103,11 @@ function SolutionCard({
       <div
         className={
           compact
-            ? "flex flex-col gap-xl border-t-2 border-border p-xl tablet:grid tablet:grid-cols-[minmax(0,1fr)_20rem] tablet:gap-0 tablet:p-2xl"
+            ? "flex flex-col gap-xl border-t-2 border-border p-3xl tablet:grid tablet:grid-cols-[minmax(0,1fr)_20rem] tablet:gap-0"
             : "flex h-[240px] border-t-2 border-border p-3xl"
         }
       >
-        <div className="flex flex-[1_0_0] flex-col items-start gap-xs text-white">
+        <div className="mr-2xl flex flex-[1_0_0] flex-col items-start gap-xs break-keep text-white">
           <h3 className={titleClassName}>{slide.title}</h3>
           <p className={subtitleClassName}>{slide.subtitle}</p>
         </div>
@@ -115,7 +115,7 @@ function SolutionCard({
         <div
           className={
             compact
-              ? "border-t border-border pt-xl tablet:border-t-0 tablet:border-l tablet:pt-0 tablet:pl-2xl"
+              ? "border-l border-border pl-md tablet:pl-2xl"
               : "w-[400px] border-l border-border pl-2xl"
           }
         >

@@ -32,12 +32,12 @@ export default function InfoFeatureSection({
 }: InfoFeatureSectionProps) {
   const leftPanelPaddingClassName = showBottomBorder
     ? "px-3xl pt-3xl pb-0"
-    : "px-3xl py-xl tablet:p-3xl";
+    : "px-xl py-xl tablet:p-3xl";
   const rightPanelPaddingClassName =
     imageLayout === "bleedRight" || imageLayout === "framed"
       ? showBottomBorder
         ? "pl-2xl pt-2xl pb-0"
-        : "pl-2xl pt-2xl pb-2xl"
+        : "pl-xl py-xl tablet:pl-2xl tablet:pt-2xl tablet:pb-2xl"
       : showBottomBorder
         ? "px-2xl pt-2xl pb-0"
         : "p-xl tablet:p-2xl";
