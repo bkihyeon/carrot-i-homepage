@@ -12,7 +12,7 @@ const heroWordmark = {
   main: {
     src: "/image/hero/mainWord.svg",
     alt: "main hero wordmark",
-    width: 430,
+    width: 300,
     height: 100,
   },
   mes: {
@@ -44,6 +44,9 @@ const mainHeroRows = Array.from({ length: 7 }, (_, rowIndex) =>
 function HeroGrid({ variant }: { variant: MediaPlaceholderVariant }) {
   const isMain = variant === "main";
   const wordmark = heroWordmark[variant];
+  const wordmarkClassName = isMain
+    ? "h-12 w-auto max-w-full object-contain tablet:h-16 desktop:h-[6.25rem]"
+    : "h-auto w-full max-w-[20rem] object-contain tablet:max-w-[30rem] desktop:max-w-[36rem]";
 
   return (
     <div
@@ -52,12 +55,12 @@ function HeroGrid({ variant }: { variant: MediaPlaceholderVariant }) {
       {mainHeroRows.map((row, rowIndex) => (
         <div
           key={`main-hero-row-${rowIndex}`}
-          className="flex items-start self-stretch border-b border-border last:border-b-0"
+          className="flex h-12 items-start self-stretch border-b border-border last:border-b-0 tablet:h-16 desktop:h-[6.25rem]"
         >
           {row.map((cell) => (
             <div
               key={cell.key}
-              className={`h-12 flex-[1_0_0] border-r border-border last:border-r-0 tablet:h-16 desktop:h-[6.25rem] ${isMain ? "bg-primary" : "bg-background"}`.trim()}
+              className={`h-full flex-[1_0_0] border-r border-border last:border-r-0 ${isMain ? "bg-primary" : "bg-background"}`.trim()}
             />
           ))}
         </div>
@@ -70,7 +73,7 @@ function HeroGrid({ variant }: { variant: MediaPlaceholderVariant }) {
           width={wordmark.width}
           height={wordmark.height}
           sizes="(max-width: 799px) 24rem, (max-width: 1279px) 36rem, 56rem"
-          className="h-auto w-full max-w-[20rem] object-contain tablet:max-w-[30rem] desktop:max-w-[45rem]"
+          className={wordmarkClassName}
         />
       </div>
     </div>
