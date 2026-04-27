@@ -17,7 +17,7 @@ export default function NextPicture({
   columnsClassName = "tablet:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] desktop:grid-cols-[minmax(0,648.8px)_minmax(320px,431.2px)]",
   title = null,
   description = null,
-  descriptionClassName = "font-sans text-[0.875rem] leading-[1.3125rem] font-normal tracking-[0.00438rem] text-foreground tablet:text-[0.875rem] tablet:leading-[21px] tablet:font-normal tablet:tracking-[0.07px] desktop:text-[1.125rem] desktop:font-normal",
+  descriptionClassName = "font-sans text-[1.125rem] leading-[140%] font-light uppercase text-foreground",
   inquiryDes = null,
   inquiryDescriptionClassName = "font-sans text-[0.875rem] leading-[1.3125rem] font-medium tracking-[0.00438rem] text-foreground desktop:text-[1rem]",
 }: NextPictureProps) {

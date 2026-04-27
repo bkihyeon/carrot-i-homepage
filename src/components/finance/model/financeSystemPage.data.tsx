@@ -9,10 +9,10 @@ export const financeNextPictureProps = {
     "tablet:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] desktop:grid-cols-[minmax(0,648.8px)_minmax(320px,431.2px)]",
   title: <>금융 시스템 설계 & 운영</>,
   description: (
-    <>
+    <section className={"desktop:w-[22rem]"}>
       데이터부터 채널까지, 금융을 하나의 흐름으로 끊김 없이 작동하는 안정적인
       금융 인프라
-    </>
+    </section>
   ),
   inquiryDes:
     "계정계(Core Banking) 기반의 여수신 데이터 정합성과 트랜잭션 안정성을 확보하고, 정교한 권한 관리와 감사 추적이 가능한 금융 보안 체계를 구축하며, 고가용성 아키텍처를 통해 어떤 상황에서도 중단 없이 운영되는 안정적인 금융 채널 서비스를 제공합니다.",
