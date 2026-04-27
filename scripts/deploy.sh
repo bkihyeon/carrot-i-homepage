@@ -33,8 +33,8 @@ run_container "${IMAGE}:${TAG}"
 
 if wait_healthy; then
   printf '%s %s\n' "$(date -Iseconds)" "${TAG}" >> "${HISTORY_FILE}"
-  # 7일 초과 unused 이미지 자동 prune (롤백 윈도우 보존, 실패해도 배포 성공 판정 유지)
-  docker image prune -f --filter "until=168h" >/dev/null 2>&1 || true
+  # 7일 초과 unused 이미지 자동 prune (-a로 태그된 unused까지 대상, 롤백 윈도우 보존, 실패해도 배포 성공 판정 유지)
+  docker image prune -af --filter "until=168h" >/dev/null 2>&1 || true
   exit 0
 fi
 
