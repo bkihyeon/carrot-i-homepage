@@ -249,6 +249,16 @@
   font-weight: var(--token-font-weight-semibold);
 }
 
+@media (min-width: 50rem) {
+  .tablet-type-heading-2 {
+    font-family: var(--token-font-headings);
+    font-size: var(--token-text-heading-2-size);
+    line-height: var(--token-text-heading-2-line-height);
+    letter-spacing: var(--token-text-heading-2-letter-spacing);
+    font-weight: var(--token-font-weight-semibold);
+  }
+}
+
 .font-headings {
   font-family: var(--token-font-headings);
 }
