@@ -18,7 +18,7 @@ function MobileHeaderPanel({ onNavigate }: { onNavigate: () => void }) {
   );
 
   return (
-    <div className="fixed inset-x-0 top-16 z-40 bg-background/60 px-xl py-xs shadow-card backdrop-blur-[8px] tablet:hidden">
+    <div className="px-xl py-xs">
       <nav className="flex flex-col items-start gap-xs">
         {solutionItem?.type === "menu" ? (
           <div className="flex w-full flex-col items-start ">
@@ -68,6 +68,9 @@ function MobileHeaderPanel({ onNavigate }: { onNavigate: () => void }) {
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
+  const headerSurfaceClassName = mobileOpen
+    ? "bg-transparent backdrop-blur-none tablet:bg-background/60 tablet:backdrop-blur-[8px]"
+    : "bg-background/60 backdrop-blur-[8px]";
 
   useEffect(() => {
     function handlePointerDown(event: MouseEvent) {
@@ -93,7 +96,16 @@ export default function Header() {
 
   return (
     <div ref={rootRef}>
-      <header className="fixed inset-x-0 top-0 z-50 h-[76px] self-stretch bg-background/60 backdrop-blur-[8px] tablet:h-[6.25rem]">
+      {mobileOpen ? (
+        <div className="fixed inset-x-0 top-0 z-40 bg-background/60 backdrop-blur-[8px] tablet:hidden">
+          <div className="h-[76px]" />
+          <MobileHeaderPanel onNavigate={() => setMobileOpen(false)} />
+        </div>
+      ) : null}
+
+      <header
+        className={`fixed inset-x-0 top-0 z-50 h-[76px] self-stretch tablet:h-[6.25rem] ${headerSurfaceClassName}`.trim()}
+      >
         <div className="flex h-full w-full items-center justify-between self-stretch p-lg tablet:px-2xl tablet:py-xl desktop:px-3xl">
           <div className="flex min-w-0 items-center gap-2xl">
             <Link
@@ -147,9 +159,6 @@ export default function Header() {
         </div>
       </header>
 
-      {mobileOpen ? (
-        <MobileHeaderPanel onNavigate={() => setMobileOpen(false)} />
-      ) : null}
     </div>
   );
 }
