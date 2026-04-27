@@ -56,7 +56,7 @@ export const mesInfoFeatureSections = [
       "BOM 구조를 기반으로 자재와 구성 요소를 정리하여 제품 단위의 생산 기준을 명확하게 정의합니다.",
       "변경과 확장이 쉬운 구조로 안정적인 생산 관리를 지원합니다.",
     ],
-    imageSrc: "/image/mes/BOMgwanli3.png",
+    imageSrc: "/image/mes/BOMgwanli_4x.png",
     imageAlt: "BOM 관리 화면",
     imageLayout: "bleedRight",
   },

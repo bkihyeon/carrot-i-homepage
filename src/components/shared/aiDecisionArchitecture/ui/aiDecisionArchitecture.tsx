@@ -9,7 +9,7 @@ export type AIDecisionArchitectureProps = {
   className?: string;
 };
 
-const defaultImageSrc = "/image/Rectangle 49.png";
+const defaultImageSrc = "/image/main/Rectangle 49_4x.png";
 
 export default function AIDecisionArchitecture({
   eyebrow,

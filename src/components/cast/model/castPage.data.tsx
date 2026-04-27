@@ -36,7 +36,7 @@ export const castDashboardProps = {
   title: "지도 기반 데이터로 상권을 직관적으로 분석합니다",
   description:
     "유동인구, 매출, 업종 데이터를 지도 위에 통합해 상권의 구조와 흐름을 한눈에 파악할 수 있습니다. 입지별 특성과 경쟁 환경을 직관적으로 분석할 수 있습니다.",
-  imageSrc: "/image/cast/Commercial Map.png",
+  imageSrc: "/image/cast/sanggwonMap_4x.png",
   mobileImageSrc: "/image/cast/Commercial Map(mobile).png",
   imageAlt: "cast 상권 지도 이미지",
   mobileImageClassName: "mx-auto h-auto w-full max-w-[377px]",
@@ -60,7 +60,7 @@ export const castInfoFeatureSectionProps = {
     "매출, 원가, 지출 데이터를 기반으로 실시간 손익을 자동으로 계산하고 시각화합니다.",
     "운영 흐름을 직관적으로 파악하고 더 정확한 매장 운영 의사결정을 지원합니다.",
   ],
-  imageSrc: "/image/cast/phoneDisplay.png",
+  imageSrc: "/image/cast/unyoung_4x.png",
   tabletImageSrc: "/image/cast/cast_phone4x.png",
   imageAlt: "CAST 운영 관리 화면",
   imageClassName: "object-contain object-center",
