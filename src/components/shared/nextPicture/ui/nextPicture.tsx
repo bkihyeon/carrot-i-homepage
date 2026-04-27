@@ -32,7 +32,7 @@ export default function NextPicture({
         <p className={descriptionClassName}>{description}</p>
       </div>
 
-      <div className="flex flex-col items-start gap-xl border-t border-border p-xl tablet:min-h-[220px] tablet:gap-2xl tablet:border-t-0 tablet:border-l tablet:p-3xl desktop:min-h-[240px] desktop:gap-4xl desktop:p-3xl">
+      <div className="flex flex-col items-start gap-xl border-t border-border p-xl tablet:min-h-[220px] tablet:gap-2xl tablet:border-t-0 tablet:border-l tablet:p-3xl desktop:-ml-px desktop:min-h-[240px] desktop:gap-4xl desktop:p-3xl">
         <p className={inquiryDescriptionClassName}>{inquiryDes}</p>
 
         <OpenInquiryButton className="inline-flex min-h-[36px] items-center justify-center gap-xs rounded-xl bg-secondary px-md py-xs text-secondary-foreground transition-colors hover:bg-accent">
