@@ -31,7 +31,7 @@ export const solutionSlides: SolutionSlide[] = [
   {
     id: "cast",
     href: "/cast",
-    imageSrc: "/icon/main/slider/Visual 2.png",
+    imageSrc: "/icon/main/slider/Visual 2_4x.png",
     imageAlt: "Preci.CAST visual",
     themeColor: "#9333EA",
     title: "상권 분석 및 수요 예측 솔루션",
@@ -47,7 +47,7 @@ export const solutionSlides: SolutionSlide[] = [
   {
     id: "financial-system",
     href: "/financial_system",
-    imageSrc: "/icon/main/slider/Visual 3.png",
+    imageSrc: "/icon/main/slider/Visual 3_4x.png",
     imageAlt: "Financial System visual",
     themeColor: "#16A34A",
     title: "금융 시스템 설계 & 운영",

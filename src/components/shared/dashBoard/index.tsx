@@ -11,6 +11,8 @@ export type DashBoardProps = {
   className?: string;
   mobileImageHeightClassName?: string;
   mobileImageClassName?: string;
+  mobileImageVisibilityClassName?: string;
+  desktopImageClassName?: string;
   mobileImageWidth?: number;
   mobileImageHeight?: number;
   useTabletImagePadding?: boolean;
@@ -26,6 +28,8 @@ export default function DashBoard({
   className = "",
   mobileImageHeightClassName = "h-[25rem]",
   mobileImageClassName = "object-cover object-center",
+  mobileImageVisibilityClassName = "tablet:hidden",
+  desktopImageClassName = "hidden h-auto w-full object-cover tablet:block",
   mobileImageWidth,
   mobileImageHeight,
   useTabletImagePadding = true,
@@ -73,11 +77,11 @@ export default function DashBoard({
             width={mobileImageWidth}
             height={mobileImageHeight}
             sizes="(max-width: 799px) calc(100vw - 4rem)"
-            className={`tablet:hidden ${mobileImageClassName}`.trim()}
+            className={`${mobileImageVisibilityClassName} ${mobileImageClassName}`.trim()}
           />
         ) : (
           <div
-            className={`relative w-full overflow-hidden tablet:hidden ${mobileImageHeightClassName}`.trim()}
+            className={`relative w-full overflow-hidden ${mobileImageVisibilityClassName} ${mobileImageHeightClassName}`.trim()}
           >
             <Image
               src={mobileImageSrc ?? imageSrc}
@@ -93,7 +97,7 @@ export default function DashBoard({
           alt={imageAlt}
           width={1200}
           height={675}
-          className="hidden h-auto w-full object-cover tablet:block"
+          className={desktopImageClassName}
         />
       </div>
     </section>

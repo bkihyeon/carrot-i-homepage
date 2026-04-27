@@ -17,6 +17,30 @@ type SolutionCarouselProps = {
   className?: string;
 };
 
+const solutionLogoById = {
+  mes: {
+    src: "/icon/main/solution_mes.png",
+    alt: "preci.MES",
+    width: 2836,
+    height: 628,
+    className: "w-[17rem] tablet:w-[30rem]",
+  },
+  cast: {
+    src: "/icon/main/solution_cast.png",
+    alt: "preci.CAST",
+    width: 3076,
+    height: 628,
+    className: "w-[18rem] tablet:w-[32rem]",
+  },
+  "financial-system": {
+    src: "/icon/main/solution_financial.png",
+    alt: "Financial System",
+    width: 2482,
+    height: 1172,
+    className: "w-[15rem] tablet:w-[24rem]",
+  },
+} as const;
+
 function SolutionVisual({
   slide,
   compact = false,
@@ -25,10 +49,7 @@ function SolutionVisual({
   compact?: boolean;
 }) {
   const visualHeight = compact ? "h-[14rem] tablet:h-[22rem]" : "h-[501px]";
-  const titleSize =
-    slide.id === "financial-system"
-      ? "text-[4rem] tablet:text-[5.5rem]"
-      : "text-[4.5rem] tablet:text-[7rem]";
+  const logo = solutionLogoById[slide.id as keyof typeof solutionLogoById];
 
   return (
     <div className={`relative w-full overflow-hidden ${visualHeight}`.trim()}>
@@ -44,27 +65,19 @@ function SolutionVisual({
         className="object-cover opacity-75"
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(212,212,216,0.18)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,212,216,0.18)_1px,transparent_1px)] bg-[size:46.91px_100px]" />
-      <div
-        className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center leading-none font-black lowercase tracking-normal text-white/50 ${titleSize}`.trim()}
-      >
-        {slide.id === "financial-system" ? (
-          <>
-            <div>Financial</div>
-            <div>System</div>
-          </>
-        ) : (
-          <>
-            <span>preci</span>
-            <span className="uppercase">
-              .{slide.id === "mes" ? "MES" : "CAST"}
-            </span>
-          </>
-        )}
-      </div>
+      {logo ? (
+        <Image
+          src={logo.src}
+          alt={logo.alt}
+          width={logo.width}
+          height={logo.height}
+          className={`absolute left-1/2 top-1/2 h-auto max-w-[82%] -translate-x-1/2 -translate-y-1/2 object-contain ${logo.className}`.trim()}
+        />
+      ) : null}
       <Link
         href={slide.href}
         aria-label={`${slide.title} 페이지로 이동`}
-        className="absolute right-5 top-5 flex h-14 w-14 items-center justify-center border border-border bg-white/40 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        className="hidden tablet:block absolute right-5 top-5 flex h-14 w-14 items-center justify-center border border-border bg-white/40 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
         <span aria-hidden className="text-xl leading-none text-foreground">
           ↗
