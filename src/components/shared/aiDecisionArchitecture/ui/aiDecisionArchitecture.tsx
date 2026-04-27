@@ -24,14 +24,17 @@ export default function AIDecisionArchitecture({
     >
       <div className="flex w-full flex-col items-start gap-xs text-center text-foreground">
         {eyebrow ? (
-          <p className="type-heading-3 w-full text-center text-foreground-alt">
+          <p className="type-heading-3 w-full text-center text-foreground">
             {eyebrow}
           </p>
         ) : null}
-        <h2 className="w-full break-keep text-[1.75rem] leading-[1.3] font-bold tracking-[-0.0625rem] tablet:text-[2.25rem] desktop:text-[3rem] desktop:leading-[3rem] desktop:tracking-[-0.09375rem]">
+        <h2 className="w-full break-keep text-[1.875rem] leading-[1.3] font-bold tracking-[-0.0625rem] tablet:text-[1.875rem] desktop:text-[2.625rem] desktop:leading-[3rem] desktop:tracking-[-0.09375rem]">
           {title}
         </h2>
-        <p className="type-body mx-auto max-w-[1080px] whitespace-pre-line px-md text-center text-foreground tablet:px-2xl desktop:px-0">
+        <p
+          className="mx-auto max-w-[1080px] whitespace-pre-line px-md text-center font-['Noto_Sans_KR'] text-[1.25rem] leading-[160%] font-light uppercase tablet:px-2xl desktop:px-0"
+          style={{ color: "var(--general-foreground, #09090B)" }}
+        >
           {description}
         </p>
       </div>
