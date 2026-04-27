@@ -34,6 +34,7 @@ export default function CastPage() {
       <AIDecisionArchitecture
         {...castArchitectureProps}
         imageSrc={"/image/cast/AIDetermineArchitecture_4x.png"}
+        mobileImageSrc={"/image/cast/ai-architecture-mobile.png"}
       />
       <div className="grid grid-cols-1 border-l border-border tablet:grid-cols-5 desktop:grid-cols-5">
         {castPictureExplainItems.map((item) => (

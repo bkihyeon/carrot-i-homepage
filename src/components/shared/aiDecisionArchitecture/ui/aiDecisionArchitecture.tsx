@@ -6,16 +6,19 @@ export type AIDecisionArchitectureProps = {
   title?: ReactNode;
   description?: ReactNode;
   imageSrc?: string;
+  mobileImageSrc?: string;
   className?: string;
 };
 
 const defaultImageSrc = "/image/main/Rectangle 49_4x.png";
+const defaultMobileImageSrc = "/image/main/ai-architecture-mobile.png";
 
 export default function AIDecisionArchitecture({
   eyebrow,
   title = "캐롯아이의 AI 의사결정 아키텍처",
   description = "데이터를 예측과 판단까지 하나의 흐름으로 연결해 실행 가능한 방향을 제시합니다.",
   imageSrc = defaultImageSrc,
+  mobileImageSrc = defaultMobileImageSrc,
   className = "",
 }: AIDecisionArchitectureProps) {
   return (
@@ -39,15 +42,24 @@ export default function AIDecisionArchitecture({
         </p>
       </div>
 
-      <div className="relative h-[18rem] w-full tablet:h-[32rem] desktop:h-[720px]">
+      <div className="relative mx-auto aspect-[1380/1120] w-full max-w-[calc(100vw-2rem)] pt-md tablet:aspect-auto tablet:h-[32rem] tablet:max-w-none tablet:pt-0 desktop:h-[720px]">
+        <Image
+          src={mobileImageSrc}
+          alt="캐롯아이 AI 의사결정 아키텍처 다이어그램(모바일)"
+          fill
+          sizes="(max-width: 799px) 100vw"
+          unoptimized
+          draggable={false}
+          className="object-contain tablet:hidden"
+        />
         <Image
           src={imageSrc}
           alt="캐롯아이 AI 의사결정 아키텍처 다이어그램"
           fill
-          sizes="(max-width: 799px) 100vw, (max-width: 1279px) 100vw, 1080px"
+          sizes="(max-width: 1279px) 100vw, 1080px"
           unoptimized
           draggable={false}
-          className="object-contain"
+          className="hidden object-contain tablet:block"
         />
       </div>
     </section>

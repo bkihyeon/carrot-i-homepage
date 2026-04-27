@@ -33,6 +33,7 @@ export default function FinancialSystemPage() {
       <AIDecisionArchitecture
         {...financeArchitectureProps}
         imageSrc={"/image/finance/AIDetermineArchitecture.png"}
+        mobileImageSrc={"/image/finance/ai-architecture-mobile.png"}
       />
       <div className="grid grid-cols-1 border-l border-border tablet:grid-cols-5 desktop:grid-cols-5">
         {financePictureExplainItems.map((item) => (
