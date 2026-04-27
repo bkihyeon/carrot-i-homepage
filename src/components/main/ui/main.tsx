@@ -13,7 +13,7 @@ import SolutionCarousel from "@/components/shared/solutionCarousel/ui/solutionCa
 
 export default function MainPage() {
   return (
-    <section className="content-shell flex flex-col px-xs pt-md tablet:px-2xl tablet:pt-xl tablet:pb-5xl desktop:px-0 desktop:pt-2xl desktop:pb-0">
+    <section className="content-shell flex flex-col px-xs pt-md pb-4xl tablet:px-2xl tablet:pt-xl tablet:pb-5xl desktop:px-0 desktop:pt-2xl">
       <div>
         {/*TODO: 나중에 주는 파일로 대체*/}
         <MediaPlaceholder variant="main" />
