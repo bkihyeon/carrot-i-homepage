@@ -38,7 +38,7 @@ export const mesInfoFeatureSections = [
       "공정 흐름을 시각적으로 설계하고, 각 단계에 설비를 연결해 생산 구조를 한눈에 파악할 수 있습니다.",
       "복잡한 생산 과정을 체계적으로 관리하고 운영 효율을 높입니다.",
     ],
-    imageSrc: "/image/mes/gongjung&seoulbi.png",
+    imageSrc: "/image/mes/gongjung&seoulbi_4x.png",
     imageAlt: "공정 흐름과 설비 관리 화면",
     imageClassName: "object-contain object-top",
     imageWidth: 644,
