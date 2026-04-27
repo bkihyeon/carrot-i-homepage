@@ -107,7 +107,7 @@ function SolutionCard({
             : "flex h-[240px] border-t-2 border-border p-3xl"
         }
       >
-        <div className="mr-2xl flex flex-[1_0_0] flex-col items-start gap-xs break-keep text-white">
+        <div className=" tablet:mr-2xl flex flex-[1_0_0] flex-col items-start gap-xs break-keep text-white">
           <h3 className={titleClassName}>{slide.title}</h3>
           <p className={subtitleClassName}>{slide.subtitle}</p>
         </div>
