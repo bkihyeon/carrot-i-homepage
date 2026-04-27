@@ -93,8 +93,8 @@ export default function Header() {
 
   return (
     <div ref={rootRef}>
-      <header className="fixed inset-x-0 top-0 z-50 h-16 self-stretch bg-background/60 backdrop-blur-[8px] tablet:h-[6.25rem]">
-        <div className="flex h-full w-full items-center justify-between self-stretch px-md py-sm tablet:px-2xl tablet:py-xl desktop:px-3xl">
+      <header className="fixed inset-x-0 top-0 z-50 h-[76px] self-stretch bg-background/60 backdrop-blur-[8px] tablet:h-[6.25rem]">
+        <div className="flex h-full w-full items-center justify-between self-stretch p-lg tablet:px-2xl tablet:py-xl desktop:px-3xl">
           <div className="flex min-w-0 items-center gap-2xl">
             <Link
               href="/"
@@ -106,7 +106,6 @@ export default function Header() {
                 alt="Carrot i"
                 width={103}
                 height={28}
-                className="h-6 w-auto tablet:h-7"
                 priority
               />
             </Link>
