@@ -195,7 +195,7 @@ export default function InquiryModal({
               <button
                 type="button"
                 onClick={onOpenPrivacyConsent}
-                className="ml-xs text-left text-[0.75rem] leading-[140%] text-[#52525B] transition-colors hover:text-foreground tablet:type-body tablet:ml-sm"
+                className="ml-xs text-left text-[0.875rem] leading-[140%] text-[#52525B] transition-colors hover:text-foreground tablet:type-body tablet:ml-sm"
                 disabled={isPending}
               >
                 개인정보 수집동의
