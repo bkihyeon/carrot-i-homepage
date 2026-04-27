@@ -28,11 +28,11 @@ export const headerItems: HeaderItem[] = [
     label: "회사 소개",
     href: "/company_introduce",
   },
-  {
-    type: "link",
-    label: "콘텐츠",
-    href: "/contents",
-  },
+  // {
+  //   type: "link",
+  //   label: "콘텐츠",
+  //   href: "/contents",
+  // },
 ];
 
 export const mobileHeaderItems: MobileHeaderItem[] = [
