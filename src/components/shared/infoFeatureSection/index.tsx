@@ -44,7 +44,7 @@ export default function InfoFeatureSection({
   const imageFrameClassName =
     imageLayout === "framed"
       ? "relative h-[38.125rem] w-full overflow-hidden rounded-2xl bg-background "
-      : "relative h-[28.125rem] tablet:h-[38.125rem] w-full overflow-hidden rounded-2xl bg-background";
+      : "relative h-[28.125rem] tablet:h-[38.125rem] w-full overflow-hidden bg-background";
   const shouldUseFixedImageSize =
     imageLayout === "framed" &&
     imageWidth !== undefined &&
