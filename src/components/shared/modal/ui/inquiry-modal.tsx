@@ -65,7 +65,7 @@ export default function InquiryModal({
     <ModalShell
       title="문의하기"
       onClose={onClose}
-      panelClassName="w-full max-w-[34rem]"
+      panelClassName="w-full max-w-none tablet:max-w-[34rem]"
       mobileSheet
     >
       <form action={formAction} className="flex h-full flex-col">
@@ -74,7 +74,7 @@ export default function InquiryModal({
           name="privacyAgreed"
           value={isPrivacyAgreed ? "true" : "false"}
         />
-        <div className="flex w-full min-w-0 flex-col gap-md px-lg py-lg tablet:gap-xl tablet:p-xl">
+        <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col gap-md px-lg py-lg tablet:gap-xl tablet:p-xl">
           <label className="flex flex-col gap-xs">
             <span className="text-[1rem] leading-[140%] font-medium tracking-[-0.02em] text-foreground tablet:text-base">
               회사명 <span className="text-[#FF5E00]">*</span>
@@ -138,7 +138,7 @@ export default function InquiryModal({
             ) : null}
           </label>
 
-          <label className="flex flex-col gap-xs">
+          <label className="flex min-h-0 flex-1 flex-col gap-xs">
             <span className="flex items-center justify-between gap-md">
               <span className="text-[1rem] leading-[140%] font-medium tracking-[-0.02em] text-foreground tablet:text-base">
                 문의내용 <span className="text-[#FF5E00]">*</span>
@@ -152,7 +152,7 @@ export default function InquiryModal({
               value={formState.message}
               onChange={(event) => updateField("message", event.target.value)}
               placeholder="문의하실 내용을 입력해 주세요"
-              className={`${inputClassName} min-h-[8.75rem] resize-none tablet:min-h-[11.875rem]`}
+              className={`${inputClassName} min-h-[8.75rem] flex-1 resize-none tablet:min-h-[11.875rem]`}
               disabled={isPending}
               maxLength={MAX_INQUIRY_MESSAGE_LENGTH}
             />
