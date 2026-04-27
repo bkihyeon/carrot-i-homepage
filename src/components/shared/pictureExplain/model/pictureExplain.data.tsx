@@ -9,7 +9,7 @@ export type PictureExplainItem = {
 
 export const pictureExplainItems: PictureExplainItem[] = [
   {
-    imageSrc: "/icon/main/miri1.png",
+    imageSrc: "/icon/main/miri1_4x.png",
     imageAlt: "miri1",
     title: (
       <>
@@ -24,7 +24,7 @@ export const pictureExplainItems: PictureExplainItem[] = [
     ),
   },
   {
-    imageSrc: "/icon/main/miri2.png",
+    imageSrc: "/icon/main/miri2_4x.png",
     imageAlt: "miri2",
     title: (
       <>
@@ -39,7 +39,7 @@ export const pictureExplainItems: PictureExplainItem[] = [
     ),
   },
   {
-    imageSrc: "/icon/main/miri3.png",
+    imageSrc: "/icon/main/miri3_4x.png",
     imageAlt: "miri3",
     title: <>Execution Pipeline</>,
     description: (
@@ -49,7 +49,7 @@ export const pictureExplainItems: PictureExplainItem[] = [
     ),
   },
   {
-    imageSrc: "/icon/main/miri4.png",
+    imageSrc: "/icon/main/miri4_4x.png",
     imageAlt: "miri4",
     title: (
       <>

@@ -68,15 +68,15 @@ export const castInsightDashboardProps = {
     "상권 지표, 고객 특성, 매출 패턴을 통합 분석하여 핵심 고객층과 수요 흐름을 도출하고, 데이터 기반으로 실행 가능한 전략을 제안합니다.",
   desktopImages: [
     {
-      src: "/image/cast/cast_DashBoard_1.png",
+      src: "/image/cast/cast_DashBoard_1_4x.png",
       alt: "CAST 인사이트 대시보드1",
     },
     {
-      src: "/image/cast/cast_DashBoard_2.png",
+      src: "/image/cast/cast_DashBoard_2_4x.png",
       alt: "CAST 인사이트 대시보드2",
     },
     {
-      src: "/image/cast/cast_DashBoard_3.png",
+      src: "/image/cast/cast_DashBoard_3_4x.png",
       alt: "CAST 인사이트 대시보드3",
     },
   ],
@@ -95,7 +95,7 @@ export const castArchitectureProps = {
 
 export const castPictureExplainItems = [
   {
-    imageSrc: "/icon/main/miri1_b.png",
+    imageSrc: "/icon/main/miri1_b_4x.png",
     imageAlt: "cast-miri1",
     title: (
       <>
@@ -110,7 +110,7 @@ export const castPictureExplainItems = [
     ),
   },
   {
-    imageSrc: "/icon/main/miri2_b.png",
+    imageSrc: "/icon/main/miri2_b_4x.png",
     imageAlt: "cast-miri2",
     title: (
       <>
@@ -125,7 +125,7 @@ export const castPictureExplainItems = [
     ),
   },
   {
-    imageSrc: "/icon/main/miri3_b.png",
+    imageSrc: "/icon/main/miri3_b_4x.png",
     imageAlt: "cast-miri3",
     title: <>Execution Pipeline</>,
     description: (
@@ -136,7 +136,7 @@ export const castPictureExplainItems = [
     ),
   },
   {
-    imageSrc: "/icon/main/miri4_b.png",
+    imageSrc: "/icon/main/miri4_b_4x.png",
     imageAlt: "cast-miri4",
     title: (
       <>
