@@ -77,11 +77,15 @@ function SolutionVisual({
       <Link
         href={slide.href}
         aria-label={`${slide.title} 페이지로 이동`}
-        className="hidden tablet:block absolute right-5 top-5 flex h-14 w-14 items-center justify-center border border-border bg-white/40 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        className="absolute top-5 right-5 hidden h-[3.5rem] w-[3.5rem] items-center justify-center border-[1px] border-white/85 bg-white/20 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white tablet:flex"
       >
-        <span aria-hidden className="text-xl leading-none text-foreground">
-          ↗
-        </span>
+        <Image
+          src={"/icon/main/slider/arrow_outward.svg"}
+          alt={"outward arrow icon"}
+          width={24}
+          height={24}
+          className={""}
+        />
       </Link>
     </div>
   );
