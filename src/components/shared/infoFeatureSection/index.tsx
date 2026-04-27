@@ -31,7 +31,7 @@ export default function InfoFeatureSection({
   showBottomBorder = false,
 }: InfoFeatureSectionProps) {
   const leftPanelPaddingClassName = showBottomBorder
-    ? "px-3xl pt-3xl pb-0"
+    ? "px-3xl pt-xl tablet:pt-5xl pb-3xl"
     : "px-xl py-xl tablet:p-3xl";
   const rightPanelPaddingClassName =
     imageLayout === "bleedRight" || imageLayout === "framed"
@@ -57,7 +57,7 @@ export default function InfoFeatureSection({
       className={`flex flex-col border-x border-border bg-background tablet:grid tablet:grid-cols-[minmax(16rem,380px)_minmax(0,1fr)] tablet:items-start ${showBottomBorder ? "border-b" : ""} ${className}`.trim()}
     >
       <div
-        className={`flex w-full min-w-0 flex-col items-start justify-between gap-3xl tablet:h-[38.125rem] tablet:max-w-[380px] ${leftPanelPaddingClassName}`.trim()}
+        className={`flex w-full h-full min-w-0 flex-col items-start justify-between gap-3xl  ${leftPanelPaddingClassName}`.trim()}
       >
         <div className="flex w-full flex-col items-start gap-xs">
           <p className="text-[14px] leading-[21px] tracking-[0.07px] font-bold text-foreground">
