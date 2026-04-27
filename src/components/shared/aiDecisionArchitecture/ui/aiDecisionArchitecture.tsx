@@ -16,7 +16,12 @@ const defaultMobileImageSrc = "/image/main/ai-architecture-mobile.png";
 export default function AIDecisionArchitecture({
   eyebrow,
   title = "캐롯아이의 AI 의사결정 아키텍처",
-  description = "데이터를 예측과 판단까지 하나의 흐름으로 연결해 실행 가능한 방향을 제시합니다.",
+  description = (
+    <>
+      데이터를 예측과 판단까지 하나의 흐름으로 연결해 <br />
+      실행 가능한 방향을 제시합니다.
+    </>
+  ),
   imageSrc = defaultImageSrc,
   mobileImageSrc = defaultMobileImageSrc,
   className = "",
@@ -31,11 +36,11 @@ export default function AIDecisionArchitecture({
             {eyebrow}
           </p>
         ) : null}
-        <h2 className="w-full break-keep text-[1.875rem] leading-[1.3] font-bold tracking-[-0.0625rem] tablet:text-[1.875rem] desktop:text-[2.625rem] desktop:leading-[3rem] desktop:tracking-[-0.09375rem]">
+        <h2 className="w-full break-keep text-heading-3 tablet:text-heading-2 leading-[1.3] font-bold tracking-[-0.0625rem] tablet:text-[1.875rem] desktop:text-[2.625rem] desktop:leading-[3rem] desktop:tracking-[-0.09375rem]">
           {title}
         </h2>
         <p
-          className="mx-auto max-w-[1080px] whitespace-pre-line px-md text-center font-['Noto_Sans_KR'] text-[1.25rem] leading-[160%] font-light uppercase tablet:px-2xl desktop:px-0"
+          className="mx-auto max-w-[780px] whitespace-pre-line px-md text-center font-['Noto_Sans_KR'] text-[1rem] desktop:text-[1.25rem] leading-[160%] font-light uppercase tablet:px-2xl desktop:px-0"
           style={{ color: "var(--general-foreground, #09090B)" }}
         >
           {description}

@@ -23,21 +23,21 @@ const solutionLogoById = {
     alt: "preci.MES",
     width: 2836,
     height: 628,
-    className: "w-[17rem] tablet:w-[30rem]",
+    className: "w-[17rem] tablet:w-[44rem]",
   },
   cast: {
     src: "/icon/main/solution_cast.png",
     alt: "preci.CAST",
     width: 3076,
     height: 628,
-    className: "w-[18rem] tablet:w-[32rem]",
+    className: "w-[18rem] tablet:w-[46rem]",
   },
   "financial-system": {
     src: "/icon/main/solution_financial.png",
     alt: "Financial System",
     width: 2482,
     height: 1172,
-    className: "w-[15rem] tablet:w-[24rem]",
+    className: "w-[15rem] tablet:w-[40rem]",
   },
 } as const;
 
