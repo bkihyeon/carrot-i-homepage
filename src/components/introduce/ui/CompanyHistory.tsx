@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 type HistoryEntry = {
   title: string;
@@ -79,14 +79,41 @@ const companyHistory: HistoryYear[] = [
 ];
 
 export default function CompanyHistory() {
+  const sectionRef = useRef<HTMLElement>(null);
   const [activeYear, setActiveYear] = useState(companyHistory[0]?.year ?? "");
 
   const activeHistory =
     companyHistory.find((item) => item.year === activeYear) ??
     companyHistory[0];
 
+  const scrollHistoryTopIntoView = () => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const headerHeight =
+      document.querySelector("header")?.getBoundingClientRect().height ?? 0;
+    const sectionTop = section.getBoundingClientRect().top;
+
+    if (sectionTop >= headerHeight) return;
+
+    requestAnimationFrame(() => {
+      window.scrollTo({
+        top: window.scrollY + sectionTop - headerHeight - 1,
+        behavior: "smooth",
+      });
+    });
+  };
+
+  const handleYearClick = (year: string) => {
+    setActiveYear(year);
+    scrollHistoryTopIntoView();
+  };
+
   return (
-    <section className="w-full border border-border border-t-0 bg-background">
+    <section
+      ref={sectionRef}
+      className="w-full border border-border border-t-0 bg-background"
+    >
       <div className="flex flex-row items-stretch">
         <div className="flex w-[7.5rem] shrink-0 flex-col items-start border-r border-b border-border tablet:w-[15rem] desktop:border-b-0">
           {companyHistory.map((item) => {
@@ -96,7 +123,7 @@ export default function CompanyHistory() {
               <button
                 key={item.year}
                 type="button"
-                onClick={() => setActiveYear(item.year)}
+                onClick={() => handleYearClick(item.year)}
                 className={`flex w-full self-stretch items-center gap-xs border-b border-border tablet:px-2xl tablet:py-xl p-md text-left transition-colors last:border-b-0  ${isActive ? "bg-secondary text-foreground" : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground"}`.trim()}
                 aria-pressed={isActive}
               >
