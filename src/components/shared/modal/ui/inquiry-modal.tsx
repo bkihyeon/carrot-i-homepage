@@ -195,14 +195,14 @@ export default function InquiryModal({
               <button
                 type="button"
                 onClick={onOpenPrivacyConsent}
-                className="ml-xs text-left text-[0.875rem] leading-[140%] text-[#52525B] transition-colors hover:text-foreground tablet:type-body tablet:ml-sm"
+                className="cursor-pointer ml-xs text-left text-[0.875rem] leading-[140%] text-[#52525B] transition-colors hover:text-foreground tablet:type-body tablet:ml-sm"
                 disabled={isPending}
               >
                 개인정보 수집동의
               </button>
             </div>
             {actionState.fieldErrors.privacyAgreed ? (
-              <p className="text-sm text-[#D94841]">
+              <p className="text-sm text-[#D94841] ">
                 {actionState.fieldErrors.privacyAgreed}
               </p>
             ) : null}
@@ -224,7 +224,7 @@ export default function InquiryModal({
               disabled={!isFormValid || isPending}
               className={`inline-flex min-h-[2.25rem] w-full items-center justify-center rounded-[0.5rem] px-md py-xs text-[0.875rem] leading-[140%] font-bold tracking-[-0.02em] transition-colors tablet:min-h-[3.5rem] tablet:rounded-[0.875rem] tablet:py-sm tablet:text-[1.375rem] ${
                 isFormValid && !isPending
-                  ? "bg-primary text-primary-foreground hover:opacity-90"
+                  ? "bg-primary text-primary-foreground hover:opacity-90 cursor-pointer"
                   : "bg-[#D9D9DF] text-zinc-100"
               }`.trim()}
             >

@@ -86,19 +86,15 @@ export default function Footer() {
               ㈜캐롯아이
             </h3>
             <p className="type-body whitespace-pre-line text-[#52525B] tablet:hidden">
-              사업자 등록번호 : 000-00-0000
+              사업자 등록번호 : 807-81-00069
               {"\n"}대표 : 안선희
-              {"\n"}호스팅 서비스 : ?????????????
-              {"\n"}통신판매업 신고번호 : ????????????
               {"\n"}HQ : 경기도 고양시 덕양구 삼원로 83 915호,
               {"\n"}916호
               {"\n"}BR : 서울시 강남구 선릉로 100길 54 삼성빌딩
               {"\n"}4층
             </p>
             <p className="hidden whitespace-pre-line tablet:block tablet:type-body tablet:text-[#52525B]">
-              사업자 등록번호 : 000-00-0000 | 대표 : 안선희
-              {"\n"}호스팅 서비스 : ????????????? | 통신판매업 신고번호 :
-              ???????????
+              사업자 등록번호 : 807-81-00069 | 대표 : 안선희
               {"\n"}HQ : 경기도 고양시 덕양구 삼원로 83 915호, 916호 | BR :
               서울시 강남구 선릉로 100길 54 삼성빌딩 4층
             </p>
@@ -107,13 +103,13 @@ export default function Footer() {
           <div className="flex w-full max-w-none flex-wrap items-center gap-2 tablet:max-w-[263px] tablet:gap-3 tablet:whitespace-nowrap">
             <OpenLegalDocumentButton
               documentType="privacy"
-              className="type-body font-bold text-[#52525B] transition-colors hover:text-foreground"
+              className="type-body font-bold text-[#52525B] transition-colors hover:text-foreground cursor-pointer"
             >
               개인정보처리방침
             </OpenLegalDocumentButton>
             <OpenLegalDocumentButton
               documentType="no-email-collection"
-              className="type-body text-[#52525B] transition-colors hover:text-foreground"
+              className="type-body text-[#52525B] transition-colors hover:text-foreground cursor-pointer"
             >
               이메일무단수집거부
             </OpenLegalDocumentButton>

@@ -35,7 +35,7 @@ export default function NextPicture({
       <div className="flex flex-col items-start gap-xl border-t border-border p-xl tablet:min-h-[220px] tablet:gap-2xl tablet:border-t-0 tablet:border-l tablet:p-3xl desktop:-ml-px desktop:min-h-[240px] desktop:gap-4xl desktop:p-3xl">
         <p className={inquiryDescriptionClassName}>{inquiryDes}</p>
 
-        <OpenInquiryButton className="inline-flex min-h-[36px] items-center justify-center gap-xs rounded-xl bg-secondary px-md py-xs text-secondary-foreground transition-colors hover:bg-accent">
+        <OpenInquiryButton className="inline-flex min-h-[36px] cursor-pointer items-center justify-center gap-xs rounded-xl bg-secondary px-md py-xs text-secondary-foreground transition-colors hover:bg-accent">
           <span className="type-body font-medium">문의하기</span>
           <span aria-hidden className="text-[14px] leading-none">
             <Image
