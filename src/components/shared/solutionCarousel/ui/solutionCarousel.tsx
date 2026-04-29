@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import {
@@ -52,7 +52,11 @@ function SolutionVisual({
   const logo = solutionLogoById[slide.id as keyof typeof solutionLogoById];
 
   return (
-    <div className={`relative w-full overflow-hidden ${visualHeight}`.trim()}>
+    <Link
+      href={slide.href}
+      aria-label={`${slide.title} 페이지로 이동`}
+      className={`group relative block w-full overflow-hidden ${visualHeight}`.trim()}
+    >
       <Image
         src={slide.imageSrc}
         alt={slide.imageAlt}
@@ -74,10 +78,9 @@ function SolutionVisual({
           className={`absolute left-1/2 top-1/2 h-auto max-w-[82%] -translate-x-1/2 -translate-y-1/2 object-contain ${logo.className}`.trim()}
         />
       ) : null}
-      <Link
-        href={slide.href}
-        aria-label={`${slide.title} 페이지로 이동`}
-        className="absolute top-5 right-5 hidden h-[3.5rem] w-[3.5rem] items-center justify-center border-[1px] border-white/85 bg-white/20 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white tablet:flex"
+      <span
+        aria-hidden="true"
+        className="absolute top-5 right-5 hidden h-[3.5rem] w-[3.5rem] items-center justify-center border-[1px] border-white/85 bg-white/20 transition-opacity group-hover:opacity-80 tablet:flex"
       >
         <Image
           src={"/icon/main/slider/arrow_outward.svg"}
@@ -86,8 +89,8 @@ function SolutionVisual({
           height={24}
           className={""}
         />
-      </Link>
-    </div>
+      </span>
+    </Link>
   );
 }
 
@@ -159,17 +162,18 @@ export default function SolutionCarousel({
       <div className="hidden desktop:block">
         {/* 캐러셀만 viewport 기준으로 clip */}
         <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-clip">
-          <div className="mx-auto max-w-[1080px] overflow-visible">
+          <div className="mx-auto max-w-[1080px] overflow-hidden">
             <Swiper
-              modules={[Navigation]}
+              modules={[Autoplay, Navigation]}
+              autoplay={{ delay: 10000, disableOnInteraction: false }}
               navigation={{
                 prevEl: ".solution-carousel-prev",
                 nextEl: ".solution-carousel-next",
               }}
               spaceBetween={0}
-              slidesPerView="auto"
-              slidesOffsetAfter={220}
-              className="!overflow-visible"
+              slidesPerView={1}
+              rewind
+              className="!overflow-hidden"
             >
               {solutionSlides.map((slide) => (
                 <SwiperSlide key={slide.id} className="!w-[1080px]">
@@ -186,8 +190,8 @@ export default function SolutionCarousel({
               <span aria-hidden className="text-2xl leading-none">
                 <Image
                   src={"/icon/slider/arrow_left.svg"}
-                  width={16}
-                  height={16}
+                  width={24}
+                  height={24}
                   alt={"left arrow"}
                 />
               </span>
@@ -196,8 +200,8 @@ export default function SolutionCarousel({
               <span aria-hidden className="text-2xl leading-none">
                 <Image
                   src={"/icon/slider/arrow_forward.svg"}
-                  width={16}
-                  height={16}
+                  width={24}
+                  height={24}
                   alt={"right arrow"}
                 />
               </span>
