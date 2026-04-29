@@ -115,7 +115,7 @@ export default function CompanyHistory() {
       className="w-full border border-border border-t-0 bg-background"
     >
       <div className="flex flex-row items-stretch">
-        <div className="flex w-[7.5rem] shrink-0 flex-col items-start border-r border-b border-border tablet:w-[15rem] desktop:border-b-0">
+        <div className="flex w-[7.5rem] shrink-0 flex-col items-start border-r border-border tablet:w-[15rem]">
           {companyHistory.map((item) => {
             const isActive = item.year === activeYear;
 
@@ -135,12 +135,12 @@ export default function CompanyHistory() {
           })}
         </div>
 
-        <div className="flex min-h-[24rem] flex-[1_0_0] flex-col items-start self-stretch">
+        <div className="flex flex-[1_0_0] flex-col items-start self-stretch">
           {activeHistory.entries.length > 0 ? (
             activeHistory.entries.map((entry, index) => (
               <article
                 key={`history-entry-${index}`}
-                className="flex self-stretch flex-col items-start gap-xs border-b border-border px-2xl py-xl"
+                className="flex self-stretch flex-col items-start gap-xs border-b border-border px-2xl py-xl last:border-b-0"
               >
                 <p className="font-sans text-[1rem] leading-[1.5rem] font-bold tracking-[0] text-foreground tablet:font-heading tablet:text-[1.5rem] tablet:leading-[140%] tablet:tracking-[var(--token-text-heading-3-letter-spacing)]">
                   {entry.title}
