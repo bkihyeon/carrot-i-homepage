@@ -1,8 +1,10 @@
 "use client";
 
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Navigation } from "swiper/modules";
+import type { Swiper as SwiperInstance } from "swiper";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import {
@@ -41,6 +43,12 @@ const solutionLogoById = {
   },
 } as const;
 
+const solutionDotColorById = {
+  mes: "var(--token-color-primary)",
+  cast: "#9333EA",
+  "financial-system": "#16A34A",
+} as const;
+
 function SolutionVisual({
   slide,
   compact = false,
@@ -52,7 +60,11 @@ function SolutionVisual({
   const logo = solutionLogoById[slide.id as keyof typeof solutionLogoById];
 
   return (
-    <div className={`relative w-full overflow-hidden ${visualHeight}`.trim()}>
+    <Link
+      href={slide.href}
+      aria-label={`${slide.title} 페이지로 이동`}
+      className={`group relative block w-full overflow-hidden ${visualHeight}`.trim()}
+    >
       <Image
         src={slide.imageSrc}
         alt={slide.imageAlt}
@@ -74,10 +86,9 @@ function SolutionVisual({
           className={`absolute left-1/2 top-1/2 h-auto max-w-[82%] -translate-x-1/2 -translate-y-1/2 object-contain ${logo.className}`.trim()}
         />
       ) : null}
-      <Link
-        href={slide.href}
-        aria-label={`${slide.title} 페이지로 이동`}
-        className="absolute top-5 right-5 hidden h-[3.5rem] w-[3.5rem] items-center justify-center border-[1px] border-white/85 bg-white/20 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white tablet:flex"
+      <span
+        aria-hidden="true"
+        className="absolute top-5 right-5 hidden h-[3.5rem] w-[3.5rem] items-center justify-center border-[1px] border-white/85 bg-white/20 transition-opacity group-hover:opacity-80 tablet:flex"
       >
         <Image
           src={"/icon/main/slider/arrow_outward.svg"}
@@ -86,8 +97,8 @@ function SolutionVisual({
           height={24}
           className={""}
         />
-      </Link>
-    </div>
+      </span>
+    </Link>
   );
 }
 
@@ -146,6 +157,9 @@ function SolutionCard({
 export default function SolutionCarousel({
   className = "",
 }: SolutionCarouselProps) {
+  const swiperRef = useRef<SwiperInstance | null>(null);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
   return (
     <section className={className}>
       <div className="desktop:hidden">
@@ -159,17 +173,24 @@ export default function SolutionCarousel({
       <div className="hidden desktop:block">
         {/* 캐러셀만 viewport 기준으로 clip */}
         <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-clip">
-          <div className="mx-auto max-w-[1080px] overflow-visible">
+          <div className="mx-auto max-w-[1080px] overflow-hidden">
             <Swiper
-              modules={[Navigation]}
+              modules={[Autoplay, Navigation]}
+              autoplay={{ delay: 10000, disableOnInteraction: false }}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              onSlideChange={(swiper) => {
+                setActiveSlideIndex(swiper.activeIndex);
+              }}
               navigation={{
                 prevEl: ".solution-carousel-prev",
                 nextEl: ".solution-carousel-next",
               }}
               spaceBetween={0}
-              slidesPerView="auto"
-              slidesOffsetAfter={220}
-              className="!overflow-visible"
+              slidesPerView={1}
+              rewind
+              className="!overflow-hidden"
             >
               {solutionSlides.map((slide) => (
                 <SwiperSlide key={slide.id} className="!w-[1080px]">
@@ -180,24 +201,51 @@ export default function SolutionCarousel({
           </div>
         </div>
 
-        <div className="flex border border-border bg-secondary p-md ">
-          <div className="flex w-full items-center justify-end gap-xs">
-            <button className="solution-carousel-prev flex h-14 w-14 items-center justify-center rounded-none border border-border bg-white/40 text-foreground">
+        <div className="flex items-center justify-between border border-border bg-secondary py-md px-xl">
+          <div className="flex items-center gap-[0.625rem]">
+            {solutionSlides.map((slide, index) => {
+              const isActive = activeSlideIndex === index;
+
+              return (
+                <button
+                  key={slide.id}
+                  type="button"
+                  aria-label={`${slide.title} 슬라이드로 이동`}
+                  aria-current={isActive ? "true" : undefined}
+                  className="h-5 w-5 cursor-pointer rounded-full bg-accent transition-all duration-300 ease-out hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+                  style={{
+                    backgroundColor: isActive
+                      ? solutionDotColorById[
+                          slide.id as keyof typeof solutionDotColorById
+                        ]
+                      : undefined,
+                  }}
+                  onClick={() => {
+                    swiperRef.current?.slideTo(index);
+                    setActiveSlideIndex(index);
+                  }}
+                />
+              );
+            })}
+          </div>
+
+          <div className="flex items-center justify-end gap-xs">
+            <button className="solution-carousel-prev flex h-14 w-14 cursor-pointer items-center justify-center rounded-none border border-border bg-white/40 text-foreground">
               <span aria-hidden className="text-2xl leading-none">
                 <Image
                   src={"/icon/slider/arrow_left.svg"}
-                  width={16}
-                  height={16}
+                  width={24}
+                  height={24}
                   alt={"left arrow"}
                 />
               </span>
             </button>
-            <button className="solution-carousel-next flex h-14 w-14 items-center justify-center rounded-none border border-border bg-white/40 text-foreground">
+            <button className="solution-carousel-next flex h-14 w-14 cursor-pointer items-center justify-center rounded-none border border-border bg-white/40 text-foreground">
               <span aria-hidden className="text-2xl leading-none">
                 <Image
                   src={"/icon/slider/arrow_forward.svg"}
-                  width={16}
-                  height={16}
+                  width={24}
+                  height={24}
                   alt={"right arrow"}
                 />
               </span>
