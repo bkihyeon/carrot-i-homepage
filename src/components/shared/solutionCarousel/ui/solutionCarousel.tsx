@@ -212,7 +212,7 @@ export default function SolutionCarousel({
                   type="button"
                   aria-label={`${slide.title} 슬라이드로 이동`}
                   aria-current={isActive ? "true" : undefined}
-                  className="h-5 w-5 rounded-full bg-accent transition-all duration-300 ease-out hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+                  className="h-5 w-5 cursor-pointer rounded-full bg-accent transition-all duration-300 ease-out hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
                   style={{
                     backgroundColor: isActive
                       ? solutionDotColorById[
@@ -230,7 +230,7 @@ export default function SolutionCarousel({
           </div>
 
           <div className="flex items-center justify-end gap-xs">
-            <button className="solution-carousel-prev flex h-14 w-14 items-center justify-center rounded-none border border-border bg-white/40 text-foreground">
+            <button className="solution-carousel-prev flex h-14 w-14 cursor-pointer items-center justify-center rounded-none border border-border bg-white/40 text-foreground">
               <span aria-hidden className="text-2xl leading-none">
                 <Image
                   src={"/icon/slider/arrow_left.svg"}
@@ -240,7 +240,7 @@ export default function SolutionCarousel({
                 />
               </span>
             </button>
-            <button className="solution-carousel-next flex h-14 w-14 items-center justify-center rounded-none border border-border bg-white/40 text-foreground">
+            <button className="solution-carousel-next flex h-14 w-14 cursor-pointer items-center justify-center rounded-none border border-border bg-white/40 text-foreground">
               <span aria-hidden className="text-2xl leading-none">
                 <Image
                   src={"/icon/slider/arrow_forward.svg"}
