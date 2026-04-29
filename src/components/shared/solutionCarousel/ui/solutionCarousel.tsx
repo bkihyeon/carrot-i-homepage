@@ -1,7 +1,9 @@
 "use client";
 
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Swiper as SwiperInstance } from "swiper";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -39,6 +41,12 @@ const solutionLogoById = {
     height: 1172,
     className: "w-[15rem] tablet:w-[40rem]",
   },
+} as const;
+
+const solutionDotColorById = {
+  mes: "var(--token-color-primary)",
+  cast: "#9333EA",
+  "financial-system": "#16A34A",
 } as const;
 
 function SolutionVisual({
@@ -149,6 +157,9 @@ function SolutionCard({
 export default function SolutionCarousel({
   className = "",
 }: SolutionCarouselProps) {
+  const swiperRef = useRef<SwiperInstance | null>(null);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
   return (
     <section className={className}>
       <div className="desktop:hidden">
@@ -166,6 +177,12 @@ export default function SolutionCarousel({
             <Swiper
               modules={[Autoplay, Navigation]}
               autoplay={{ delay: 10000, disableOnInteraction: false }}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              onSlideChange={(swiper) => {
+                setActiveSlideIndex(swiper.activeIndex);
+              }}
               navigation={{
                 prevEl: ".solution-carousel-prev",
                 nextEl: ".solution-carousel-next",
@@ -184,8 +201,35 @@ export default function SolutionCarousel({
           </div>
         </div>
 
-        <div className="flex border border-border bg-secondary p-md ">
-          <div className="flex w-full items-center justify-end gap-xs">
+        <div className="flex items-center justify-between border border-border bg-secondary py-md px-xl">
+          <div className="flex items-center gap-[0.625rem]">
+            {solutionSlides.map((slide, index) => {
+              const isActive = activeSlideIndex === index;
+
+              return (
+                <button
+                  key={slide.id}
+                  type="button"
+                  aria-label={`${slide.title} 슬라이드로 이동`}
+                  aria-current={isActive ? "true" : undefined}
+                  className="h-5 w-5 rounded-full bg-accent transition-all duration-300 ease-out hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+                  style={{
+                    backgroundColor: isActive
+                      ? solutionDotColorById[
+                          slide.id as keyof typeof solutionDotColorById
+                        ]
+                      : undefined,
+                  }}
+                  onClick={() => {
+                    swiperRef.current?.slideTo(index);
+                    setActiveSlideIndex(index);
+                  }}
+                />
+              );
+            })}
+          </div>
+
+          <div className="flex items-center justify-end gap-xs">
             <button className="solution-carousel-prev flex h-14 w-14 items-center justify-center rounded-none border border-border bg-white/40 text-foreground">
               <span aria-hidden className="text-2xl leading-none">
                 <Image
