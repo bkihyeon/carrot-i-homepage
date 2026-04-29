@@ -107,13 +107,13 @@ export default function Footer() {
           <div className="flex w-full max-w-none flex-wrap items-center gap-2 tablet:max-w-[263px] tablet:gap-3 tablet:whitespace-nowrap">
             <OpenLegalDocumentButton
               documentType="privacy"
-              className="type-body font-bold text-[#52525B] transition-colors hover:text-foreground"
+              className="type-body font-bold text-[#52525B] transition-colors hover:text-foreground cursor-pointer"
             >
               개인정보처리방침
             </OpenLegalDocumentButton>
             <OpenLegalDocumentButton
               documentType="no-email-collection"
-              className="type-body text-[#52525B] transition-colors hover:text-foreground"
+              className="type-body text-[#52525B] transition-colors hover:text-foreground cursor-pointer"
             >
               이메일무단수집거부
             </OpenLegalDocumentButton>

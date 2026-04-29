@@ -72,7 +72,7 @@ export default function ModalShell({
                 width={24}
                 height={24}
                 aria-hidden
-                className="h-6 w-6"
+                className="h-6 w-6 cursor-pointer"
               />
             </button>
           </header>
