@@ -1,5 +1,4 @@
 import MediaPlaceholder from "@/components/main/ui/media-placeholder";
-import NextPicture from "@/components/shared/nextPicture/ui/nextPicture";
 import PictureExplain from "@/components/shared/pictureExplain";
 import { pictureExplainItems } from "@/components/shared/pictureExplain/model/pictureExplain.data";
 import Image from "next/image";
@@ -13,32 +12,11 @@ import SolutionCarousel from "@/components/shared/solutionCarousel/ui/solutionCa
 
 export default function MainPage() {
   return (
-    <section className="content-shell flex flex-col px-xs pt-md pb-4xl tablet:px-2xl tablet:pt-xl tablet:pb-5xl desktop:px-0 desktop:pt-2xl">
-      <div>
-        {/*TODO: 나중에 주는 파일로 대체*/}
-        <MediaPlaceholder variant="main" />
-        {/*사진 다음에 나오는 컴포넌트*/}
-        <NextPicture
-          title={
-            <>
-              결정으로 이어주는
-              <br className="desktop:hidden" /> AI 데이터 플로우
-            </>
-          }
-          description={
-            <>
-              데이터를 예측과 판단까지 하나의 흐름으로
-              <br />
-              연결해 실행 가능한 방향을 제시합니다.
-            </>
-          }
-          descriptionClassName="font-sans text-[1.125rem] leading-[140%] font-light uppercase text-foreground"
-          inquiryDescriptionClassName="font-sans text-[1rem] leading-[1.5rem] font-medium tracking-[0] text-foreground"
-          inquiryDes={
-            "캐롯아이는 다양한 데이터를 수집·정제해 AI가 활용할 수 있는 구조로 연결하고, 예측·시뮬레이션·설명까지 하나의 흐름으로 이어 실행 가능한 결과를 만듭니다."
-          }
-          className="border-t-0"
-        />
+    <section className="flex flex-col  pb-4xl tablet:pb-5xl ">
+      {/*TODO: 나중에 주는 파일로 대체*/}
+      <MediaPlaceholder variant="main" />
+
+      <div className="content-shell px-xs tablet:px-2xl desktop:px-0">
         {/* 4 + 1 사각형 디자인 사진 */}
         <div className="grid grid-cols-1 border-l border-border tablet:grid-cols-5 desktop:grid-cols-5">
           {pictureExplainItems.map((item) => (
