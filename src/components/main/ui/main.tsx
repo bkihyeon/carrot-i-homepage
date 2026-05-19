@@ -1,12 +1,8 @@
 import MediaPlaceholder from "@/components/main/ui/media-placeholder";
-import PictureExplain from "@/components/shared/pictureExplain";
-import { pictureExplainItems } from "@/components/shared/pictureExplain/model/pictureExplain.data";
 import Image from "next/image";
-import DecorativeArrowCard from "@/components/shared/decorativeArrowCard";
 
 import {
   OurTechnologyData,
-  OurSolutionData,
   OurSolutionBoxData,
 } from "@/components/main/model/main.data";
 
@@ -71,13 +67,19 @@ export default function MainPage() {
             </div>
           </OurComponent>
         </div>
+      </div>
 
-        {/* 왜 데이터와 어쩌구 */}
-        <div className="grid grid-cols-1 items-stretch tablet:h-[31.875rem] tablet:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] desktop:h-auto desktop:grid-cols-[431px_649px]">
-          <WhyAI className="border-t-0 tablet:border-l tablet:border-r-0" />
-          <WhyAIIssuesPanel />
+      {/* 왜 데이터와 어쩌구 */}
+      <section className="w-full bg-primary-foreground">
+        <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
+          <div className="flex w-full max-w-[67.5rem] flex-col items-center gap-xl self-stretch pt-md pb-3xl tablet:flex-row tablet:gap-0 tablet:pt-0 tablet:pb-0">
+            <WhyAI className="tablet:flex-[1_0_0] tablet:self-stretch" />
+            <WhyAIIssuesPanel className="tablet:flex-[1_0_0] tablet:self-stretch" />
+          </div>
         </div>
+      </section>
 
+      <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
         {/*데코레이터 배너*/}
         <ImpactBanner />
         {/*AI의사 결정 아키텍쳐 텍스트 + 그림 */}
