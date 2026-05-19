@@ -8,6 +8,25 @@ type MediaPlaceholderProps = {
   variant?: MediaPlaceholderVariant;
 };
 
+const heroImages = {
+  main: {
+    src: "/image/hero/mainHero.png",
+    alt: "캐롯아이 메인 히어로 이미지",
+  },
+  mes: {
+    src: "/image/hero/mesHero.png",
+    alt: "캐롯 MES 히어로 이미지",
+  },
+  cast: {
+    src: "/image/hero/castHero.png",
+    alt: "캐롯 CAST 히어로 이미지",
+  },
+  financial: {
+    src: "/image/hero/financialHero.png",
+    alt: "캐롯 금융 시스템 히어로 이미지",
+  },
+} as const;
+
 const heroWordmark = {
   main: {
     src: "/image/hero/mainWord.svg",
@@ -16,66 +35,79 @@ const heroWordmark = {
     height: 100,
   },
   mes: {
-    src: "/image/hero/mesWord.svg",
+    src: "/image/hero/mesWord.png",
     alt: "mes hero wordmark",
-    width: 405,
-    height: 208,
+    width: 4312,
+    height: 2304,
   },
   cast: {
-    src: "/image/hero/castWord.svg",
+    src: "/image/hero/castWord.png",
     alt: "cast hero wordmark",
-    width: 440,
-    height: 208,
+    width: 4312,
+    height: 2304,
   },
   financial: {
-    src: "/image/hero/financialWord.svg",
+    src: "/image/hero/financialWord.png",
     alt: "financial hero wordmark",
-    width: 357,
-    height: 176,
+    width: 2113,
+    height: 1000,
   },
 } as const;
 
-const mainHeroRows = Array.from({ length: 7 }, (_, rowIndex) =>
-  Array.from({ length: 22 }, (_, columnIndex) => ({
-    key: `${rowIndex}-${columnIndex}`,
-  })),
-);
+const heroImageSizes =
+  "(max-width: 799px) 100vw, (max-width: 1279px) 100vw, 2160px";
 
-function HeroGrid({ variant }: { variant: MediaPlaceholderVariant }) {
+function HeroImage({ variant }: { variant: MediaPlaceholderVariant }) {
+  const heroImage = heroImages[variant];
   const isMain = variant === "main";
+  const isFinancial = variant === "financial";
   const wordmark = heroWordmark[variant];
   const wordmarkClassName = isMain
     ? "h-12 w-auto max-w-full object-contain tablet:h-16 desktop:h-[6.25rem]"
     : "h-auto w-full max-w-[20rem] object-contain tablet:max-w-[30rem] desktop:max-w-[36rem]";
 
   return (
-    <div
-      className={`relative flex h-[21rem] w-full flex-col items-start overflow-hidden border border-border tablet:h-[28rem] desktop:h-[43.75rem] ${isMain ? "bg-primary" : "bg-background"}`.trim()}
-    >
-      {mainHeroRows.map((row, rowIndex) => (
-        <div
-          key={`main-hero-row-${rowIndex}`}
-          className="flex h-12 items-start self-stretch border-b border-border last:border-b-0 tablet:h-16 desktop:h-[6.25rem]"
-        >
-          {row.map((cell) => (
-            <div
-              key={cell.key}
-              className={`h-full flex-[1_0_0] border-r border-border last:border-r-0 ${isMain ? "bg-primary" : "bg-background"}`.trim()}
-            />
-          ))}
+    <div className="relative h-[21rem] w-full overflow-hidden border border-border bg-background tablet:h-[28rem] desktop:h-[43.75rem]">
+      <Image
+        src={heroImage.src}
+        alt={heroImage.alt}
+        fill
+        preload
+        quality={100}
+        sizes={heroImageSizes}
+        className="object-cover object-center"
+      />
+      {isMain ? (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-xl tablet:p-2xl desktop:p-3xl">
+          <Image
+            src={wordmark.src}
+            alt={wordmark.alt}
+            width={wordmark.width}
+            height={wordmark.height}
+            sizes="(max-width: 799px) 24rem, (max-width: 1279px) 36rem, 56rem"
+            className={wordmarkClassName}
+          />
         </div>
-      ))}
-
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-xl tablet:p-2xl desktop:p-3xl">
+      ) : isFinancial ? (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-xl tablet:p-2xl desktop:p-3xl">
+          <Image
+            src={wordmark.src}
+            alt={wordmark.alt}
+            width={wordmark.width}
+            height={wordmark.height}
+            sizes="(max-width: 799px) 15rem, (max-width: 1279px) 24rem, 33rem"
+            className="h-auto w-full max-w-[20rem] object-contain tablet:max-w-[30rem] desktop:max-w-[42rem]"
+          />
+        </div>
+      ) : (
         <Image
           src={wordmark.src}
           alt={wordmark.alt}
-          width={wordmark.width}
-          height={wordmark.height}
-          sizes="(max-width: 799px) 24rem, (max-width: 1279px) 36rem, 56rem"
-          className={wordmarkClassName}
+          fill
+          sizes={heroImageSizes}
+          className="pointer-events-none object-cover object-center"
         />
-      </div>
+      )}
     </div>
   );
 }
@@ -89,7 +121,7 @@ export default function MediaPlaceholder({
     <div
       className={`flex self-stretch flex-col items-center justify-center ${className}`.trim()}
     >
-      <HeroGrid variant={variant} />
+      <HeroImage variant={variant} />
       <span className="sr-only">{label}</span>
     </div>
   );
