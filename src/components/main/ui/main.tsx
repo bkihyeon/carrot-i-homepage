@@ -27,14 +27,14 @@ export default function MainPage() {
         {/* Our Technology */}
         <div className="pt-[var(--token-space-24)] pb-[var(--token-space-10)]">
           <OurComponent {...OurTechnologyData}>
-            <div className="grid grid-cols-1 gap-sm tablet:grid-cols-2 desktop:grid-cols-4 ">
+            <div className="grid grid-cols-1 gap-sm tablet:grid-cols-4 ">
               {OurSolutionBoxData.map((item, index) => (
                 <article
                   key={item.imageAlt}
-                  className="flex flex-col items-start gap-md border border-ring bg-background p-xl rounded-2xl"
+                  className="flex self-stretch items-start gap-md rounded-2xl border border-ring bg-background p-md tablet:flex-col tablet:p-xl"
                 >
-                  <div className="flex self-stretch items-start justify-between">
-                    <div className="relative h-[7.5rem] w-[7.5rem]">
+                  <div className="flex shrink-0 self-stretch items-start justify-between tablet:w-full">
+                    <div className="relative desktop:h-[7.5rem] desktop:w-[7.5rem] tablet:h-[5rem] tablet:w-[5rem] h-[6rem] w-[6rem]">
                       <Image
                         src={item.imageSrc}
                         alt={item.imageAlt}
@@ -43,11 +43,7 @@ export default function MainPage() {
                         className="object-contain"
                       />
                     </div>
-                    <div
-                      className={
-                        "h-[2rem] w-[2rem] desktop:h-[2.5rem] desktop:w-[2.5rem] bg-(--color-secondary) rounded-2xl items-center justify-center flex"
-                      }
-                    >
+                    <div className="hidden h-[2rem] w-[2rem] items-center justify-center rounded-2xl bg-(--color-secondary) tablet:flex desktop:h-[2.5rem] desktop:w-[2.5rem]">
                       <Image
                         src={"/icon/main/slider/arrow_forward.svg"}
                         alt={item.imageAlt}
@@ -57,8 +53,8 @@ export default function MainPage() {
                       />
                     </div>
                   </div>
-                  <div className="flex self-stretch items-end gap-md justify-between ">
-                    <div className="flex flex-col gap-3">
+                  <div className="flex min-w-0 flex-1 self-stretch items-start justify-between gap-md tablet:items-end">
+                    <div className="flex min-w-0 flex-1 flex-col self-stretch items-start gap-3">
                       <h3 className="break-keep text-heading-4 leading-[var(--token-text-heading-4-line-height)] font-bold tracking-[var(--token-text-heading-4-letter-spacing)]">
                         {item.title}
                       </h3>
@@ -66,7 +62,9 @@ export default function MainPage() {
                         {item.description}
                       </p>
                     </div>
-                    <div className={"text-muted-foreground"}>0{index + 1}</div>
+                    <div className="shrink-0 self-end font-normal text-muted-foreground">
+                      0{index + 1}
+                    </div>
                   </div>
                 </article>
               ))}
