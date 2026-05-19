@@ -3,42 +3,75 @@ import PictureExplain from "@/components/shared/pictureExplain";
 import { pictureExplainItems } from "@/components/shared/pictureExplain/model/pictureExplain.data";
 import Image from "next/image";
 import DecorativeArrowCard from "@/components/shared/decorativeArrowCard";
+
+import {
+  OurTechnologyData,
+  OurSolutionData,
+  OurSolutionBoxData,
+} from "@/components/main/model/main.data";
+
 import WhyAI from "@/components/main/ui/whyAI";
 import WhyAIIssuesPanel from "@/components/main/ui/whyAIIssuesPanel";
 import ImpactBanner from "@/components/main/ui/impactBanner";
 import AIDecisionArchitecture from "@/components/shared/aiDecisionArchitecture/ui/aiDecisionArchitecture";
 import SolutionsIntro from "@/components/main/ui/solutionsIntro";
 import SolutionCarousel from "@/components/shared/solutionCarousel/ui/solutionCarousel";
+import OurComponent from "@/components/main/ui/ourComponent";
 
 export default function MainPage() {
   return (
     <section className="flex flex-col  pb-4xl tablet:pb-5xl ">
-      {/*TODO: 나중에 주는 파일로 대체*/}
       <MediaPlaceholder variant="main" />
 
       <div className="content-shell px-xs tablet:px-2xl desktop:px-0">
-        {/* 4 + 1 사각형 디자인 사진 */}
-        <div className="grid grid-cols-1 border-l border-border tablet:grid-cols-5 desktop:grid-cols-5">
-          {pictureExplainItems.map((item) => (
-            <PictureExplain
-              key={item.imageAlt}
-              className="max-w-none border-0 border-r border-b border-border tablet:border-b"
-              media={
-                <div className="relative h-[10rem] w-[10rem] tablet:h-[10rem] tablet:w-[10rem] desktop:h-[13.5rem] desktop:w-[13.5rem]">
-                  <Image
-                    src={item.imageSrc}
-                    alt={item.imageAlt}
-                    fill
-                    sizes="(max-width: 1279px) 10rem, 13.5rem"
-                    className="object-contain"
-                  />
-                </div>
-              }
-              title={item.title}
-              description={item.description}
-            />
-          ))}
-          <DecorativeArrowCard className="border-0 border-r border-b border-border tablet:border-b-0" />
+        {/* Our Technology */}
+        <div className="pt-[var(--token-space-24)] pb-[var(--token-space-10)]">
+          <OurComponent {...OurTechnologyData}>
+            <div className="grid grid-cols-1 gap-sm tablet:grid-cols-2 desktop:grid-cols-4 ">
+              {OurSolutionBoxData.map((item, index) => (
+                <article
+                  key={item.imageAlt}
+                  className="flex flex-col items-start gap-md border border-ring bg-background p-xl rounded-2xl"
+                >
+                  <div className="flex self-stretch items-start justify-between">
+                    <div className="relative h-[7.5rem] w-[7.5rem]">
+                      <Image
+                        src={item.imageSrc}
+                        alt={item.imageAlt}
+                        fill
+                        sizes="7.5rem"
+                        className="object-contain"
+                      />
+                    </div>
+                    <div
+                      className={
+                        "h-[2rem] w-[2rem] desktop:h-[2.5rem] desktop:w-[2.5rem] bg-(--color-secondary) rounded-2xl items-center justify-center flex"
+                      }
+                    >
+                      <Image
+                        src={"/icon/main/slider/arrow_forward.svg"}
+                        alt={item.imageAlt}
+                        height={24}
+                        width={24}
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex self-stretch items-end gap-md justify-between ">
+                    <div className="flex flex-col gap-3">
+                      <h3 className="break-keep text-heading-4 leading-[var(--token-text-heading-4-line-height)] font-bold tracking-[var(--token-text-heading-4-letter-spacing)]">
+                        {item.title}
+                      </h3>
+                      <p className="font-normal text-[1rem] break-keep text-foreground">
+                        {item.description}
+                      </p>
+                    </div>
+                    <div className={"text-muted-foreground"}>0{index + 1}</div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </OurComponent>
         </div>
 
         {/* 왜 데이터와 어쩌구 */}
