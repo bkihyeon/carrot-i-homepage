@@ -23,15 +23,15 @@ export default function MainPage() {
     <section className="flex flex-col  pb-4xl tablet:pb-5xl ">
       <MediaPlaceholder variant="main" />
 
-      <div className="content-shell px-xs tablet:px-2xl desktop:px-0">
+      <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
         {/* Our Technology */}
-        <div className="pt-[var(--token-space-24)] pb-[var(--token-space-10)]">
+        <div className=" pt-[var(--spacing-2xl)] tablet:pt-[var(--token-space-24)] pb-[var(--token-space-10)]">
           <OurComponent {...OurTechnologyData}>
             <div className="grid grid-cols-1 gap-sm tablet:grid-cols-4 ">
               {OurSolutionBoxData.map((item, index) => (
                 <article
                   key={item.imageAlt}
-                  className="flex self-stretch items-start gap-md rounded-2xl border border-ring bg-background p-md tablet:flex-col tablet:p-xl"
+                  className="flex self-stretch items-center gap-md rounded-2xl border border-ring bg-background p-md tablet:flex-col tablet:items-start tablet:p-xl"
                 >
                   <div className="flex shrink-0 self-stretch items-start justify-between tablet:w-full">
                     <div className="relative desktop:h-[7.5rem] desktop:w-[7.5rem] tablet:h-[5rem] tablet:w-[5rem] h-[6rem] w-[6rem]">
@@ -55,10 +55,10 @@ export default function MainPage() {
                   </div>
                   <div className="flex min-w-0 flex-1 self-stretch items-start justify-between gap-md tablet:items-end">
                     <div className="flex min-w-0 flex-1 flex-col self-stretch items-start gap-3">
-                      <h3 className="break-keep text-heading-4 leading-[var(--token-text-heading-4-line-height)] font-bold tracking-[var(--token-text-heading-4-letter-spacing)]">
+                      <h3 className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-bold tracking-[0.00438rem] text-foreground tablet:text-heading-4 tablet:leading-[var(--token-text-heading-4-line-height)] tablet:tracking-[var(--token-text-heading-4-letter-spacing)]">
                         {item.title}
                       </h3>
-                      <p className="font-normal text-[1rem] break-keep text-foreground">
+                      <p className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-normal tracking-[0.00438rem] text-foreground tablet:text-[1rem] tablet:leading-normal tablet:tracking-[0]">
                         {item.description}
                       </p>
                     </div>
