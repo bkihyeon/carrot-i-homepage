@@ -79,9 +79,14 @@ export default function MainPage() {
         </div>
       </section>
 
+      {/*데코레이터 배너*/}
+      <section className="w-full border border-border bg-[linear-gradient(180deg,#09090b_0%,#562b0c_100%)]">
+        <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
+          <ImpactBanner />
+        </div>
+      </section>
+
       <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
-        {/*데코레이터 배너*/}
-        <ImpactBanner />
         {/*AI의사 결정 아키텍쳐 텍스트 + 그림 */}
         <AIDecisionArchitecture />
         {/*캐러셀 위 타이틀*/}
