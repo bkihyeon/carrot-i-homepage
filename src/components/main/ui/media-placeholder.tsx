@@ -75,8 +75,7 @@ function MainHeroImage() {
             </h1>
             <p className="break-keep font-sans text-[0.875rem] leading-[1.55] font-medium tracking-[0] tablet:text-[1rem]">
               캐롯아이는 다양한 데이터를 수집·정제해
-              <br className="tablet:hidden" />
-              AI가 활용할 수 있는 구조로 연결하고,
+              <br className="tablet:hidden" /> AI가 활용할 수 있는 구조로 연결하고,
               <br />
               예측·시뮬레이션·설명까지 하나의 흐름으로 이어
               <br className="tablet:hidden" />
