@@ -20,6 +20,7 @@ export interface SolutionBoxType {
   description: ReactNode;
   imageSrc: string;
   imageAlt: string;
+  link: string;
 }
 
 export const OurTechnologyData: OurPropsType = {
@@ -116,6 +117,7 @@ export const OurSolutionBoxData: SolutionBoxType[] = [
       "데이터를 기반으로 운영을 관리하고 생산·재고·공정을 최적화하는 AI 기반 MES 솔루션",
     imageSrc: "/image/hero/mesHero.png",
     imageAlt: "MES 이미지",
+    link: "/mes",
   },
   {
     title: "Preci.CAST",
@@ -124,6 +126,7 @@ export const OurSolutionBoxData: SolutionBoxType[] = [
       "데이터를 기반으로 상권을 분석하고 수요와 매출까지 예측하는 AI 솔루션",
     imageSrc: "/image/hero/castHero.png",
     imageAlt: "CAST 이미지",
+    link: "/cast",
   },
   {
     title: "Financial System",
@@ -132,5 +135,6 @@ export const OurSolutionBoxData: SolutionBoxType[] = [
       "데이터부터 채널까지, 금융을 하나의 흐름으로 끊김 없이 작동하는 안정적인 금융 인프라",
     imageSrc: "/image/hero/financialHero.png",
     imageAlt: "Finance 이미지",
+    link: "/financial_system",
   },
 ];

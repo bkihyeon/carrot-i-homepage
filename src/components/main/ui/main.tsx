@@ -13,6 +13,7 @@ import WhyAIIssuesPanel from "@/components/main/ui/whyAIIssuesPanel";
 import ImpactBanner from "@/components/main/ui/impactBanner";
 import MainAiArchitecture from "@/components/main/ui/mainAiArchitecture";
 import OurComponent from "@/components/main/ui/ourComponent";
+import Link from "next/link";
 
 const solutionCategoryClassName: Record<string, string> = {
   "AI ARCHITECTURE": "text-primary",
@@ -105,41 +106,43 @@ export default function MainPage() {
                   key={item.imageAlt}
                   className="overflow-hidden rounded-2xl border border-ring bg-background"
                 >
-                  <div className="relative h-[12.5rem] w-full tablet:h-[11.25rem] desktop:h-[12.875rem]">
-                    <Image
-                      src={item.imageSrc}
-                      alt={item.imageAlt}
-                      fill
-                      sizes="(max-width: 799px) calc(100vw - 2.5rem), (max-width: 1279px) calc((100vw - 5rem) / 3), 21.5rem"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-xs p-xl">
-                    <div>
-                      <p
-                        className={`font-sans text-body-mini leading-[var(--token-text-body-mini-line-height)] font-bold tracking-[0] ${
-                          solutionCategoryClassName[item.category] ??
-                          "text-primary"
-                        }`}
-                      >
-                        {item.category}
-                      </p>
-                      <h3
-                        className="break-keep text-[1.5rem] leading-[140%] font-bold text-foreground"
-                        style={{
-                          fontFamily:
-                            'var(--font-definitions-font-family-headings, "Noto Sans KR")',
-                          letterSpacing:
-                            "var(--heading-3-letter-spacing, -0.0625rem)",
-                        }}
-                      >
-                        {item.title}
-                      </h3>
+                  <Link href={item.link}>
+                    <div className="relative h-[12.5rem] w-full tablet:h-[11.25rem] desktop:h-[12.875rem]">
+                      <Image
+                        src={item.imageSrc}
+                        alt={item.imageAlt}
+                        fill
+                        sizes="(max-width: 799px) calc(100vw - 2.5rem), (max-width: 1279px) calc((100vw - 5rem) / 3), 21.5rem"
+                        className="object-cover"
+                      />
                     </div>
-                    <p className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-normal tracking-[0.00438rem] text-foreground">
-                      {item.description}
-                    </p>
-                  </div>
+                    <div className="flex flex-col gap-xs p-xl">
+                      <div>
+                        <p
+                          className={`font-sans text-body-mini leading-[var(--token-text-body-mini-line-height)] font-bold tracking-[0] ${
+                            solutionCategoryClassName[item.category] ??
+                            "text-primary"
+                          }`}
+                        >
+                          {item.category}
+                        </p>
+                        <h3
+                          className="break-keep text-[1.5rem] leading-[140%] font-bold text-foreground"
+                          style={{
+                            fontFamily:
+                              'var(--font-definitions-font-family-headings, "Noto Sans KR")',
+                            letterSpacing:
+                              "var(--heading-3-letter-spacing, -0.0625rem)",
+                          }}
+                        >
+                          {item.title}
+                        </h3>
+                      </div>
+                      <p className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-normal tracking-[0.00438rem] text-foreground">
+                        {item.description}
+                      </p>
+                    </div>
+                  </Link>
                 </article>
               ))}
             </div>
