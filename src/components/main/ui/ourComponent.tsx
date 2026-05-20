@@ -8,7 +8,7 @@ export default function OurComponent({
   children,
 }: OurPropsType) {
   return (
-    <section className={"flex flex-col gap-2 tablet:gap-4 desktop:gap-6"}>
+    <section className={"flex flex-col gap-3"}>
       <div className="flex gap-2">
         <Image
           src={"/icon/main/our_icon.svg"}
@@ -25,7 +25,9 @@ export default function OurComponent({
           <h1 className="text-heading-4 leading-[var(--token-text-heading-4-line-height)] font-bold tracking-[var(--token-text-heading-4-letter-spacing)] tablet:text-heading-2 tablet:leading-[140%] tablet:tracking-[var(--token-text-heading-2-letter-spacing)]">
             {title}
           </h1>
-          <p className="text-body-regular font-normal">{subtitle}</p>
+          {subtitle ? (
+            <p className="text-body-regular font-normal">{subtitle}</p>
+          ) : null}
         </div>
         {children}
       </div>

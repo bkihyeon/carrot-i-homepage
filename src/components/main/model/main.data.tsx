@@ -7,8 +7,16 @@ export interface OurPropsType {
   children?: ReactNode;
 }
 
+export interface TechnologyBoxType {
+  title: ReactNode;
+  description: ReactNode;
+  imageSrc: string;
+  imageAlt: string;
+}
+
 export interface SolutionBoxType {
   title: ReactNode;
+  category: string;
   description: ReactNode;
   imageSrc: string;
   imageAlt: string;
@@ -32,7 +40,7 @@ export const OurSolutionData: OurPropsType = {
   ),
 };
 
-export const OurSolutionBoxData: SolutionBoxType[] = [
+export const OurTechnologyBoxData: TechnologyBoxType[] = [
   {
     title: (
       <>
@@ -97,5 +105,32 @@ export const OurSolutionBoxData: SolutionBoxType[] = [
     ),
     imageSrc: "/icon/main/our-tech4.png",
     imageAlt: "우리테크아이콘4",
+  },
+];
+
+export const OurSolutionBoxData: SolutionBoxType[] = [
+  {
+    title: "Preci.MES",
+    category: "AI ARCHITECTURE",
+    description:
+      "데이터를 기반으로 운영을 관리하고 생산·재고·공정을 최적화하는 AI 기반 MES 솔루션",
+    imageSrc: "/image/hero/mesHero.png",
+    imageAlt: "MES 이미지",
+  },
+  {
+    title: "Preci.CAST",
+    category: "RETAIL & LOCATION",
+    description:
+      "데이터를 기반으로 상권을 분석하고 수요와 매출까지 예측하는 AI 솔루션",
+    imageSrc: "/image/hero/castHero.png",
+    imageAlt: "CAST 이미지",
+  },
+  {
+    title: "Financial System",
+    category: "FINANCE",
+    description:
+      "데이터부터 채널까지, 금융을 하나의 흐름으로 끊김 없이 작동하는 안정적인 금융 인프라",
+    imageSrc: "/image/hero/financialHero.png",
+    imageAlt: "Finance 이미지",
   },
 ];

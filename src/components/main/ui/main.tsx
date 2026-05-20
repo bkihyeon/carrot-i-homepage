@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import {
   OurTechnologyData,
+  OurTechnologyBoxData,
+  OurSolutionData,
   OurSolutionBoxData,
 } from "@/components/main/model/main.data";
 
@@ -10,9 +12,13 @@ import WhyAI from "@/components/main/ui/whyAI";
 import WhyAIIssuesPanel from "@/components/main/ui/whyAIIssuesPanel";
 import ImpactBanner from "@/components/main/ui/impactBanner";
 import MainAiArchitecture from "@/components/main/ui/mainAiArchitecture";
-import SolutionsIntro from "@/components/main/ui/solutionsIntro";
-import SolutionCarousel from "@/components/shared/solutionCarousel/ui/solutionCarousel";
 import OurComponent from "@/components/main/ui/ourComponent";
+
+const solutionCategoryClassName: Record<string, string> = {
+  "AI ARCHITECTURE": "text-primary",
+  "RETAIL & LOCATION": "text-purple-600",
+  FINANCE: "text-green-600",
+};
 
 export default function MainPage() {
   return (
@@ -24,7 +30,7 @@ export default function MainPage() {
         <div className=" pt-[var(--spacing-2xl)] tablet:pt-[var(--token-space-24)] pb-[var(--token-space-10)]">
           <OurComponent {...OurTechnologyData}>
             <div className="grid grid-cols-1 gap-sm tablet:grid-cols-4 ">
-              {OurSolutionBoxData.map((item, index) => (
+              {OurTechnologyBoxData.map((item, index) => (
                 <article
                   key={item.imageAlt}
                   className="flex self-stretch items-center gap-md rounded-2xl border border-ring bg-background p-md tablet:flex-col tablet:items-start tablet:p-xl"
@@ -90,10 +96,55 @@ export default function MainPage() {
       <MainAiArchitecture />
 
       <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
-        {/*캐러셀 위 타이틀*/}
-        <SolutionsIntro />
-        {/*메인페이지 캐러셀*/}
-        <SolutionCarousel />
+        {/* Our Solution */}
+        <div className=" pt-[var(--spacing-2xl)] tablet:pt-[var(--token-space-24)] pb-[var(--token-space-10)]">
+          <OurComponent {...OurSolutionData}>
+            <div className="grid grid-cols-1 gap-4 tablet:grid-cols-3">
+              {OurSolutionBoxData.map((item) => (
+                <article
+                  key={item.imageAlt}
+                  className="overflow-hidden rounded-2xl border border-ring bg-background"
+                >
+                  <div className="relative h-[12.5rem] w-full tablet:h-[11.25rem] desktop:h-[12.875rem]">
+                    <Image
+                      src={item.imageSrc}
+                      alt={item.imageAlt}
+                      fill
+                      sizes="(max-width: 799px) calc(100vw - 2.5rem), (max-width: 1279px) calc((100vw - 5rem) / 3), 21.5rem"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-xs p-xl">
+                    <div>
+                      <p
+                        className={`font-sans text-body-mini leading-[var(--token-text-body-mini-line-height)] font-bold tracking-[0] ${
+                          solutionCategoryClassName[item.category] ??
+                          "text-primary"
+                        }`}
+                      >
+                        {item.category}
+                      </p>
+                      <h3
+                        className="break-keep text-[1.5rem] leading-[140%] font-bold text-foreground"
+                        style={{
+                          fontFamily:
+                            'var(--font-definitions-font-family-headings, "Noto Sans KR")',
+                          letterSpacing:
+                            "var(--heading-3-letter-spacing, -0.0625rem)",
+                        }}
+                      >
+                        {item.title}
+                      </h3>
+                    </div>
+                    <p className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-normal tracking-[0.00438rem] text-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </OurComponent>
+        </div>
       </div>
     </section>
   );
