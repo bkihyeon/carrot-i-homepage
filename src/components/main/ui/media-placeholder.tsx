@@ -55,7 +55,7 @@ function MainHeroImage() {
   const heroImage = heroImages.main;
 
   return (
-    <div className="relative h-[28.75rem] tablet:h-[41.25rem] w-full overflow-hidden border-y border-border bg-background desktop:aspect-[5120/2640] desktop:h-auto">
+    <div className="relative h-[28.75rem] w-full overflow-hidden border-y border-border bg-background tablet:h-[41.25rem] desktop:aspect-[5120/2640] desktop:h-auto">
       <Image
         src={heroImage.src}
         alt={heroImage.alt}
@@ -65,7 +65,7 @@ function MainHeroImage() {
         sizes="100vw"
         className="object-cover object-[58%_center] tablet:object-center"
       />
-      <div className="pointer-events-none absolute inset-0 flex items-center">
+      <div className="pointer-events-none absolute inset-x-0 top-0 flex h-full items-center justify-center desktop:h-[min(100%,calc(100dvh-6.25rem))]">
         <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
           <div className="flex w-full max-w-[20rem] flex-col gap-md text-foreground tablet:max-w-none tablet:gap-lg">
             <h1 className="break-keep font-sans text-[1.875rem] leading-[1.18] tracking-[0] tablet:text-[2.625rem] desktop:text-[3.375rem]">
