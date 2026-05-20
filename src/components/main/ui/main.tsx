@@ -9,7 +9,7 @@ import {
 import WhyAI from "@/components/main/ui/whyAI";
 import WhyAIIssuesPanel from "@/components/main/ui/whyAIIssuesPanel";
 import ImpactBanner from "@/components/main/ui/impactBanner";
-import AIDecisionArchitecture from "@/components/shared/aiDecisionArchitecture/ui/aiDecisionArchitecture";
+import MainAiArchitecture from "@/components/main/ui/mainAiArchitecture";
 import SolutionsIntro from "@/components/main/ui/solutionsIntro";
 import SolutionCarousel from "@/components/shared/solutionCarousel/ui/solutionCarousel";
 import OurComponent from "@/components/main/ui/ourComponent";
@@ -80,15 +80,16 @@ export default function MainPage() {
       </section>
 
       {/*데코레이터 배너*/}
-      <section className="w-full border border-border bg-[linear-gradient(180deg,#09090b_0%,#562b0c_100%)]">
+      <section className="w-full bg-[linear-gradient(180deg,#09090b_0%,#562b0c_100%)]">
         <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
           <ImpactBanner />
         </div>
       </section>
 
+      {/*AI의사 결정 아키텍쳐 텍스트 + 그림 */}
+      <MainAiArchitecture />
+
       <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
-        {/*AI의사 결정 아키텍쳐 텍스트 + 그림 */}
-        <AIDecisionArchitecture />
         {/*캐러셀 위 타이틀*/}
         <SolutionsIntro />
         {/*메인페이지 캐러셀*/}
