@@ -106,8 +106,8 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 h-[76px] self-stretch tablet:h-[6.25rem] ${headerSurfaceClassName}`.trim()}
       >
-        <div className="flex h-full w-full items-center justify-between self-stretch p-lg tablet:px-2xl tablet:py-xl desktop:px-3xl">
-          <div className="flex min-w-0 items-center gap-2xl">
+        <div className="relative flex h-full w-full items-center justify-between self-stretch p-lg tablet:px-2xl tablet:py-xl desktop:px-3xl">
+          <div className="flex min-w-0 items-center">
             <Link
               href="/"
               className="shrink-0"
@@ -121,12 +121,14 @@ export default function Header() {
                 priority
               />
             </Link>
+          </div>
 
+          <div className="absolute top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-1/2 tablet:block">
             <HeaderNav items={headerItems} />
           </div>
 
           <div className="hidden tablet:block">
-            <OpenInquiryButton className="inline-flex min-h-8 shrink-0 cursor-pointer items-center justify-center gap-xs rounded-xl bg-secondary px-sm py-2xs text-secondary-foreground shadow-xs transition-colors tablet:min-h-[36px] tablet:px-md tablet:py-xs">
+            <OpenInquiryButton className="inline-flex min-h-8 shrink-0 cursor-pointer items-center justify-center gap-xs rounded-xl bg-primary px-sm py-2xs text-secondary-foreground shadow-xs transition-colors tablet:min-h-[36px] tablet:px-md tablet:py-xs">
               <Image
                 src="/icon/header/inquiry.svg"
                 alt="inquiry"
@@ -158,7 +160,6 @@ export default function Header() {
           </button>
         </div>
       </header>
-
     </div>
   );
 }
