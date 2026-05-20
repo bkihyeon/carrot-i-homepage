@@ -1,5 +1,9 @@
 import Image from "next/image";
 
+type WhyAIIssuesPanelProps = {
+  className?: string;
+};
+
 const whyAiItems = [
   {
     icon: "/icon/whyAI/database_off.svg",
@@ -21,27 +25,27 @@ const whyAiItems = [
   },
 ];
 
-export default function WhyAIIssuesPanel() {
+export default function WhyAIIssuesPanel({
+  className = "",
+}: WhyAIIssuesPanelProps) {
   return (
-    <section className="flex w-full flex-col items-start justify-center bg-secondary tablet:min-h-[420px] tablet:border-l tablet:border-r tablet:border-border desktop:h-[510px] desktop:max-w-[649px]">
-      {whyAiItems.map((item, index) => (
-        <div
+    <section
+      className={`flex w-full flex-col items-start gap-sm bg-transparent tablet:pt-25 tablet:pb-5xl ${className}`.trim()}
+    >
+      {whyAiItems.map((item) => (
+        <article
           key={item.title}
-          className={`flex w-full items-start gap-md px-xl py-xl tablet:gap-lg tablet:px-2xl tablet:py-3xl desktop:px-3xl desktop:py-4xl ${
-            index < whyAiItems.length - 1 ? "border-b border-border" : ""
-          }`}
+          className="flex w-full items-start gap-md rounded-xl border border-ring bg-background px-xl py-xl tablet:min-h-[8.75rem] tablet:gap-lg tablet:px-2xl tablet:py-xl desktop:px-3xl"
         >
           <Image src={item.icon} alt="" width={24} height={24} aria-hidden />
 
-          <div className="flex min-w-0 flex-[1_0_0] flex-col items-start gap-xs text-foreground">
-            <h3 className="type-heading-4 w-full max-w-[180px]">
-              {item.title}
-            </h3>
-            <p className="w-full min-w-0 text-[14px] leading-[21px] tracking-[0.07px] text-foreground">
+          <div className="flex min-w-0 flex-1 flex-col items-start gap-xs text-foreground">
+            <h3 className="type-heading-4 w-full">{item.title}</h3>
+            <p className="w-full min-w-0 break-keep text-[14px] leading-[21px] tracking-[0.07px] text-foreground">
               {item.description}
             </p>
           </div>
-        </div>
+        </article>
       ))}
     </section>
   );

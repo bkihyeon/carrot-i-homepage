@@ -1,82 +1,150 @@
 import MediaPlaceholder from "@/components/main/ui/media-placeholder";
-import NextPicture from "@/components/shared/nextPicture/ui/nextPicture";
-import PictureExplain from "@/components/shared/pictureExplain";
-import { pictureExplainItems } from "@/components/shared/pictureExplain/model/pictureExplain.data";
 import Image from "next/image";
-import DecorativeArrowCard from "@/components/shared/decorativeArrowCard";
+
+import {
+  OurTechnologyData,
+  OurTechnologyBoxData,
+  OurSolutionData,
+  OurSolutionBoxData,
+} from "@/components/main/model/main.data";
+
 import WhyAI from "@/components/main/ui/whyAI";
 import WhyAIIssuesPanel from "@/components/main/ui/whyAIIssuesPanel";
 import ImpactBanner from "@/components/main/ui/impactBanner";
-import AIDecisionArchitecture from "@/components/shared/aiDecisionArchitecture/ui/aiDecisionArchitecture";
-import SolutionsIntro from "@/components/main/ui/solutionsIntro";
-import SolutionCarousel from "@/components/shared/solutionCarousel/ui/solutionCarousel";
+import MainAiArchitecture from "@/components/main/ui/mainAiArchitecture";
+import OurComponent from "@/components/main/ui/ourComponent";
+
+const solutionCategoryClassName: Record<string, string> = {
+  "AI ARCHITECTURE": "text-primary",
+  "RETAIL & LOCATION": "text-purple-600",
+  FINANCE: "text-green-600",
+};
 
 export default function MainPage() {
   return (
-    <section className="content-shell flex flex-col px-xs pt-md pb-4xl tablet:px-2xl tablet:pt-xl tablet:pb-5xl desktop:px-0 desktop:pt-2xl">
-      <div>
-        {/*TODO: 나중에 주는 파일로 대체*/}
-        <MediaPlaceholder variant="main" />
-        {/*사진 다음에 나오는 컴포넌트*/}
-        <NextPicture
-          title={
-            <>
-              결정으로 이어주는
-              <br className="desktop:hidden" /> AI 데이터 플로우
-            </>
-          }
-          description={
-            <>
-              데이터를 예측과 판단까지 하나의 흐름으로
-              <br />
-              연결해 실행 가능한 방향을 제시합니다.
-            </>
-          }
-          descriptionClassName="font-sans text-[1.125rem] leading-[140%] font-light uppercase text-foreground"
-          inquiryDescriptionClassName="font-sans text-[1rem] leading-[1.5rem] font-medium tracking-[0] text-foreground"
-          inquiryDes={
-            "캐롯아이는 다양한 데이터를 수집·정제해 AI가 활용할 수 있는 구조로 연결하고, 예측·시뮬레이션·설명까지 하나의 흐름으로 이어 실행 가능한 결과를 만듭니다."
-          }
-          className="border-t-0"
-        />
-        {/* 4 + 1 사각형 디자인 사진 */}
-        <div className="grid grid-cols-1 border-l border-border tablet:grid-cols-5 desktop:grid-cols-5">
-          {pictureExplainItems.map((item) => (
-            <PictureExplain
-              key={item.imageAlt}
-              className="max-w-none border-0 border-r border-b border-border tablet:border-b"
-              media={
-                <div className="relative h-[10rem] w-[10rem] tablet:h-[10rem] tablet:w-[10rem] desktop:h-[13.5rem] desktop:w-[13.5rem]">
-                  <Image
-                    src={item.imageSrc}
-                    alt={item.imageAlt}
-                    fill
-                    sizes="(max-width: 1279px) 10rem, 13.5rem"
-                    className="object-contain"
-                  />
-                </div>
-              }
-              title={item.title}
-              description={item.description}
-            />
-          ))}
-          <DecorativeArrowCard className="border-0 border-r border-b border-border tablet:border-b-0" />
-        </div>
+    <section className="flex flex-col  pb-4xl tablet:pb-5xl ">
+      <MediaPlaceholder variant="main" />
 
-        {/* 왜 데이터와 어쩌구 */}
-        <div className="grid grid-cols-1 items-stretch tablet:h-[31.875rem] tablet:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] desktop:h-auto desktop:grid-cols-[431px_649px]">
-          <WhyAI className="border-t-0 tablet:border-l tablet:border-r-0" />
-          <WhyAIIssuesPanel />
+      <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
+        {/* Our Technology */}
+        <div className=" pt-[var(--spacing-2xl)] tablet:pt-[var(--token-space-24)] pb-[var(--token-space-10)]">
+          <OurComponent {...OurTechnologyData}>
+            <div className="grid grid-cols-1 gap-sm tablet:grid-cols-4 ">
+              {OurTechnologyBoxData.map((item, index) => (
+                <article
+                  key={item.imageAlt}
+                  className="flex self-stretch items-center gap-md rounded-2xl border border-ring bg-background p-md tablet:flex-col tablet:items-start tablet:p-xl"
+                >
+                  <div className="flex shrink-0 self-stretch items-start justify-between tablet:w-full">
+                    <div className="relative desktop:h-[7.5rem] desktop:w-[7.5rem] tablet:h-[5rem] tablet:w-[5rem] h-[6rem] w-[6rem]">
+                      <Image
+                        src={item.imageSrc}
+                        alt={item.imageAlt}
+                        fill
+                        sizes="7.5rem"
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="hidden h-[2rem] w-[2rem] items-center justify-center rounded-2xl bg-(--color-secondary) tablet:flex desktop:h-[2.5rem] desktop:w-[2.5rem]">
+                      <Image
+                        src={"/icon/main/slider/arrow_forward.svg"}
+                        alt={item.imageAlt}
+                        height={24}
+                        width={24}
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex min-w-0 flex-1 self-stretch items-start justify-between gap-md tablet:items-end">
+                    <div className="flex min-w-0 flex-1 flex-col self-stretch items-start gap-3">
+                      <h3 className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-bold tracking-[0.00438rem] text-foreground tablet:text-heading-4 tablet:leading-[var(--token-text-heading-4-line-height)] tablet:tracking-[var(--token-text-heading-4-letter-spacing)]">
+                        {item.title}
+                      </h3>
+                      <p className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-normal tracking-[0.00438rem] text-foreground tablet:text-[0.875rem] tablet:leading-normal tablet:tracking-[0]">
+                        {item.description}
+                      </p>
+                    </div>
+                    <div className="shrink-0 self-end font-normal text-muted-foreground">
+                      0{index + 1}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </OurComponent>
         </div>
+      </div>
 
-        {/*데코레이터 배너*/}
-        <ImpactBanner />
-        {/*AI의사 결정 아키텍쳐 텍스트 + 그림 */}
-        <AIDecisionArchitecture />
-        {/*캐러셀 위 타이틀*/}
-        <SolutionsIntro />
-        {/*메인페이지 캐러셀*/}
-        <SolutionCarousel />
+      {/* 왜 데이터와 어쩌구 */}
+      <section className="w-full bg-primary-foreground">
+        <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
+          <div className="flex w-full max-w-[67.5rem] flex-col items-center gap-xl self-stretch pt-md pb-3xl tablet:flex-row tablet:gap-0 tablet:pt-0 tablet:pb-0">
+            <WhyAI className="tablet:flex-[1_0_0] tablet:self-stretch" />
+            <WhyAIIssuesPanel className="tablet:flex-[1_0_0] tablet:self-stretch" />
+          </div>
+        </div>
+      </section>
+
+      {/*데코레이터 배너*/}
+      <section className="w-full bg-[linear-gradient(180deg,#09090b_0%,#562b0c_100%)]">
+        <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
+          <ImpactBanner />
+        </div>
+      </section>
+
+      {/*AI의사 결정 아키텍쳐 텍스트 + 그림 */}
+      <MainAiArchitecture />
+
+      <div className="content-shell px-lg tablet:px-2xl desktop:px-0">
+        {/* Our Solution */}
+        <div className=" pt-[var(--spacing-2xl)] tablet:pt-[var(--token-space-24)] pb-[var(--token-space-10)]">
+          <OurComponent {...OurSolutionData}>
+            <div className="grid grid-cols-1 gap-4 tablet:grid-cols-3">
+              {OurSolutionBoxData.map((item) => (
+                <article
+                  key={item.imageAlt}
+                  className="overflow-hidden rounded-2xl border border-ring bg-background"
+                >
+                  <div className="relative h-[12.5rem] w-full tablet:h-[11.25rem] desktop:h-[12.875rem]">
+                    <Image
+                      src={item.imageSrc}
+                      alt={item.imageAlt}
+                      fill
+                      sizes="(max-width: 799px) calc(100vw - 2.5rem), (max-width: 1279px) calc((100vw - 5rem) / 3), 21.5rem"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-xs p-xl">
+                    <div>
+                      <p
+                        className={`font-sans text-body-mini leading-[var(--token-text-body-mini-line-height)] font-bold tracking-[0] ${
+                          solutionCategoryClassName[item.category] ??
+                          "text-primary"
+                        }`}
+                      >
+                        {item.category}
+                      </p>
+                      <h3
+                        className="break-keep text-[1.5rem] leading-[140%] font-bold text-foreground"
+                        style={{
+                          fontFamily:
+                            'var(--font-definitions-font-family-headings, "Noto Sans KR")',
+                          letterSpacing:
+                            "var(--heading-3-letter-spacing, -0.0625rem)",
+                        }}
+                      >
+                        {item.title}
+                      </h3>
+                    </div>
+                    <p className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-normal tracking-[0.00438rem] text-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </OurComponent>
+        </div>
       </div>
     </section>
   );
