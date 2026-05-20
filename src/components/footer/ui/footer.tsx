@@ -11,9 +11,9 @@ const solutionLinks = [
 export default function Footer() {
   return (
     <footer className="mt-auto">
-      <section className="flex self-stretch flex-col items-center gap-3xl bg-primary px-xl py-3xl tablet:gap-4xl tablet:px-2xl tablet:py-5xl">
+      <section className="flex self-stretch flex-col items-center gap-3xl bg-primary-foreground px-xl py-3xl tablet:gap-4xl tablet:px-2xl tablet:py-5xl">
         <div className="mx-auto flex w-full max-w-[67.5rem] flex-col items-start gap-3xl tablet:gap-[5rem]">
-          <h2 className="break-keep text-[1.75rem] leading-[1.4] font-bold tracking-[-1px] text-white tablet:text-[42px]">
+          <h2 className="break-keep text-[1.75rem] leading-[1.4] font-bold tracking-[-1px] text-primary tablet:text-[42px]">
             <span className="tablet:hidden">
               데이터는 분석이 아니라
               <br />
@@ -37,8 +37,7 @@ export default function Footer() {
               alt="Carrot i"
               width={154}
               height={42}
-              className="h-7 w-auto invert brightness-0 tablet:h-[42px] tablet:w-[154px]"
-              style={{ filter: "brightness(0) invert(1)" }}
+              className="h-7 w-auto tablet:h-[42px] tablet:w-[154px]"
             />
           </Link>
         </div>
