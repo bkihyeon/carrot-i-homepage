@@ -60,7 +60,7 @@ export default function MainPage() {
                       <h3 className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-bold tracking-[0.00438rem] text-foreground tablet:text-heading-4 tablet:leading-[var(--token-text-heading-4-line-height)] tablet:tracking-[var(--token-text-heading-4-letter-spacing)]">
                         {item.title}
                       </h3>
-                      <p className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-normal tracking-[0.00438rem] text-foreground tablet:text-[1rem] tablet:leading-normal tablet:tracking-[0]">
+                      <p className="break-keep font-sans text-body-small leading-[var(--token-text-body-small-line-height)] font-normal tracking-[0.00438rem] text-foreground tablet:text-[0.875rem] tablet:leading-normal tablet:tracking-[0]">
                         {item.description}
                       </p>
                     </div>
