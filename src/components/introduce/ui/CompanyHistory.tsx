@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 
 type HistoryEntry = {
   title: string;
@@ -13,22 +14,18 @@ type HistoryYear = {
 
 const companyHistory: HistoryYear[] = [
   {
-    year: "2026",
+    year: "2025 ~ 2026",
     entries: [
       {
-        title: "롯데 코리아세븐 데이터파이프라인 구축",
+        title: "서민금융진흥원 통합 플렛폼 구축 프로젝트",
       },
       {
-        title: "서민금융진흥원 권한시스템 고도화",
+        title: "대상 순창 간장공장 MES 구축 프로젝트",
       },
       {
-        title: "26년 1월 . 서민금융진흥원 청년미래적금 사업 개발",
+        title:
+          "LS산전 “Smart MV 프로젝트 설정 화면 및 반응형 웹 화면 개발” 프로젝트 수행",
       },
-    ],
-  },
-  {
-    year: "2025",
-    entries: [
       { title: "대상 주식회사 MES 서비스 개발" },
       { title: "칠갑농산 MES 서비스 공급" },
       { title: "AI기반의 수요예측 솔루션  NIPA 'AI허브' 등록" },
@@ -52,25 +49,15 @@ const companyHistory: HistoryYear[] = [
     ],
   },
   {
-    year: "2019 ~ 2020",
+    year: "2015 ~ 2020",
     entries: [
       { title: "중부지방고용노동청 표창" },
       { title: "SK플래닛 협력사 등록" },
       { title: "SK플래닛 IDMS시스템 개발" },
-    ],
-  },
-  {
-    year: "2017 ~ 2018",
-    entries: [
       { title: "연구진구성" },
       { title: "기업부설연구소 지정" },
       { title: "DIMS 솔루션 개발" },
       { title: "고양신문 지역기업 인터뷰 보도" },
-    ],
-  },
-  {
-    year: "2015 ~ 2016",
-    entries: [
       { title: "SKM&S 협력사 등록" },
       { title: "LS일렉트릭 협력사 등록" },
       { title: "캐롯아이 법인설립" },
@@ -80,33 +67,32 @@ const companyHistory: HistoryYear[] = [
 
 export default function CompanyHistory() {
   const sectionRef = useRef<HTMLElement>(null);
+  const yearRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [activeYear, setActiveYear] = useState(companyHistory[0]?.year ?? "");
 
-  const activeHistory =
-    companyHistory.find((item) => item.year === activeYear) ??
-    companyHistory[0];
-
-  const scrollHistoryTopIntoView = () => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const headerHeight =
-      document.querySelector("header")?.getBoundingClientRect().height ?? 0;
-    const sectionTop = section.getBoundingClientRect().top;
-
-    if (sectionTop >= headerHeight) return;
-
+  const scrollYearIntoView = (year: string) => {
     requestAnimationFrame(() => {
+      const yearElement = yearRefs.current[year];
+      if (!yearElement) return;
+
+      const headerHeight =
+        document.querySelector("header")?.getBoundingClientRect().height ?? 0;
+      const yearRect = yearElement.getBoundingClientRect();
+      const isYearVisible =
+        yearRect.top >= headerHeight && yearRect.bottom <= window.innerHeight;
+
+      if (isYearVisible) return;
+
       window.scrollTo({
-        top: window.scrollY + sectionTop - headerHeight - 1,
+        top: window.scrollY + yearRect.top - headerHeight - 1,
         behavior: "smooth",
       });
     });
   };
 
   const handleYearClick = (year: string) => {
-    setActiveYear(year);
-    scrollHistoryTopIntoView();
+    setActiveYear((currentYear) => (currentYear === year ? "" : year));
+    scrollYearIntoView(year);
   };
 
   return (
@@ -114,47 +100,68 @@ export default function CompanyHistory() {
       ref={sectionRef}
       className="w-full border border-border border-t-0 bg-background"
     >
-      <div className="flex flex-row items-stretch">
-        <div className="flex w-[7.5rem] shrink-0 flex-col items-start border-r border-border tablet:w-[15rem]">
-          {companyHistory.map((item) => {
-            const isActive = item.year === activeYear;
+      <div className="flex flex-col items-stretch">
+        {companyHistory.map((item) => {
+          const isActive = item.year === activeYear;
+          const panelId = `company-history-panel-${item.year.replace(/\s+/g, "-")}`;
 
-            return (
+          return (
+            <div
+              key={item.year}
+              ref={(element) => {
+                yearRefs.current[item.year] = element;
+              }}
+              className="flex flex-col items-stretch"
+            >
               <button
-                key={item.year}
                 type="button"
                 onClick={() => handleYearClick(item.year)}
-                className={`flex w-full cursor-pointer self-stretch items-center gap-xs border-b border-border tablet:px-2xl tablet:py-xl p-md text-left transition-colors last:border-b-0  ${isActive ? "bg-secondary text-foreground" : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground"}`.trim()}
-                aria-pressed={isActive}
+                className={`flex w-full cursor-pointer self-stretch items-center gap-xs border-b border-border p-md text-left transition-colors tablet:px-2xl tablet:py-xl ${isActive ? "bg-secondary text-foreground" : "text-foreground hover:bg-secondary/60 hover:text-foreground"}`.trim()}
+                aria-expanded={isActive}
+                aria-controls={panelId}
               >
-                <span className="font-sans text-[0.875rem] leading-[1.3125rem] font-bold tracking-[0.00438rem] tablet:font-heading tablet:text-[1.875rem] tablet:leading-[140%] tablet:tracking-[var(--token-text-heading-2-letter-spacing)]">
+                <Image
+                  src={"/image/introduce/Polygon.png"}
+                  alt={"삼각형"}
+                  height={24}
+                  width={28}
+                  className={`h-6 w-7 object-contain transition-transform duration-300 ease-out ${isActive ? "rotate-90" : "rotate-0"}`.trim()}
+                />
+                <span className="font-sans text-[1.875rem] leading-[1.3125rem] font-bold tracking-[0.00438rem] tablet:font-heading tablet:text-[1.875rem] tablet:leading-[140%] tablet:tracking-[var(--token-text-heading-2-letter-spacing)]">
                   {item.year}
                 </span>
               </button>
-            );
-          })}
-        </div>
 
-        <div className="flex flex-[1_0_0] flex-col items-start self-stretch">
-          {activeHistory.entries.length > 0 ? (
-            activeHistory.entries.map((entry, index) => (
-              <article
-                key={`history-entry-${index}`}
-                className="flex self-stretch flex-col items-start gap-xs border-b border-border px-2xl py-xl "
-              >
-                <p className="font-sans text-[1rem] leading-[1.5rem] font-bold tracking-[0] text-foreground tablet:font-heading tablet:text-[1.5rem] tablet:leading-[140%] tablet:tracking-[var(--token-text-heading-3-letter-spacing)]">
-                  {entry.title}
-                </p>
-              </article>
-            ))
-          ) : (
-            <div className="flex min-h-[24rem] items-center px-xl py-3xl tablet:px-2xl">
-              <p className="type-body text-muted-foreground">
-                {activeHistory.year} 연혁 내용은 아직 정리 중입니다.
-              </p>
+              {isActive && (
+                <div
+                  id={panelId}
+                  className="flex flex-col items-start self-stretch"
+                >
+                  {item.entries.length > 0 ? (
+                    item.entries.map((entry, index) => (
+                      <article
+                        key={`${item.year}-history-entry-${index}`}
+                        className={`flex self-stretch flex-col items-start gap-xs border-b border-border px-5xl py-xl ${isActive ? "bg-secondary text-foreground" : "text-foreground hover:bg-secondary/60 hover:text-foreground"}`.trim()}
+                      >
+                        <p
+                          className={`font-sans text-[1.5rem] leading-[1.5rem] font-bold tracking-[0] text-foreground tablet:font-heading tablet:text-[1.5rem] tablet:leading-[140%] tablet:tracking-[var(--token-text-heading-3-letter-spacing)]  `}
+                        >
+                          {entry.title}
+                        </p>
+                      </article>
+                    ))
+                  ) : (
+                    <div className="flex min-h-[24rem] items-center px-xl py-3xl tablet:px-2xl">
+                      <p className="type-body text-muted-foreground">
+                        {item.year} 연혁 내용은 아직 정리 중입니다.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          );
+        })}
       </div>
     </section>
   );
