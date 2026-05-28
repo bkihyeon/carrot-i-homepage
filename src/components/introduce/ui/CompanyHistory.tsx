@@ -29,6 +29,7 @@ const companyHistory: HistoryYear[] = [
         title:
           "LS산전 “Smart MV 프로젝트 설정 화면 및 반응형 웹 화면 개발” 프로젝트 수행",
       },
+      { title: "대상 주식회사 MES 서비스 개발" },
       { title: "칠갑농산 MES 서비스 공급" },
       { title: "AI기반의 수요예측 솔루션  NIPA 'AI허브' 등록" },
       { title: "상표등록 ‘RUNNOTE’" },
