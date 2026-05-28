@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "release": "./scripts/release.sh",
+    "release:status": "ssh carrot-i 'docker ps -a --filter name=carrot-homepage'",
+    "release:logs": "ssh carrot-i 'docker logs --tail=100 -f carrot-homepage'",
+    "release:health": "ssh carrot-i 'curl -fsS http://127.0.0.1:3000/api/health'",
+    "release:history": "ssh carrot-i 'tail -20 /opt/carrot-homepage/deploy-history.log'",
+    "release:tunnel": "ssh -N -L 3001:127.0.0.1:3000 carrot-i"
   },
   "dependencies": {
     "next": "16.2.3",
@@ -26,5 +32,6 @@
     "prettier": "^3.8.3",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a"
 }

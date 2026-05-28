@@ -55,7 +55,7 @@ src/
 ### 1. Install
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### 2. Configure environment variables
@@ -82,18 +82,31 @@ cp .env.example .env.local
 ### 3. Run the development server
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 브라우저에서 [http://localhost:3000](http://localhost:3000) 을 열면 확인할 수 있습니다.
 
 ## Available Scripts
 
+### Development
+
 ```bash
-npm run dev
-npm run build
-npm run start
-npm run lint
+pnpm dev      # 개발 서버
+pnpm build    # 프로덕션 빌드
+pnpm start    # 빌드 산출물 실행
+pnpm lint     # ESLint
+```
+
+### Release / Ops
+
+```bash
+pnpm release           # 이미지 빌드 → 푸시 → EC2 배포 (scripts/release.sh)
+pnpm release:status    # EC2 컨테이너 상태
+pnpm release:logs      # 컨테이너 로그 follow
+pnpm release:health    # /api/health 1회 호출
+pnpm release:history   # 배포/롤백 이력 (최근 20건)
+pnpm release:tunnel    # localhost:3001 → EC2 :3000 SSH 터널
 ```
 
 ## Inquiry Flow
@@ -117,8 +130,45 @@ npm run lint
 - 솔루션 소개 데이터는 각 기능별 `model/*.data.tsx` 파일과 공용 `src/components/shared/solutionCarousel/model/solutionCarousel.data.tsx` 에서 관리합니다.
 - 헤더와 푸터에서 같은 솔루션 링크 체계를 사용합니다.
 
-## Deployment Checklist
+## Deployment
 
-- `.env.local` 또는 배포 환경 변수에 SMTP 설정이 정확히 들어갔는지 확인
-- `npm run build` 로 프로덕션 빌드 성공 여부 확인
-- 문의 모달에서 실제 메일 발송이 되는지 점검
+Docker 컨테이너를 EC2에 배포합니다. 이미지는 GitLab Container Registry
+(`registry.gitlab.com/carrot-i/carrot-i-homepage`) 에 푸시되고, EC2에서
+`/opt/carrot-homepage/deploy.sh` 가 pull → 교체 → 헬스체크 → 필요시 자동 롤백을 수행합니다.
+
+### Prerequisites (1회성)
+
+- Docker Desktop 실행 중 (로컬 Mac)
+- `docker login registry.gitlab.com` (본인 GitLab classic PAT, `read_registry` + `write_registry`)
+- SSH `carrot-i` 호스트 설정 (`~/.ssh/config`)
+
+### 배포 루틴
+
+```bash
+git pull
+pnpm release
+```
+
+성공 시 `:stable` 태그가 새 이미지로 갱신됩니다.
+헬스체크 실패 시 자동 롤백되고 `:stable` 은 유지됩니다 (release.sh exit 2).
+
+### 배포 직후 확인
+
+```bash
+pnpm release:status
+pnpm release:history
+pnpm release:logs    # 이슈 의심 시
+```
+
+### 내부 검증 (nginx 전환 전/특정 시점)
+
+```bash
+pnpm release:tunnel  # 다른 터미널에서 실행
+# 브라우저에서 http://localhost:3001
+```
+
+### Checklist
+
+- `.env.production` 이 EC2 `/opt/carrot-homepage/` 에 `0600` 권한으로 존재
+- 로컬 tracked 파일에 uncommitted 변경 없음 (release.sh가 자동 가드)
+- 문의 모달에서 실제 메일 발송 되는지 주기 점검 (SMTP 자격증명 만료 감지)
