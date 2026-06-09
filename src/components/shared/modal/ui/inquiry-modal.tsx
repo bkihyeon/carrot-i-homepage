@@ -74,7 +74,7 @@ export default function InquiryModal({
           name="privacyAgreed"
           value={isPrivacyAgreed ? "true" : "false"}
         />
-        <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col gap-md px-lg py-lg tablet:gap-xl tablet:p-xl">
+        <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col gap-md overflow-y-auto px-lg py-lg tablet:gap-xl tablet:p-xl">
           <label className="flex flex-col gap-xs">
             <span className="text-[1rem] leading-[140%] font-medium tracking-[-0.02em] text-foreground tablet:text-base">
               회사명 <span className="text-[#FF5E00]">*</span>
@@ -164,7 +164,7 @@ export default function InquiryModal({
           </label>
         </div>
 
-        <div className="mt-auto border-t border-border px-lg py-xl tablet:p-xl">
+        <div className="mt-auto shrink-0 border-t border-border px-lg py-xl tablet:p-xl">
           <div className="flex flex-col gap-xs">
             <div className="flex min-h-[2rem] items-center rounded-[0.5rem] border border-[#D9D9D9] bg-background px-sm py-2xs tablet:min-h-[3.25rem] tablet:rounded-[0.875rem] tablet:px-3 tablet:py-xs">
               <button
