@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
+
 import MesPage from "@/components/mes/ui";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/mes" },
+};
 
 export default function Mes() {
   return (

@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
+
 import CastPage from "@/components/cast/ui";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/cast" },
+};
 
 export default function Cast() {
   return (

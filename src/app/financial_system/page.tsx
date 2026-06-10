@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
+
 import FinancialSystemPage from "@/components/finance/ui";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/financial_system" },
+};
 
 export default function FinancialSystem() {
   return (

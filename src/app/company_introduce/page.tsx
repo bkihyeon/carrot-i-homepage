@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
+
 import IntroducePage from "@/components/introduce/ui";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/company_introduce" },
+};
 
 export default function CompanyIntroduce() {
   return (

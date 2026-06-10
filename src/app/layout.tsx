@@ -18,7 +18,7 @@ const notoSansKr = Noto_Sans_KR({
   variable: "--font-brand-sans",
 });
 
-const SITE_URL = "https://carrot-i-homepage.vercel.app";
+const SITE_URL = "https://www.carrot-i.com";
 const SITE_NAME = "Carrot-i";
 const SITE_TITLE = "Carrot-i | AI 데이터 플로우 솔루션";
 const SITE_DESCRIPTION =
@@ -52,9 +52,6 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
-  },
-  alternates: {
-    canonical: "/",
   },
   robots: {
     index: true,
