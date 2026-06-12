@@ -6,8 +6,12 @@ const isVercel = process.env.VERCEL === "1";
 
 export default function robots(): MetadataRoute.Robots {
   if (isVercel) {
+    // 일부러 disallow하지 않는다.
+    // 이미 색인된 프리뷰 URL을 빼려면 크롤러가 페이지에 들어와
+    // X-Robots-Tag/메타의 noindex를 "읽을 수" 있어야 한다.
+    // robots.txt로 막으면 크롤러 진입이 차단돼 noindex를 못 읽고 색인이 그대로 남는다.
     return {
-      rules: { userAgent: "*", disallow: "/" },
+      rules: { userAgent: "*", allow: "/" },
     };
   }
 

@@ -18,6 +18,9 @@ const notoSansKr = Noto_Sans_KR({
   variable: "--font-brand-sans",
 });
 
+// Vercel 배포(VERCEL=1)에서는 검색 색인을 막는다. (next.config.ts / robots.ts와 동일 정책)
+const isVercel = process.env.VERCEL === "1";
+
 const SITE_URL = "https://www.carrot-i.com";
 const SITE_NAME = "Carrot-i";
 const SITE_TITLE = "Carrot-i | AI 데이터 플로우 솔루션";
@@ -53,17 +56,19 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      "max-video-preview": -1,
-    },
-  },
+  robots: isVercel
+    ? { index: false, follow: false, googleBot: { index: false, follow: false } }
+    : {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-snippet": -1,
+          "max-image-preview": "large",
+          "max-video-preview": -1,
+        },
+      },
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
